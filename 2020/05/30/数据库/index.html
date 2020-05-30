@@ -20,28 +20,51 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="严冰的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="数据库系统原理 参考文档：https:&#x2F;&#x2F;cyc2018.github.io&#x2F;CS-Notes&#x2F;#&#x2F;notes&#x2F;数据库系统原理 事务概念事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。  ACID特性1. 原子性（Atomicity）事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。 回滚可以用回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="严冰的博客">
+<meta property="og:description" content="数据库系统原理 参考文档：https:&#x2F;&#x2F;cyc2018.github.io&#x2F;CS-Notes&#x2F;#&#x2F;notes&#x2F;数据库系统原理 事务概念事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。  ACID特性1. 原子性（Atomicity）事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。 回滚可以用回">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%BA%8B%E5%8A%A1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/ACID%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%B8%A2%E5%A4%B1%E4%BF%AE%E6%94%B9.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E8%AF%BB%E8%84%8F%E6%95%B0%E6%8D%AE.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E5%B9%BB%E5%BD%B1%E8%AF%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/XS%E9%94%81%E5%85%BC%E5%AE%B9%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E6%84%8F%E5%90%91%E9%94%81%E5%85%BC%E5%AE%B9%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%B8%80%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E8%AF%BB%E8%84%8F%E6%95%B0%E6%8D%AE.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%B8%89%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E8%A7%A3%E5%86%B3%E5%B9%B6%E5%8F%91%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/undo%E6%97%A5%E5%BF%97.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/readview.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%B8%80%E5%AF%B9%E5%A4%9A.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E5%A4%9A%E6%AC%A1%E5%87%BA%E7%8E%B0.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E5%A4%9A%E5%90%91%E6%80%A7.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E8%A1%A8%E7%A4%BA%E5%AD%90%E7%B1%BB.jpg">
+<meta property="article:published_time" content="2020-05-30T02:10:22.084Z">
+<meta property="article:modified_time" content="2020-05-30T01:51:51.333Z">
 <meta property="article:author" content="yanbing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/pictures/%E4%BA%8B%E5%8A%A1.jpg">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>严冰的博客</title>
+  <title>数据库 | 严冰的博客</title>
   
 
 
@@ -149,9 +172,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -167,10 +191,9 @@
       <meta itemprop="name" content="严冰的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据库
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -194,7 +217,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>数据库系统原理</p>
+        <p>数据库系统原理</p>
 <p>参考文档：<a href="https://cyc2018.github.io/CS-Notes/#/notes/数据库系统原理" target="_blank" rel="noopener">https://cyc2018.github.io/CS-Notes/#/notes/数据库系统原理</a></p>
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。</p>
 <p><img src="./pictures/%E4%BA%8B%E5%8A%A1.jpg" alt="事务"></p>
@@ -541,171 +564,30 @@ SELECT ... FOR UPDATE;</code></p>
 <li>外模式/模式的映像：实现外模式到概念模式之间的相互转换。</li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/cscode%E5%86%99%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/cscode%E5%86%99%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">cscode写博客内容</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-30 10:10:12 / 修改时间：08:50:14" itemprop="dateCreated datePublished" datetime="2020-05-30T10:10:12+08:00">2020-05-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><p>+正文直接输入就可以了</p>
-<p>换行注意，要在代码中实际空一行，直接换行的话，渲染输出的是没有换行的</p>
-<p>行内代码块</p>
-<p><code>print (
-    “hello world!”
-)</code></p>
-<p>列表</p>
-<ol>
-<li>有序列表，输入数字，加一个句点，然后空格即可；可以缩进空置多级列表</li>
-<li>哈哈哈<br>i  不对啊<pre><code>a. 好像只有一级列表
-    b.确实是缩进就行</code></pre></li>
-</ol>
-<p>无序列表，输入-，然后空格</p>
-<ul>
-<li>测试1</li>
-<li>测试2</li>
-</ul>
-<p>加粗和倾斜<br><strong>加粗</strong><br><em>倾斜</em><br><strong><em>加粗和倾斜</em></strong></p>
-<p>加分割线</p>
-<hr>
-<hr>
-<p>文本颜色设置<br>红：255，0，0 #FF0000<br>橙: 255,125,0 #FF7D00<br>黄：255，255，0 #FFFF00<br>绿：0，255，0 #00FF00<br>蓝：0，0，255 #0000FF<br>靛: 0,255,255 #00FFFF<br>紫: 255,0,255 #FF00FF</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/30/cscode%E5%86%99%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9/" rel="prev" title="cscode写博客内容">
+      <i class="fa fa-chevron-left"></i> cscode写博客内容
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/29/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-29 18:48:20" itemprop="dateCreated datePublished" datetime="2020-04-29T18:48:20+08:00">2020-04-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -758,6 +640,7 @@ SELECT ... FOR UPDATE;</code></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ACID特性"><span class="nav-number">1.2.</span> <span class="nav-text">ACID特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-原子性（Atomicity）"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 原子性（Atomicity）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-一致性（Consistency）"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 一致性（Consistency）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-隔离性（Isolation）"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 隔离性（Isolation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-持久性（Durability）"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 持久性（Durability）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AUTOCOMMIT"><span class="nav-number">1.3.</span> <span class="nav-text">AUTOCOMMIT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发一致性问题"><span class="nav-number">2.</span> <span class="nav-text">并发一致性问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#丢失修改"><span class="nav-number">2.1.</span> <span class="nav-text">丢失修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读脏数据"><span class="nav-number">2.2.</span> <span class="nav-text">读脏数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可重复读"><span class="nav-number">2.3.</span> <span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幻影读"><span class="nav-number">2.4.</span> <span class="nav-text">幻影读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封锁"><span class="nav-number">3.</span> <span class="nav-text">封锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封锁粒度"><span class="nav-number">3.1.</span> <span class="nav-text">封锁粒度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封锁类型"><span class="nav-number">3.2.</span> <span class="nav-text">封锁类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-读写锁"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 读写锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-意向锁"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 意向锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封锁协议"><span class="nav-number">3.3.</span> <span class="nav-text">封锁协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三级封锁协议"><span class="nav-number">3.3.1.</span> <span class="nav-text">三级封锁协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一级封锁协议"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">一级封锁协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二级封锁协议"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">二级封锁协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三级封锁协议-1"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">三级封锁协议</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两段封锁协议"><span class="nav-number">3.3.2.</span> <span class="nav-text">两段封锁协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-隐式与显示锁定"><span class="nav-number">3.4.</span> <span class="nav-text">MySQL 隐式与显示锁定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离级别"><span class="nav-number">4.</span> <span class="nav-text">隔离级别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#未提交读（READ-UNCOMMITTED）"><span class="nav-number">4.1.</span> <span class="nav-text">未提交读（READ UNCOMMITTED）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交读（READ-COMMITTED）"><span class="nav-number">4.2.</span> <span class="nav-text">提交读（READ COMMITTED）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可重复读（REPEATABLE-READ）"><span class="nav-number">4.3.</span> <span class="nav-text">可重复读（REPEATABLE READ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可串行化（SERIALIZABLE）"><span class="nav-number">4.4.</span> <span class="nav-text">可串行化（SERIALIZABLE）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多版本并发控制"><span class="nav-number">5.</span> <span class="nav-text">多版本并发控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本思想"><span class="nav-number">5.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本号"><span class="nav-number">5.2.</span> <span class="nav-text">版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Undo-日志"><span class="nav-number">5.3.</span> <span class="nav-text">Undo 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReadView"><span class="nav-number">5.4.</span> <span class="nav-text">ReadView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照读与当前读"><span class="nav-number">5.5.</span> <span class="nav-text">快照读与当前读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-快照读"><span class="nav-number">5.5.1.</span> <span class="nav-text">1. 快照读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-当前读"><span class="nav-number">5.5.2.</span> <span class="nav-text">2. 当前读</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-Key-Locks"><span class="nav-number">6.</span> <span class="nav-text">Next-Key Locks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Record-Locks"><span class="nav-number">6.1.</span> <span class="nav-text">Record Locks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gap-Locks"><span class="nav-number">6.2.</span> <span class="nav-text">Gap Locks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-Key-Locks-1"><span class="nav-number">6.3.</span> <span class="nav-text">Next-Key Locks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系数据库设计理论"><span class="nav-number">7.</span> <span class="nav-text">关系数据库设计理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数依赖"><span class="nav-number">7.1.</span> <span class="nav-text">函数依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">7.2.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范式"><span class="nav-number">7.3.</span> <span class="nav-text">范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第一范式-1NF"><span class="nav-number">7.3.1.</span> <span class="nav-text">1. 第一范式 (1NF)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-第二范式-2NF"><span class="nav-number">7.3.2.</span> <span class="nav-text">2. 第二范式 (2NF)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-第三范式-3NF"><span class="nav-number">7.3.3.</span> <span class="nav-text">3. 第三范式 (3NF)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER-图"><span class="nav-number">8.</span> <span class="nav-text">ER 图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实体的三种联系"><span class="nav-number">8.1.</span> <span class="nav-text">实体的三种联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表示出现多次的关系"><span class="nav-number">8.2.</span> <span class="nav-text">表示出现多次的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联系的多向性"><span class="nav-number">8.3.</span> <span class="nav-text">联系的多向性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表示子类"><span class="nav-number">8.4.</span> <span class="nav-text">表示子类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级模式与两级映射"><span class="nav-number">9.</span> <span class="nav-text">三级模式与两级映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级模式"><span class="nav-number">9.1.</span> <span class="nav-text">三级模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户级–-gt-外模式-反映了数据库系统的用户观"><span class="nav-number">9.1.1.</span> <span class="nav-text">用户级–&gt; 外模式(反映了数据库系统的用户观)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概念级–-gt-概念模式（反映了数据库系统的整体观）"><span class="nav-number">9.1.2.</span> <span class="nav-text">概念级–&gt; 概念模式（反映了数据库系统的整体观）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#物理级-–-gt-内模式（反映了数据库系统的存储观）"><span class="nav-number">9.1.3.</span> <span class="nav-text">物理级 –&gt; 内模式（反映了数据库系统的存储观）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两级映射"><span class="nav-number">9.2.</span> <span class="nav-text">两级映射</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
