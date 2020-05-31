@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ice.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ice.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="集合分类Java 容器分为 Collection 和 Map 两大类： Collection集合主要有List和Set两大接口  Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。 List：一个有序（元素存入集合的顺序和取出的顺序一致）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合概述">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/java%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="严冰的博客">
+<meta property="og:description" content="集合分类Java 容器分为 Collection 和 Map 两大类： Collection集合主要有List和Set两大接口  Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。 List：一个有序（元素存入集合的顺序和取出的顺序一致）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-30T12:50:49.000Z">
+<meta property="article:modified_time" content="2020-05-31T03:01:12.747Z">
+<meta property="article:author" content="yanbing">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/30/java%E9%9B%86%E5%90%88/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>集合概述 | 严冰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">严冰的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/java%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          集合概述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-31 11:01:12" itemprop="dateModified" datetime="2020-05-31T11:01:12+08:00">2020-05-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/java%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">java集合</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="集合分类"><a href="#集合分类" class="headerlink" title="集合分类"></a>集合分类</h2><p>Java 容器分为 Collection 和 Map 两大类：</p>
+<p>Collection集合主要有List和Set两大接口</p>
+<ul>
+<li>Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。</li>
+<li>List：一个有序（元素存入集合的顺序和取出的顺序一致）容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 ArrayList、LinkedList。<br>Map是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。Map 的常用实现类：HashMap、TreeMap、HashTable、LinkedHashMap、ConcurrentHashMap</li>
+</ul>
+<h2 id="底层数据结构"><a href="#底层数据结构" class="headerlink" title="底层数据结构"></a>底层数据结构</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
+<li><p>Arraylist： Object数组</p>
+</li>
+<li><p>Vector： Object数组</p>
+</li>
+<li><p>LinkedList： 双向循环链表</p>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3></li>
+<li><p>HashSet（无序，唯一）：基于 HashMap 实现的，底层采用 HashMap 来保存元素</p>
+</li>
+<li><p>LinkedHashSet： LinkedHashSet 继承与 HashSet，并且其内部是通过 LinkedHashMap 来实现的。</p>
+</li>
+<li><p>TreeSet（有序，唯一）： 红黑树（自平衡的排序二叉树）。</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3></li>
+<li><p>HashMap： JDK1.8之前HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）。JDK1.8以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为<strong>红黑树</strong>，以减少搜索时间。</p>
+</li>
+<li><p>LinkedHashMap：LinkedHashMap 继承自 HashMap，所以它的底层仍然是基于拉链式散列结构即由数组和链表或红黑树组成。另外，LinkedHashMap 在上面结构的基础上，<strong>增加了一条双向链表</strong>，使得上面的结构可以保持键值对的插入顺序。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。</p>
+</li>
+<li><p>HashTable： 数组+链表组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的。</p>
+</li>
+<li><p>TreeMap： 红黑树（自平衡的排序二叉树）</p>
+<h2 id="线程安全的集合类"><a href="#线程安全的集合类" class="headerlink" title="线程安全的集合类"></a>线程安全的集合类</h2></li>
+<li><p>vector：就比arraylist多了个同步化机制（线程安全），因为效率较低，现在已经不太建议使用。在web应用中，特别是前台页面，往往效率（页面响应速度）是优先考虑的。</p>
+</li>
+<li><p>stack：堆栈类，先进后出。</p>
+</li>
+<li><p>hashtable：就比hashmap多了个线程安全。</p>
+</li>
+<li><p>enumeration：枚举，相当于迭代器。</p>
+<h2 id="快速失败-fail-fast-和安全失败-fail-safe"><a href="#快速失败-fail-fast-和安全失败-fail-safe" class="headerlink" title="快速失败(fail-fast)和安全失败(fail-safe)"></a>快速失败(fail-fast)和安全失败(fail-safe)</h2><h3 id="快速失败（fail—fast）"><a href="#快速失败（fail—fast）" class="headerlink" title="快速失败（fail—fast）"></a>快速失败（fail—fast）</h3></li>
+</ul>
+<p>在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出Concurrent Modification Exception。</p>
+<p>原理：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个 modCount 变量。集合在被遍历期间如果内容发生变化，就会改变modCount的值。每当迭代器使用hashNext()/next()遍历下一个元素之前，都会检测modCount变量是否为expectedmodCount值，是的话就返回遍历；否则抛出异常，终止遍历。</p>
+<p>注意：这里异常的抛出条件是检测到 modCount != expectedmodCount 这个条件。如果集合发生变化时修改modCount值刚好又设置为了expectedmodCount值，则异常不会抛出。因此，不能依赖于这个异常是否抛出而进行并发操作的编程，这个异常只建议用于检测并发修改的bug。</p>
+<p>场景：java.util包下的集合类都是快速失败的，不能在多线程下发生并发修改（迭代过程中被修改）。</p>
+<h3 id="安全失败（fail—safe）"><a href="#安全失败（fail—safe）" class="headerlink" title="安全失败（fail—safe）"></a>安全失败（fail—safe）</h3><p>采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。</p>
+<p>原理：由于迭代时是对原集合的拷贝进行遍历，所以在遍历过程中对原集合所作的修改并不能被迭代器检测到，所以不会触发Concurrent Modification Exception。</p>
+<p>缺点：基于拷贝内容的优点是避免了Concurrent Modification Exception，但同样地，迭代器并不能访问到修改后的内容，即：迭代器遍历的是开始遍历那一刻拿到的集合拷贝，在遍历期间原集合发生的修改迭代器是不知道的。</p>
+<p>场景：java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，并发修改。</p>
+<h2 id="集合和数组的区别"><a href="#集合和数组的区别" class="headerlink" title="集合和数组的区别"></a>集合和数组的区别</h2><ul>
+<li>数组是固定长度的；集合可变长度的。</li>
+<li>数组可以存储基本数据类型，也可以存储引用数据类型；集合只能存储引用数据类型。</li>
+<li>数组存储的元素必须是同一个数据类型；集合存储的对象可以是不同数据类型。<h2 id="使用集合框架的好处"><a href="#使用集合框架的好处" class="headerlink" title="使用集合框架的好处"></a>使用集合框架的好处</h2></li>
+</ul>
+<ol>
+<li>容量自增长；</li>
+<li>提供了高性能的数据结构和算法，使编码更轻松，提高了程序速度和质量；</li>
+<li>允许不同 API 之间的互操作，API之间可以来回传递集合；</li>
+<li>可以方便地扩展或改写集合，提高代码复用性和可操作性;</li>
+<li>通过使用JDK自带的集合类，可以降低代码维护和学习新API成本。<h2 id="确保一个集合不能被修改"><a href="#确保一个集合不能被修改" class="headerlink" title="确保一个集合不能被修改"></a>确保一个集合不能被修改</h2>可以使用 Collections. unmodifiableCollection(Collection c) 方法来创建一个只读集合，这样改变集合的任何操作都会抛出 Java.lang. UnsupportedOperationException 异常：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list. add(<span class="string">"x"</span>);</span><br><span class="line">Collection&lt;String&gt; clist = Collections. unmodifiableCollection(list);</span><br><span class="line">clist. add(<span class="string">"y"</span>); <span class="comment">// 运行时此行报错</span></span><br><span class="line">System. out. println(list. size());</span><br></pre></td></tr></table></figure>
+
+<h2 id="comparable-和-comparator"><a href="#comparable-和-comparator" class="headerlink" title="comparable 和 comparator"></a>comparable 和 comparator</h2><ul>
+<li>comparable接口出自java.lang包，它有一个compareTo(Object obj)方法用来排序</li>
+<li>comparator接口出自 java.util 包，它有一个compare(Object obj1, Object obj2)方法用来排序<br>一般我们需要对一个集合使用自定义排序时，我们就要重写compareTo方法或compare方法，当我们需要对某一个集合实现两种排序方式，比如一个song对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写compareTo方法和使用自制的Comparator方法或者以两个Comparator来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的Collections.sort()。</li>
+</ul>
+<h2 id="Collection-和-Collections"><a href="#Collection-和-Collections" class="headerlink" title="Collection 和 Collections"></a>Collection 和 Collections</h2><ul>
+<li>java.util.Collection 是一个集合接口（集合类的一个顶级接口）。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java 类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供了最大化的统一操作方式，其直接继承接口有List与Set。</li>
+<li>Collections则是集合类的一个工具类/帮助类，其中提供了一系列静态方法，用于对集合中元素进行排序、搜索以及线程安全等各种操作。<br>Collections 工具类的 sort 方法有两种重载的形式，</li>
+</ul>
+<ol>
+<li><p>第一种要求传入的待排序容器中存放的对象比较实现 Comparable 接口以实现元素的比较。</p>
+</li>
+<li><p>第二种不强制性的要求容器中的元素必须可比较，但是要求传入第二个参数，参数是Comparator 接口的子类型（需要重写 compare 方法实现元素的比较），相当于一个临时定义的排序规则，其实就是通过接口注入比较元素大小的算法，也是对回调模式的应用（Java 中对函数式编程的支持）。</p>
+</li>
+</ol>
+<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><h3 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器 Iterator"></a>迭代器 Iterator</h3><p>Iterator 接口提供遍历任何 <strong>Collection</strong> 的接口。我们可以从一个 Collection 中使用迭代器方法来获取迭代器实例。迭代器取代了 Java 集合框架中的 Enumeration，迭代器允许调用者在迭代过程中移除元素。</p>
+<h4 id="单向遍历"><a href="#单向遍历" class="headerlink" title="单向遍历"></a>单向遍历</h4><p>Iterator 的特点是只能单向遍历，但是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 ConcurrentModificationException 异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    String obj = it.next();</span><br><span class="line">    System.out.println(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; it = list.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    it.remove();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Iterator-和-ListIterator"><a href="#Iterator-和-ListIterator" class="headerlink" title="Iterator 和 ListIterator"></a>Iterator 和 ListIterator</h4><ul>
+<li>Iterator 可以遍历 Set 和 List 集合，而 ListIterator 只能遍历 List。</li>
+<li>Iterator 只能单向遍历，而 ListIterator 可以双向遍历。</li>
+<li>ListIterator 实现 Iterator 接口，然后添加了一些额外的功能，比如添加一个元素、替换一个元素、获取前面或后面元素的索引位置。<h3 id="List-1"><a href="#List-1" class="headerlink" title="List"></a>List</h3><h4 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h4></li>
+</ul>
+<ol>
+<li><p>for 循环遍历，基于计数器。在集合外部维护一个计数器，然后依次读取每一个位置的元素，当读取到最后一个元素后停止。</p>
+</li>
+<li><p>迭代器遍历，Iterator。Iterator 是面向对象的一个设计模式，目的是屏蔽不同数据集合的特点，统一遍历集合的接口。Java 在 Collections 中支持了 Iterator 模式。</p>
+</li>
+<li><p>foreach 循环遍历。foreach 内部也是采用了 Iterator 的方式实现，使用时不需要显式声明 Iterator 或计数器。优点是代码简洁，不易出错；缺点是只能做简单的遍历，不能在遍历过程中操作数据集合，例如删除、替换。</p>
+</li>
+</ol>
+<p><strong>RandomAccess</strong></p>
+<p>Java Collections 框架中提供了一个 RandomAccess 接口，用来标记 List 实现是否支持 Random Access。</p>
+<ul>
+<li><p>如果一个数据集合实现了该接口，就意味着它支持 RandomAccess，按位置读取元素的平均时间复杂度为 <strong>O(1)</strong>，如ArrayList。</p>
+</li>
+<li><p>如果没有实现该接口，表示不支持 RandomAccess，如LinkedList。</p>
+</li>
+<li><p>推荐的做法就是，支持 RandomAccess 的列表可用 for 循环遍历，否则建议用 Iterator 或 foreach 遍历。</p>
+<h4 id="ArrayList-的优缺点"><a href="#ArrayList-的优缺点" class="headerlink" title="ArrayList 的优缺点"></a>ArrayList 的优缺点</h4><p>ArrayList的优点如下：</p>
+</li>
+<li><p>ArrayList 底层以数组实现，是一种随机访问模式。ArrayList 实现了 RandomAccess 接口，因此查找的时候非常快。</p>
+</li>
+<li><p>ArrayList 在顺序添加一个元素的时候非常方便。<br>ArrayList 的缺点如下：</p>
+</li>
+<li><p>删除元素的时候，需要做一次元素复制操作。如果要复制的元素很多，那么就会比较耗费性能。</p>
+</li>
+<li><p>插入元素的时候，也需要做一次元素复制操作，缺点同上。<br>ArrayList 比较适合<strong>顺序添加、随机访问</strong>的场景。</p>
+</li>
+</ul>
+<h4 id="数组和-List-的转换"><a href="#数组和-List-的转换" class="headerlink" title="数组和 List 的转换"></a>数组和 List 的转换</h4><ul>
+<li>数组转 List：使用 Arrays. asList(array) 进行转换。</li>
+<li>List 转数组：使用 List 自带的 toArray() 方法。<h4 id="ArrayList-和-LinkedList-区别"><a href="#ArrayList-和-LinkedList-区别" class="headerlink" title="ArrayList 和 LinkedList 区别"></a>ArrayList 和 LinkedList 区别</h4></li>
+<li>数据结构实现：ArrayList 是<strong>动态数组</strong>的数据结构实现，而 LinkedList 是<strong>双向链表</strong>的数据结构实现。</li>
+<li>随机访问效率：ArrayList 比 LinkedList 在随机访问的时候效率要高，因为 LinkedList 是线性的数据存储方式，所以需要移动指针从前往后依次查找。</li>
+<li>增加和删除效率：在非首尾的增加和删除操作，LinkedList 要比 ArrayList 效率要高，因为 ArrayList 增删操作要影响数组内的其他数据的下标。</li>
+<li>内存空间占用：LinkedList 比 ArrayList 更占内存，因为 LinkedList 的节点除了存储数据，还存储了两个引用，一个指向前一个元素，一个指向后一个元素。</li>
+<li>线程安全：ArrayList 和 LinkedList 都是不同步的，也就是不保证线程安全。<br>综合来说，在需要频繁读取集合中的元素时，更推荐使用 ArrayList，而在插入和删除操作较多时，更推荐使用 LinkedList。</li>
+</ul>
+<h4 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h4><p>ArrayList 实现了 Serializable 接口，这意味着 ArrayList 支持序列化。transient 的作用是说不希望 elementData 数组被序列化，每次序列化时，先调用 defaultWriteObject() 方法序列化 ArrayList 中的非 transient 元素，然后遍历 elementData，只序列化已存入的元素，这样既加快了序列化的速度，又减小了序列化之后的文件大小。</p>
+<h3 id="Set-1"><a href="#Set-1" class="headerlink" title="Set"></a>Set</h3><h4 id="HashSet-的实现原理"><a href="#HashSet-的实现原理" class="headerlink" title="HashSet 的实现原理"></a>HashSet 的实现原理</h4><p>HashSet 是基于 HashMap 实现的，HashSet的值存放于HashMap的key上，HashMap的value统一为PRESENT，因此 HashSet 的实现比较简单，相关 HashSet 的操作，基本上都是直接调用底层 HashMap 的相关方法来完成，HashSet 不允许重复的值。</p>
+<h4 id="HashSet-如何检查重复"><a href="#HashSet-如何检查重复" class="headerlink" title="HashSet 如何检查重复"></a>HashSet 如何检查重复</h4><p>向HashSet 中add()元素时，判断元素是否存在的依据，不仅要比较hash值，同时还要结合equals()方法比较。 HashSet 中的add()方法会使用HashMap 的put()方法。</p>
+<p>HashMap 的 key 是唯一的，由源码可以看出 HashSet 添加进去的值就是作为HashMap 的key，并且在HashMap中如果K/V相同时，会用新的V覆盖掉旧的V，然后返回旧的V，所以不会重复（ HashMap 比较key是否相等是先比较hashcode 再比较equals ）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> HashMap&lt;E,Object&gt; map;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 调用HashMap的put方法,PRESENT是一个至始至终都相同的虚值</span></span><br><span class="line">    <span class="keyword">return</span> map.put(e, PRESENT)==<span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="hashCode-与-equals"><a href="#hashCode-与-equals" class="headerlink" title="hashCode() 与 equals()"></a>hashCode() 与 equals()</h4><ul>
+<li>如果两个对象相等，则hashcode()一定也是相同的</li>
+<li>两个对象相等,对两个equals()方法返回true</li>
+<li>两个对象有相同的hashcode()值，它们不一定是相等的<h4 id="HashSet与HashMap的区别"><a href="#HashSet与HashMap的区别" class="headerlink" title="HashSet与HashMap的区别"></a>HashSet与HashMap的区别</h4><table>
+<thead>
+<tr>
+<th>HashMap</th>
+<th>HashSet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实现了Map接口</td>
+<td>实现Set接口</td>
+</tr>
+<tr>
+<td>存储键值对</td>
+<td>仅存储对象</td>
+</tr>
+<tr>
+<td>调用put()向map中添加元素</td>
+<td>调用add()方法向Set中添加元素</td>
+</tr>
+<tr>
+<td>HashMap使用键(Key)计算hashcode</td>
+<td>hashSet使用成员对象来计算hashcode值</td>
+</tr>
+<tr>
+<td>较快，因为它是使用唯一的键获取对象</td>
+<td>HashSet较HashMap来说比较慢</td>
+</tr>
+<tr>
+<td>### Queue</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 阻塞队列BlockingQueue</td>
+<td></td>
+</tr>
+<tr>
+<td>Java.util.concurrent.BlockingQueue是一个队列，在进行检索或移除一个元素的时候，它会等待队列变为非空；当在添加一个元素时，它会等待队列中的可用空间。BlockingQueue接口是Java集合框架的一部分，主要用于实现==生产者-消费者模式==。我们不需要担心等待生产者有可用的空间，或消费者有可用的对象，因为它都在BlockingQueue的实现类中被处理了。Java提供了集中BlockingQueue的实现，比如ArrayBlockingQueue、LinkedBlockingQueue、PriorityBlockingQueue,、SynchronousQueue等。</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="poll-和-remove-区别"><a href="#poll-和-remove-区别" class="headerlink" title="poll()和 remove()区别"></a>poll()和 remove()区别</h4><p>0相同点：都是返回第一个元素，并在队列中删除返回的对象。<br>不同点：如果没有元素 poll()会返回 null，而 remove()会直接抛出 NoSuchElementException 异常。</p>
+<h3 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h3><h4 id="HashMap-的实现原理"><a href="#HashMap-的实现原理" class="headerlink" title="HashMap 的实现原理"></a>HashMap 的实现原理</h4><p>put元素时，利用key的hashCode值计算出当前对象的元素在数组中的下标存储时，如果出现hash值相同的key，此时有两种情况：</p>
+<ol>
+<li>如果key相同，则覆盖原始值；</li>
+<li>如果key不同（出现冲突），则将当前的key-value放入链表中<br>获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。</li>
+</ol>
+<h4 id="put方法的具体流程"><a href="#put方法的具体流程" class="headerlink" title="put方法的具体流程"></a>put方法的具体流程</h4><p>put的时候，首先计算 key的hash值，这里调用了 hash方法，hash方法实际是让key.hashCode()与key.hashCode()&gt;&gt;&gt;16进行异或操作，高16bit补0，一个数和0异或不变，所以 hash 函数大概的作用就是：==高16bit不变，低16bit和高16bit做了一个异或，目的是减少碰撞==。按照函数注释，因为bucket数组大小是2的幂，计算下标index = (table.length - 1) &amp; hash，如果不做 hash 处理，相当于散列生效的只有几个低 bit 位，为了减少散列的碰撞，设计者综合考虑了之后，使用高16bit和低16bit异或来简单处理减少碰撞，而且JDK8中用了复杂度 O（logn）的树结构来提升碰撞下的性能。</p>
+<h4 id="HashMap的扩容操作"><a href="#HashMap的扩容操作" class="headerlink" title="HashMap的扩容操作"></a>HashMap的扩容操作</h4><ul>
+<li><p>在jdk1.8中，在hashmap中的键值对大于阀值时或者初始化时，就调用resize方法进行扩容；</p>
+</li>
+<li><p>每次扩展的时候，都是扩展2倍；</p>
+</li>
+<li><p>扩展后Node对象的位置要么在原位置，要么移动到原偏移量两倍的位置。<br>resize() 方法表示的在进行第一次初始化时会对其进行扩容，或者当该数组的实际大小大于其临界值值(第一次为12)，这个时候在扩容的同时也会伴随的桶上面的元素进行重新分发，这也是JDK1.8版本的一个优化的地方：</p>
+</li>
+<li><p>在1.7中，扩容之后需要重新去计算其Hash值，根据Hash值对其进行分发；</p>
+</li>
+<li><p>在1.8版本中，则是根据在同一个桶的位置中进行判断(e.hash &amp; oldCap)是否为0，重新进行hash分配后，该元素的位置要么停留在原始位置，要么移动到原始位置+增加的数组大小这个位置上。</p>
+<h4 id="Hash冲突"><a href="#Hash冲突" class="headerlink" title="Hash冲突"></a>Hash冲突</h4></li>
+</ul>
+<p><strong>哈希的概念</strong></p>
+<p>Hash，一般翻译为“散列”，也有直接音译为“哈希”的，就是把任意长度的输入通过散列算法，变换成固定长度的输出，该输出就是散列值（哈希值）；这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
+<p>所有散列函数都有如下一个基本特性：<strong>根据同一散列函数计算出的散列值如果不同，那么输入值肯定也不同。但是，根据同一散列函数计算出的散列值如果相同，输入值不一定相同</strong>。</p>
+<p><strong>HashMap为什么不直接使用hashCode()处理后的哈希值直接作为table的下标？</strong></p>
+<p>hashCode()方法返回的是int整数类型，其范围为-(2 ^ 31)(2 ^ 31 - 1)，约有40亿个映射空间，而HashMap的容量范围是在16（初始化默认值）2 ^ 30，HashMap通常情况下是取不到最大值的，并且设备上也难以提供这么多的存储空间，从而导致通过hashCode()计算出的哈希值可能不在数组大小范围内，进而无法匹配存储位置；</p>
+<p>所以HashMap自己实现了自己的hash()方法，通过两次扰动使得它自己的哈希值高低位自行进行异或运算，降低哈希碰撞概率也使得数据分布更平均。</p>
+<p>在保证数组长度为2的幂次方的时候，使用hash()运算之后的值与运算（&amp;）（数组长度 - 1）来获取数组下标的方式进行存储，这样一来是比取余操作更加有效率，二来也是因为只有当数组长度为2的幂次方时，h&amp;(length-1)才等价于h%length，三来解决了“哈希值与数组大小范围不匹配”的问题；</p>
+<p><strong>HashMap 的长度为什么是2的幂次方</strong></p>
+<p>为了能让 HashMap 存取高效，尽量较少碰撞，也就是要尽量把数据分配均匀，每个链表/红黑树长度大致相同。这个实现就是把数据存到哪个链表/红黑树中的算法。</p>
+<p>这个算法应该如何设计呢？</p>
+<p>我们首先可能会想到采用取余的操作来实现。但是，重点来了：取余(%)操作中如果除数是2的幂次则等价于与其除数减一的与(&amp;)操作（也就是说 hash%length==hash&amp;(length-1)的前提是 length 是2的 n 次方）， 并且 采用二进制位操作 &amp;，相对于%能够提高运算效率，这就解释了 HashMap 的长度为什么是2的幂次方。</p>
+<p><strong>那为什么是两次扰动呢？</strong></p>
+<p>这样就是加大哈希值低位的随机性，使得分布更均匀，从而提高对应数组存储下标位置的随机性和均匀性，最终减少Hash冲突，两次就够了，已经达到了高位低位同时参与运算的目的。</p>
+<p><strong>解决hash冲突的方式</strong></p>
+<p><em>JDK1.8之前</em></p>
+<p>JDK1.8之前采用的是拉链法。</p>
+<p>拉链法：将链表和数组相结合。创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。</p>
+<p>相比于hashCode返回的int类型，我们HashMap初始的容量大小 DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4（即2的四次方16）要远小于int类型的范围，所以我们如果只是单纯的用hashCode取余来获取对应的下标将会大大增加哈希碰撞的概率，并且最坏情况下还会将HashMap变成一个单链表，所以我们还需要对hashCode作一定的优化。</p>
+<p><em>JDK1.8之后</em></p>
+<p><strong>优化hash函数</strong></p>
+<p>上面提到的问题，主要是因为如果使用hashCode取余，那么相当于==参与运算的只有hashCode的低位，高位是没有起到任何作用的==，所以我们的思路就是让hashCode取值出的高位也参与运算，进一步降低hash碰撞的概率，使得数据分布更平均，我们把这样的操作称为扰动，在JDK 1.8中的hash()函数如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="comment">// 与自己右移16位进行异或运算（高低位异或）</span></span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这比在JDK 1.7中，更为简洁，相比在1.7中的4次位运算，5次异或运算（9次扰动），在1.8中，只进行了1次位运算和1次异或运算（2次扰动）。</p>
+<p><strong>新增红黑树</strong></p>
+<p>当链表长度大于阈值（默认为8）且数组长度大于64时，将链表转化为红黑树，以减少搜索时间，从原来的O(n)到O(logn)。（链表长度大于阈值，但是数组长度小于64时会首先进行扩容）</p>
+<h4 id="链表成环（死循环）"><a href="#链表成环（死循环）" class="headerlink" title="链表成环（死循环）"></a>链表成环（死循环）</h4><p>多线程操作HashMap时可能引起死循环。</p>
+<p>我先举个例子吧，我们现在往一个容量大小为2的put两个值，负载因子是0.75，2*0.75 = 1 所以插入第二个就要resize了，我们要在容量为2的容器里面用不同线程插入A，B，C，假如我们在resize之前打个短点，那意味着数据都插入了但是还没resize那扩容前可能是这样的。</p>
+<p>因为resize的赋值方式，也就是使用了单链表的头插入方式，同一位置上新元素总会被放在链表的头部位置，==在旧数组中同一条Entry链上的元素，通过重新计算索引位置后，有可能被放到了新数组的不同位置上。==一旦几个线程都调整完成，就可能出现环形链表。</p>
+<p>使用头插会改变链表的上的顺序，但是如果使用尾插，在扩容时会保持链表元素原本的顺序，就不会出现链表成环的问题了。</p>
+<ul>
+<li>Java7在多线程操作HashMap时可能引起死循环，原因是扩容转移后前后链表顺序倒置，在转移过程中修改了原来链表中节点的引用关系。</li>
+<li>Java8在同样的前提下并不会引起死循环，原因是扩容转移后前后链表顺序不变，保持之前节点的引用关系。<br>我认为即使不会出现死循环，但是通过源码看到put/get方法都没有加同步锁，多线程情况最容易出现的就是：无法保证上一秒put的值，下一秒get的时候还是原值，所以线程安全还是无法保证。</li>
+</ul>
+<h4 id="类作为key的条件"><a href="#类作为key的条件" class="headerlink" title="类作为key的条件"></a>类作为key的条件</h4><p>可以使用任何类作为 Map 的 key，然而在使用之前，需要考虑以下几点：</p>
+<ul>
+<li>如果类重写了 equals() 方法，也应该重写 hashCode() 方法。</li>
+<li>类的所有实例需要遵循与 equals() 和 hashCode() 相关的规则。</li>
+<li>如果一个类没有使用 equals()，不应该在 hashCode() 中使用它。</li>
+<li>用户自定义 Key 类最佳实践是使之为不可变的，这样 hashCode() 值可以被缓存起来，拥有更好的性能。不可变的类也可以确保 hashCode() 和 equals() 在未来不会改变，这样就会解决与可变相关的问题了。</li>
+</ul>
+<p><strong>为什么HashMap中String、Integer这样的包装类适合作为K？</strong></p>
+<p>String、Integer等包装类的特性能够保证Hash值的不可更改性和计算准确性，能够有效的减少Hash碰撞的几率</p>
+<ul>
+<li>都是final类型，即不可变性，保证key的不可更改性，不会存在获取hash值不同的情况。</li>
+<li>内部已重写了equals()、hashCode()等方法，遵守了HashMap内部的规范，不容易出现Hash值计算错误的情况。</li>
+</ul>
+<p><strong>如果使用Object作为HashMap的Key，应该怎么办呢？</strong></p>
+<p>重写hashCode()和equals()方法</p>
+<ul>
+<li>重写hashCode()是因为需要计算存储数据的存储位置，需要注意不要试图从散列码计算中排除掉一个对象的关键部分来提高性能，这样虽然能更快但可能会导致更多的Hash碰撞；</li>
+<li>重写equals()方法，需要遵守自反性、对称性、传递性、一致性以及对于任何非null的引用值x，x.equals(null)必须返回false的这几个特性，目的是为了保证key在哈希表中的唯一性；<h4 id="HashMap-与-HashTable-区别"><a href="#HashMap-与-HashTable-区别" class="headerlink" title="HashMap 与 HashTable 区别"></a>HashMap 与 HashTable 区别</h4></li>
+</ul>
+<ol>
+<li><p>线程安全： HashMap 是非线程安全的，HashTable 是线程安全的；HashTable 内部的方法基本都经过 synchronized 修饰。（如果要保证线程安全的话就使用 ConcurrentHashMap 吧！）</p>
+</li>
+<li><p>效率： 因为线程安全的问题，HashMap 要比 HashTable 效率高一点。另外，HashTable 基本被淘汰，不要在代码中使用它；</p>
+</li>
+<li><p>对Null key 和Null value的支持： HashMap 中，null 可以作为键，这样的键只有一个，可以有一个或多个键所对应的值为 null。但是在 HashTable 中 put 进的键值只要有一个 null，直接抛NullPointerException。</p>
+</li>
+<li><p>初始容量大小和每次扩充容量大小的不同 ：</p>
+<ul>
+<li>创建时如果不指定容量初始值，Hashtable 默认的初始大小为11，之后每次扩充，容量变为原来的2n+1。HashMap 默认的初始化大小为16。之后每次扩充，容量变为原来的2倍。</li>
+<li>创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为2的幂次方大小。也就是说 <strong>HashMap 总是使用2的幂作为哈希表的大小</strong>。</li>
+</ul>
+</li>
+<li><p>底层数据结构： JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。</p>
+</li>
+</ol>
+<p>在 Hashtable 的类注释可以看到，Hashtable 是保留类不建议使用，推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用 ConcurrentHashMap 替代。</p>
+<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p><strong>底层数据结构</strong></p>
+<p>JDK1.7的 ConcurrentHashMap 底层采用 分段的数组+链表实现，JDK1.8 采用的数据结构跟HashMap的结构一样，数组+链表/红黑二叉树。HashMap的键值对允许有null，但是ConCurrentHashMap都不允许。</p>
+<p><strong>实现线程安全的方式</strong></p>
+<p><em>JDK1.7</em></p>
+<p>在JDK1.7中，ConcurrentHashMap采用Segment + HashEntry的方式进行实现。</p>
+<p>首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问。</p>
+<p>一个 ConcurrentHashMap 里包含一个 Segment 数组。Segment 的结构和HashMap类似，是一种数组和链表结构，Segment 是一种可重入的锁 ReentrantLock，每个 Segment 守护一个HashEntry 数组里得元素，当对 HashEntry 数组的数据进行修改时，必须首先获得对应的 Segment 锁。</p>
+<p><em>JDK1.8</em></p>
+<p>JDK1.8 的时候已经摒弃了Segment的概念，取而代之的是采用Node + CAS + Synchronized来保证并发安全进行实现。synchronized只锁定当前链表或红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发。</p>
+<h4 id="TreeMap-和-TreeSet"><a href="#TreeMap-和-TreeSet" class="headerlink" title="TreeMap 和 TreeSet"></a>TreeMap 和 TreeSet</h4><ul>
+<li>TreeSet 要求存放的对象所属的类必须实现 Comparable 接口，该接口提供了比较元素的 compareTo()方法，当插入元素时会回调该方法比较元素的大小。</li>
+<li>TreeMap 要求存放的键值对映射的键必须实现 Comparable 接口，从而根据键对元素进行排序。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/30/%E5%89%91%E6%8C%87offer/" rel="prev" title="剑指offer">
+      <i class="fa fa-chevron-left"></i> 剑指offer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/30/tags%20copy/" rel="next" title="剑指offer">
+      剑指offer <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合分类"><span class="nav-number">1.</span> <span class="nav-text">集合分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#底层数据结构"><span class="nav-number">2.</span> <span class="nav-text">底层数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">2.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">2.2.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">2.3.</span> <span class="nav-text">Map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全的集合类"><span class="nav-number">3.</span> <span class="nav-text">线程安全的集合类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速失败-fail-fast-和安全失败-fail-safe"><span class="nav-number">4.</span> <span class="nav-text">快速失败(fail-fast)和安全失败(fail-safe)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速失败（fail—fast）"><span class="nav-number">4.1.</span> <span class="nav-text">快速失败（fail—fast）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全失败（fail—safe）"><span class="nav-number">4.2.</span> <span class="nav-text">安全失败（fail—safe）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合和数组的区别"><span class="nav-number">5.</span> <span class="nav-text">集合和数组的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用集合框架的好处"><span class="nav-number">6.</span> <span class="nav-text">使用集合框架的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确保一个集合不能被修改"><span class="nav-number">7.</span> <span class="nav-text">确保一个集合不能被修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparable-和-comparator"><span class="nav-number">8.</span> <span class="nav-text">comparable 和 comparator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection-和-Collections"><span class="nav-number">9.</span> <span class="nav-text">Collection 和 Collections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection接口"><span class="nav-number">10.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器-Iterator"><span class="nav-number">10.1.</span> <span class="nav-text">迭代器 Iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单向遍历"><span class="nav-number">10.1.1.</span> <span class="nav-text">单向遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除元素"><span class="nav-number">10.1.2.</span> <span class="nav-text">移除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-和-ListIterator"><span class="nav-number">10.1.3.</span> <span class="nav-text">Iterator 和 ListIterator</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-1"><span class="nav-number">10.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历方式"><span class="nav-number">10.2.1.</span> <span class="nav-text">遍历方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList-的优缺点"><span class="nav-number">10.2.2.</span> <span class="nav-text">ArrayList 的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组和-List-的转换"><span class="nav-number">10.2.3.</span> <span class="nav-text">数组和 List 的转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList-和-LinkedList-区别"><span class="nav-number">10.2.4.</span> <span class="nav-text">ArrayList 和 LinkedList 区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transient"><span class="nav-number">10.2.5.</span> <span class="nav-text">transient</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-1"><span class="nav-number">10.3.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet-的实现原理"><span class="nav-number">10.3.1.</span> <span class="nav-text">HashSet 的实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet-如何检查重复"><span class="nav-number">10.3.2.</span> <span class="nav-text">HashSet 如何检查重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hashCode-与-equals"><span class="nav-number">10.3.3.</span> <span class="nav-text">hashCode() 与 equals()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet与HashMap的区别"><span class="nav-number">10.3.4.</span> <span class="nav-text">HashSet与HashMap的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poll-和-remove-区别"><span class="nav-number">10.3.5.</span> <span class="nav-text">poll()和 remove()区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map接口"><span class="nav-number">10.4.</span> <span class="nav-text">Map接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-的实现原理"><span class="nav-number">10.4.1.</span> <span class="nav-text">HashMap 的实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put方法的具体流程"><span class="nav-number">10.4.2.</span> <span class="nav-text">put方法的具体流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的扩容操作"><span class="nav-number">10.4.3.</span> <span class="nav-text">HashMap的扩容操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash冲突"><span class="nav-number">10.4.4.</span> <span class="nav-text">Hash冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表成环（死循环）"><span class="nav-number">10.4.5.</span> <span class="nav-text">链表成环（死循环）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类作为key的条件"><span class="nav-number">10.4.6.</span> <span class="nav-text">类作为key的条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-与-HashTable-区别"><span class="nav-number">10.4.7.</span> <span class="nav-text">HashMap 与 HashTable 区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-number">10.4.8.</span> <span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeMap-和-TreeSet"><span class="nav-number">10.4.9.</span> <span class="nav-text">TreeMap 和 TreeSet</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="yanbing"
+      src="/images/dog.jpg">
+  <p class="site-author-name" itemprop="name">yanbing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yanbingzn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yanbingzn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/i_silence" title="csdn → https:&#x2F;&#x2F;me.csdn.net&#x2F;i_silence" rel="noopener" target="_blank"><i class="fab fa-arrows-alt fa-fw"></i>csdn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2814825681&site=qq&menu=yes" title="qq → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2814825681&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>qq</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanbing</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
