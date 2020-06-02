@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ice.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ice.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="查找算法说明查找定义： 根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。 查找算法分类：  静态查找和动态查找 注：静态或者动态都是针对查找表而言的。动态表指查找表中有删除和插入操作的表。  无序查找和有序查找 无序查找：被查找数列有序无序均可 有序查找：被查找数列必须为有序数列   平均查找长度（Average Search Length，ASL）： 需和指定key进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查找算法">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="严冰的博客">
+<meta property="og:description" content="查找算法说明查找定义： 根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。 查找算法分类：  静态查找和动态查找 注：静态或者动态都是针对查找表而言的。动态表指查找表中有删除和插入操作的表。  无序查找和有序查找 无序查找：被查找数列有序无序均可 有序查找：被查找数列必须为有序数列   平均查找长度（Average Search Length，ASL）： 需和指定key进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-30T12:50:49.000Z">
+<meta property="article:modified_time" content="2020-06-02T04:33:57.133Z">
+<meta property="article:author" content="yanbing">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>查找算法 | 严冰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">严冰的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          查找算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 12:33:57" itemprop="dateModified" datetime="2020-06-02T12:33:57+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="查找算法说明"><a href="#查找算法说明" class="headerlink" title="查找算法说明"></a>查找算法说明</h2><p><strong>查找定义</strong>：</p>
+<p>根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。</p>
+<p><strong>查找算法分类：</strong></p>
+<ol>
+<li><p>静态查找和动态查找</p>
+<p>注：静态或者动态都是针对查找表而言的。<strong>动态表指查找表中有删除和插入操作的表。</strong></p>
+</li>
+<li><p>无序查找和有序查找</p>
+<p>无序查找：被查找数列有序无序均可</p>
+<p>有序查找：被查找数列必须为有序数列</p>
+</li>
+</ol>
+<p><strong>平均查找长度（Average Search Length，ASL）</strong>：</p>
+<p>需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。</p>
+<p>对于含有n个数据元素的查找表，查找成功的平均查找长度为：<code>ASL = Pi * Ci</code> 的和。</p>
+<ul>
+<li>​    <strong>Pi</strong>：查找表中第i个数据元素的概率。</li>
+<li>​    <strong>Ci</strong>：找到第i个数据元素时已经比较过的次数。</li>
+</ul>
+<h2 id="顺序查找（Sequence-Search）"><a href="#顺序查找（Sequence-Search）" class="headerlink" title="顺序查找（Sequence Search）"></a>顺序查找（Sequence Search）</h2><p><strong>基本思想</strong></p>
+<p>顺序查找也称为线形查找，属于<strong>无序查找</strong>算法。从数据结构线形表的一端开始，顺序扫描，依次将扫描到的结点关键字与给定值k相比较，若相等则表示查找成功；若扫描结束仍没有找到关键字等于k的结点，表示查找失败。顺序查找适合于存储结构为<strong>顺序存储</strong>或<strong>链接存储</strong>的线性表。</p>
+<p><strong>复杂度分析</strong>　</p>
+<p>查找成功时的平均查找长度为（假设每个数据元素的概率相等）： <code>ASL = (1+2+3+…+n)/n = (n+1)/2</code> </p>
+<p>当查找不成功时，需要n+1次比较，时间复杂度为O(n)，所以，顺序查找的时间复杂度为O(n)。</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">SequenceSearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = a.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] == value) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">SequenceSearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = a.length - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//如果最后一个数是要找的，直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (key == a[index])</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    <span class="comment">//将最后一个数设置为哨兵</span></span><br><span class="line">    a[index] = key;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (a[i++] != key);</span><br><span class="line">    <span class="comment">//若i == index + 1，说明没有查到，返回-1</span></span><br><span class="line">    <span class="keyword">return</span> i == index + <span class="number">1</span> ? -<span class="number">1</span> : i - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二分查找（Binary-Search）"><a href="#二分查找（Binary-Search）" class="headerlink" title="二分查找（Binary Search）"></a>二分查找（Binary Search）</h2><p><strong>基本思想</strong></p>
+<ol>
+<li>从已经排好序的数组或区间中取出中间位置的元素，判断该元素是否满足要搜索的条件，如果满足，停止搜索，程序结束。</li>
+<li>如果正中间的元素不满足条件，则从它两边的区域进行搜索。由于数组是排好序的，可以利用排除法，确定接下来应该从这两个区间中的哪一个去搜索。</li>
+<li>通过判断，如果发现真正要找的元素在左半区间的话，就继续在左半区间里进行二分搜索。反之，就在右半区间里进行二分搜索。</li>
+</ol>
+<p><strong>核心步骤：</strong></p>
+<ol>
+<li>确定搜索的范围和区间</li>
+<li>取中间的数判断是否满足条件</li>
+<li>如果不满足条件，判定应该往哪个半边继续进行搜索</li>
+</ol>
+<p><strong>时间复杂度分析：</strong></p>
+<p>假设我们要对长度为 n 的数组进行二分搜索，T(n) 是执行时间函数，我们可以得到：<br>$$<br>T(n) = T(n/2) + 1<br>$$<br>代入公式法得：a = 1，b = 2，f(n) = 1，因此：O(nlog(b)a) = O(n0) = 1 等于 O(f(n))，时间复杂度就是 O(nlog(b)alogn) = <strong>O(logn)</strong>。非常高效。因此也称为<strong>对数搜索</strong>，但要求待查找的数组或者区间是<strong>排好序</strong>的。</p>
+<p><strong>代码实现</strong></p>
+<p>递归解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 为了避免无限循环，先判断，如果起点位置大于终点位置，表明这是一个非法的区间</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt; high) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 取正中间那个数的下标 middle。</span></span><br><span class="line">    <span class="keyword">int</span> middle = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 判断一下正中间的那个数是不是要找的目标数 target，是，就返回下标 middle。    </span></span><br><span class="line">    <span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果发现目标数在左边，就递归地从左半边进行二分搜索。</span></span><br><span class="line">    <span class="comment">// 否则从右半边递归地进行二分搜索</span></span><br><span class="line">    <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(nums, target, low, middle - <span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(nums, target, middle + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>在计算 middle 下标的时候，不能简单地用 (low + hight) / 2，可能会导致<strong>溢出</strong>。</li>
+<li>在取左半边以及右半边的区间时，左半边是 [low, middle - 1]，右半边是 [middle + 1, high]，这是两个闭区间。因为已经确定了 middle 那个点不是我们要找的，就没有必要再把它加入到左、右半边了。</li>
+<li>对于一个长度为奇数的数组，例如：{1, 2, 3, 4, 5}，按照 low + (high - low) / 2 来计算，middle 就是正中间的那个位置，对于一个长度为偶数的数组，例如 {1, 2, 3, 4}，middle 就是<strong>正中间靠左边</strong>的一个位置。</li>
+</ul>
+</blockquote>
+<p>非递归解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 在 while 循环里，判断搜索的区间范围是否有效</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">        <span class="comment">// 计算正中间的数的下标</span></span><br><span class="line">        <span class="keyword">int</span> middle = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// 判断正中间的那个数是不是要找的目标数 target。如果是，就返回下标 middle</span></span><br><span class="line">    	<span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">    	&#125;</span><br><span class="line">        <span class="comment">// 如果发现目标数在左边，调整搜索区间的终点为 middle - 1；</span></span><br><span class="line">        <span class="comment">//否则，调整搜索区间的起点为 middle + 1</span></span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果超出了搜索区间，表明无法找到目标数，返回 -1  </span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插值查找（Insert-Search）"><a href="#插值查找（Insert-Search）" class="headerlink" title="插值查找（Insert Search）"></a>插值查找（Insert Search）</h2><p><strong>基本思想</strong></p>
+<ul>
+<li>差值查找算法是对二分查找（折半查找）的一个优化</li>
+<li>二分查找算法选取的是中间位置：<code>mid = (low + high)/2</code></li>
+<li>插值查找算法选取的是自适应<code>mid</code>位置开始查找: <code>mid= low + (key - a[low])(high - low)/(a[high] - a[low])</code></li>
+</ul>
+<p><strong>使用场景</strong></p>
+<ul>
+<li>插值查找算法通过上面计算的mid，可以判断要查找的位置大概在哪里，对于<strong>表较长，且关键字分布比较均匀</strong>时候，查找比较快。</li>
+<li>关键字分布不均匀的情况下，该方法不一定比折半查找要好</li>
+</ul>
+<p><strong>时间复杂度分析</strong></p>
+<p>如果元素均匀分布，则O(log2n)，在最坏的情况下可能需要 O(n)。</p>
+<p><strong>代码实现</strong></p>
+<p>递归实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">insertSearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 为了避免无限循环，先判断，如果起点位置大于终点位置，表明这是一个非法的区间</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt; high) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 二分查找</span></span><br><span class="line">    <span class="comment">//int middle = low + (high - low) / 2;</span></span><br><span class="line">    <span class="comment">// 插值查找</span></span><br><span class="line">  	<span class="keyword">int</span> middle = low + (high - low)*(target - nums[low])/(nums[high] - nums[low]);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断一下是不是要找的目标数 target，是，就返回下标 middle。    </span></span><br><span class="line">    <span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果发现目标数在左边，就递归地从左半边进行插值查找</span></span><br><span class="line">    <span class="comment">// 否则从右半边递归地进行插值查找</span></span><br><span class="line">    <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">        <span class="keyword">return</span> insertSearch(nums, target, low, middle - <span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> insertSearch(nums, target, middle + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>非递归解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 在 while 循环里，判断搜索的区间范围是否有效</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">         <span class="comment">// 二分查找</span></span><br><span class="line">    	<span class="comment">//int middle = low + (high - low) / 2;</span></span><br><span class="line">    	<span class="comment">// 插值查找</span></span><br><span class="line">  		<span class="keyword">int</span> middle = low + (high - low)*(target - nums[low])/(nums[high] - nums[low]);</span><br><span class="line">        <span class="comment">// 判断一下是不是要找的目标数 target，是，就返回下标 middle</span></span><br><span class="line">    	<span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">    	&#125;</span><br><span class="line">        <span class="comment">// 如果发现目标数在左边，调整搜索区间的终点为 middle - 1；</span></span><br><span class="line">        <span class="comment">//否则，调整搜索区间的起点为 middle + 1</span></span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果超出了搜索区间，表明无法找到目标数，返回 -1  </span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/" rel="prev" title="数据结构图解">
+      <i class="fa fa-chevron-left"></i> 数据结构图解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="next" title="排序算法">
+      排序算法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找算法说明"><span class="nav-number">1.</span> <span class="nav-text">查找算法说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序查找（Sequence-Search）"><span class="nav-number">2.</span> <span class="nav-text">顺序查找（Sequence Search）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找（Binary-Search）"><span class="nav-number">3.</span> <span class="nav-text">二分查找（Binary Search）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插值查找（Insert-Search）"><span class="nav-number">4.</span> <span class="nav-text">插值查找（Insert Search）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="yanbing"
+      src="/images/dog.jpg">
+  <p class="site-author-name" itemprop="name">yanbing</p>
+  <div class="site-description" itemprop="description">闲看庭前花开落，漫随天外云卷舒。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yanbingzn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yanbingzn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/i_silence" title="csdn → https:&#x2F;&#x2F;me.csdn.net&#x2F;i_silence" rel="noopener" target="_blank"><i class="fab fa-arrows-alt fa-fw"></i>csdn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2814825681&site=qq&menu=yes" title="qq → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2814825681&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>qq</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/6685015114" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6685015114" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanbing</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js=', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'DlT8ADAo4EcbSWK4bq6AlcJ1-gzGzoHsz',
+      appKey     : 'D5hJDo89WlY0e9sbVCfXl6XR',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
