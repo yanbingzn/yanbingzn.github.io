@@ -3188,7 +3188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -3202,7 +3202,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" class="post-title-link" itemprop="url">Docker</a>
+            <a href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/" class="post-title-link" itemprop="url">Linux</a>
         </h2>
 
         <div class="post-meta">
@@ -3219,7 +3219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:51:12" itemprop="dateModified" datetime="2020-06-02T12:51:12+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-02 12:37:27" itemprop="dateModified" datetime="2020-06-02T12:37:27+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3227,7 +3227,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
                 </span>
             </span>
 
@@ -3240,8 +3240,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -3257,164 +3257,264 @@
 
       
           <blockquote>
-<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/tools/Docker-Image" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/tools/Docker-Image</a></p>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux</a></p>
 </blockquote>
-<h2 id="Docker-下载镜像"><a href="#Docker-下载镜像" class="headerlink" title="Docker 下载镜像"></a>Docker 下载镜像</h2><p>如果我们想要在本地运行容器，就必须保证本地存在对应的镜像。所以，第一步，我们需要下载镜像。当我们尝试下载镜像时，Docker 会尝试先从默认的镜像仓库（默认使用 Docker Hub 公共仓库）去下载，当然了，用户也可以自定义配置想要下载的镜像仓库。</p>
-<h3 id="1-1-下载镜像"><a href="#1-1-下载镜像" class="headerlink" title="1.1 下载镜像"></a>1.1 下载镜像</h3><p>镜像是运行容器的前提，我们可以使用 <code>docker pull[IMAGE_NAME]:[TAG]</code>命令来下载镜像，其中 <code>IMAGE_NAME</code> 表示的是镜像的名称，而 <code>TAG</code> 是镜像的标签，也就是说我们需要通过 “<strong>镜像 + 标签</strong>” 的方式来下载镜像。</p>
-<p><strong>注意：</strong> 您也可以不显式地指定 TAG, 它会默认下载 latest 标签，也就是下载仓库中最新版本的镜像。这里并不推荐您下载 latest 标签，因为该镜像的内容会跟踪镜像的最新版本，并随之变化，所以它是不稳定的。在生产环境中，可能会出现莫名其妙的 bug, 推荐您最好还是显示的指定具体的 TAG。</p>
-<p>举个例子，如我们想要下载一个 Mysql 5.7 镜像，可以通过命令来下载：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.7</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong> 由于官方 DockerHub 仓库服务器在国外，下载速度较慢</p>
-<h3 id="1-2-验证"><a href="#1-2-验证" class="headerlink" title="1.2 验证"></a>1.2 验证</h3><p>让我们来验证一下，本地是否存在 Mysql5.7 的镜像，运行命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<p>可以看到本地的确存在该镜像，则确实是下载成功了！</p>
-<h3 id="1-3-下载镜像相关细节"><a href="#1-3-下载镜像相关细节" class="headerlink" title="1.3 下载镜像相关细节"></a>1.3 下载镜像相关细节</h3><p>通过下载过程，可以看到，一个镜像一般是由多个层（ <code>layer</code>） 组成，类似 <code>f7e2b70d04ae</code>这样的串表示层的唯一 ID（实际上完整的 ID 包括了 256 个 bit, 64 个十六进制字符组成）。</p>
-<p><strong>您可能会想，如果多个不同的镜像中，同时包含了同一个层（ layer）,这样重复下载，岂不是导致了存储空间的浪费么?</strong></p>
-<p>实际上，Docker 并不会这么傻会去下载重复的层（ <code>layer</code>）,Docker 在下载之前，会去检测本地是否会有同样 ID 的层，如果本地已经存在了，就直接使用本地的就好了。</p>
-<p><strong>另一个问题，不同仓库中，可能也会存在镜像重名的情况发生, 这种情况咋办？</strong></p>
-<p>严格意义上，我们在使用 <code>docker pull</code> 命令时，还需要在镜像前面指定仓库地址( <code>Registry</code>), 如果不指定，则 Docker 会使用您默认配置的仓库地址。例如配置的是国内 <code>docker.io</code> 的仓库地址，我在 <code>pull</code> 的时候，docker 会默认为我加上 <code>docker.io/library</code> 的前缀。</p>
-<p>如：当我执行 <code>docker pull mysql:5.7</code> 命令时，实际上相当于 <code>docker pull docker.io/mysql:5.7</code>，如果您未自定义配置仓库，则默认在下载的时候，会在镜像前面加上 DockerHub 的地址。</p>
-<p>Docker 通过前缀地址的不同，来保证不同仓库中，重名镜像的唯一性。</p>
-<h3 id="1-4-PULL-子命令"><a href="#1-4-PULL-子命令" class="headerlink" title="1.4 PULL 子命令"></a>1.4 PULL 子命令</h3><p>命令行中输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull --help</span><br></pre></td></tr></table></figure>
-
-<p>会得到如下信息：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">slimshady@MacBook-Pro ~ % docker pull --help</span><br><span class="line"></span><br><span class="line">Usage:	docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br><span class="line"></span><br><span class="line">Pull an image or a repository from a registry</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -a, --all-tags                Download all tagged images in the repository</span><br><span class="line">      --disable-content-trust   Skip image verification (default true)</span><br><span class="line">  -q, --quiet                   Suppress verbose output</span><br></pre></td></tr></table></figure>
-
-<p>我们可以看到主要支持的子命令有：</p>
-<ol>
-<li><code>-a,--all-tags=true|false</code>: 是否获取仓库中所有镜像，默认为否；</li>
-<li><code>--disable-content-trust</code>: 跳过镜像内容的校验，默认为 true;</li>
-</ol>
-<h2 id="查看镜像信息"><a href="#查看镜像信息" class="headerlink" title="查看镜像信息"></a>查看镜像信息</h2><h3 id="2-1-images-命令列出镜像"><a href="#2-1-images-命令列出镜像" class="headerlink" title="2.1 images 命令列出镜像"></a>2.1 images 命令列出镜像</h3><p>通过使用如下两个命令，列出本机已有的镜像：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<p>或：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure>
-
-<p>如下图所示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4sejxos4j31ma054td9.jpg" alt="image-20200525164236760"></p>
-<p>解释：</p>
-<ul>
-<li><strong>REPOSITORY</strong>: 来自于哪个仓库；</li>
-<li><strong>TAG</strong>: 镜像的标签信息，比如 5.7、latest 表示不同的版本信息；</li>
-<li><strong>IMAGE ID</strong>: 镜像的 ID, 如果您看到两个 ID 完全相同，那么实际上，它们指向的是同一个镜像，只是标签名称不同罢了；</li>
-<li><strong>CREATED</strong>: 镜像最后的更新时间；</li>
-<li><strong>SIZE</strong>: 镜像的大小，优秀的镜像一般体积都比较小，这也是我更倾向于使用轻量级的 alpine 版本的原因；</li>
+<h2 id="初探Linux"><a href="#初探Linux" class="headerlink" title="初探Linux"></a>初探Linux</h2><h3 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h3><ul>
+<li><strong>类Unix系统：</strong> Linux是一种自由、开放源码的类似Unix的操作系统</li>
+<li><strong>Linux内核：</strong> 严格来说，Linux这个词本身只表示Linux内核。</li>
 </ul>
+<h3 id="Linux的分类"><a href="#Linux的分类" class="headerlink" title="Linux的分类"></a>Linux的分类</h3><p><strong>Linux根据原生程度，分为两种：</strong></p>
+<ol>
+<li><strong>内核版本：</strong> Linux不是一个操作系统，严格来讲，Linux只是一个操作系统中的内核。内核是建立了计算机软件与硬件之间通讯的平台，内核提供系统服务，比如文件管理、虚拟内存、设备I/O等；</li>
+<li><strong>发行版本：</strong> 一些组织或公司在内核版基础上进行二次开发而重新发行的版本。Linux发行版本有很多种（ubuntu和CentOS用的都很多，初学建议选择CentOS）</li>
+</ol>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p><strong>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件。</strong></p>
+<p>也就是说在LINUX系统中有一个重要的概念：<strong>一切都是文件</strong>。其实这是UNIX哲学的一个体现，而Linux是重写UNIX而来，所以这个概念也就传承了下来。在UNIX系统中，把一切资源都看作是文件，包括硬件设备。UNIX系统把每个硬件都看成是一个文件，通常称为设备文件，这样用户就可以用读写文件的方式实现对硬件的访问。</p>
+<h3 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h3><p><strong>Linux支持5种文件类型 ：</strong> </p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4h5yg9rcj30p10f7wg6.jpg" alt="文件类型" style="zoom:67%;" />
+
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><strong>Linux的目录结构如下：</strong></p>
+<p>Linux文件系统的结构层次鲜明，就像一棵倒立的树，最顶层是其根目录： </p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4h5ydygyj30mv08rt8u.jpg" alt="Linux的目录结构" style="zoom:67%;" />
+
+<p><strong>常见目录说明：</strong></p>
+<ul>
+<li><strong>/bin：</strong> 存放二进制可执行文件(ls、cat、mkdir等)，常用命令一般都在这里；</li>
+<li><strong>/etc：</strong> 存放系统管理和配置文件；</li>
+<li><strong>/home：</strong> 存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示；</li>
+<li><strong>/usr ：</strong> 用于存放系统应用程序；</li>
+<li><strong>/opt：</strong> 额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把tomcat等都安装到这里；</li>
+<li><strong>/proc：</strong> 虚拟文件系统目录，是系统内存的映射。可直接访问这个目录来获取系统信息；</li>
+<li><strong>/root：</strong> 超级用户（系统管理员）的主目录（特权阶级^o^）；</li>
+<li><strong>/sbin:</strong>   存放二进制可执行文件，只有root才能访问。这里存放的是系统管理员使用的系统级别的管理命令和程序。如ifconfig等；</li>
+<li><strong>/dev：</strong> 用于存放设备文件；</li>
+<li><strong>/mnt：</strong> 系统管理员安装临时文件系统的安装点，系统提供这个目录是让用户临时挂载其他的文件系统；</li>
+<li><strong>/boot：</strong> 存放用于系统引导时使用的各种文件；</li>
+<li><strong>/lib ：</strong> 存放着和系统运行相关的库文件 ；</li>
+<li><strong>/tmp：</strong> 用于存放各种临时文件，是公用的临时文件存储点；</li>
+<li><strong>/var：</strong> 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，比方说各种服务的日志文件（系统启动日志等。）等；</li>
+<li><strong>/lost+found：</strong> 这个目录平时是空的，系统非正常关机而留下“无家可归”的文件（windows下叫什么.chk）就在这里。</li>
+</ul>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>下面只是给出了一些比较常用的命令。推荐一个Linux命令快查网站，非常不错，大家如果遗忘某些命令或者对某些命令不理解都可以在这里得到解决。</p>
+<p>Linux命令大全：<a href="http://man.linuxde.net/" target="_blank" rel="noopener">http://man.linuxde.net/</a></p>
+<h3 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h3><ul>
+<li><strong><code>cd usr</code>：</strong> 切换到该目录下usr目录</li>
+<li><strong><code>cd ..（或cd../）</code>：</strong> 切换到上一层目录</li>
+<li><strong><code>cd /</code>：</strong> 切换到系统根目录</li>
+<li><strong><code>cd ~</code>：</strong> 切换到用户主目录</li>
+<li><strong><code>cd -</code>：</strong> 切换到上一个操作所在目录</li>
+</ul>
+<h3 id="目录的操作命令-增删改查"><a href="#目录的操作命令-增删改查" class="headerlink" title="目录的操作命令(增删改查)"></a>目录的操作命令(增删改查)</h3><ol>
+<li><p><strong><code>mkdir 目录名称</code>：</strong> 增加目录</p>
+</li>
+<li><p><strong><code>ls或者ll</code></strong>（ll是ls -l的别名，ll命令可以看到该目录下的所有目录和文件的详细信息）：查看目录信息</p>
+</li>
+<li><p><strong><code>find 目录 参数</code>：</strong> 寻找目录（查）</p>
 <blockquote>
-<p>  注意：图中的镜像大小信息只是逻辑上的大小信息，因为一个镜像是由多个镜像层（ <code>layer</code>）组成的，而相同的镜像层本地只会存储一份，所以，真实情况下，占用的物理存储空间大小，可能会小于逻辑大小。</p>
+<p>  示例：</p>
+<ul>
+<li>列出当前目录及子目录下所有文件和文件夹: <code>find .</code></li>
+<li>在<code>/home</code>目录下查找以.txt结尾的文件名:<code>find /home -name &quot;*.txt&quot;</code></li>
+<li>同上，但忽略大小写: <code>find /home -iname &quot;*.txt&quot;</code></li>
+<li>当前目录及子目录下查找所有以.txt和.pdf结尾的文件:<code>find . \( -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot; \)</code>或<code>find . -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot;</code></li>
+</ul>
 </blockquote>
-<h3 id="2-2-使用-tag-命令为镜像添加标签"><a href="#2-2-使用-tag-命令为镜像添加标签" class="headerlink" title="2.2 使用 tag 命令为镜像添加标签"></a>2.2 使用 tag 命令为镜像添加标签</h3><p>通常情况下，为了方便在后续工作中，快速地找到某个镜像，我们可以使用 <code>docker tag</code> 命令，为本地镜像添加一个新的标签。<code>docker tag</code> 命令功能更像是, 为指定镜像添加快捷方式一样。</p>
-<p>标签和原镜像的镜像 ID 是一模一样的，说明它们是同一个镜像，只是别名不同而已。</p>
-<h3 id="2-3-使用-inspect-命令查看镜像详细信息"><a href="#2-3-使用-inspect-命令查看镜像详细信息" class="headerlink" title="2.3 使用 inspect 命令查看镜像详细信息"></a>2.3 使用 inspect 命令查看镜像详细信息</h3><p>通过 <code>docker inspect</code> 命令，我们可以获取镜像的详细信息，其中，包括创建者，各层的数字摘要等。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<p><code>docker inspect</code> 返回的是 <code>JSON</code> 格式的信息，如果您想获取其中指定的一项内容，可以通过 <code>-f</code> 来指定，如获取镜像大小：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect -f &#123;&#123;".Size"&#125;&#125; IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-使用-history-命令查看镜像历史"><a href="#2-4-使用-history-命令查看镜像历史" class="headerlink" title="2.4 使用 history 命令查看镜像历史"></a>2.4 使用 history 命令查看镜像历史</h3><p>前面的小节中，我们知道了，一个镜像是由多个层（layer）组成的，那么，我们要如何知道各个层的具体内容呢？</p>
-<p>通过 <code>docker history</code> 命令，可以列出各个层（layer）的创建信息：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker history IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4t03poegj31mm0kw4kn.jpg" alt="image-20200525170130201"></p>
-<p>可以看到，上面过长的信息，为了方便展示，后面都省略了，如果您想要看具体信息，可以通过添加 <code>--no-trunc</code> 选项，如下面命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker history --no-trunc IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<h2 id="搜索镜像"><a href="#搜索镜像" class="headerlink" title="搜索镜像"></a>搜索镜像</h2><h3 id="3-1-search-命令"><a href="#3-1-search-命令" class="headerlink" title="3.1 search 命令"></a>3.1 search 命令</h3><p>您可以通过下面命令进行搜索：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search [option] keyword</span><br></pre></td></tr></table></figure>
-
-<p>比如，您想搜索仓库中 <code>mysql</code> 相关的镜像，可以输入如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-search-子命令"><a href="#3-2-search-子命令" class="headerlink" title="3.2 search 子命令"></a>3.2 search 子命令</h3><p>命令行输入 <code>docker search --help</code>, 输出如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">slimshady@MacBook-Pro ~ % docker search --help</span><br><span class="line"></span><br><span class="line">Usage:	docker search [OPTIONS] TERM</span><br><span class="line"></span><br><span class="line">Search the Docker Hub for images</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -f, --filter filter   Filter output based on conditions provided</span><br><span class="line">      --format string   Pretty-print search using a Go template</span><br><span class="line">      --limit int       Max number of search results (default 25)</span><br><span class="line">      --no-trunc        Don't truncate output</span><br></pre></td></tr></table></figure>
-
-<p>可以看到 <code>search</code> 支持的子命令有：</p>
-<ul>
-<li><code>-f,--filter filter</code>: 过滤输出的内容；</li>
-<li><code>--limit int</code>：指定搜索内容展示个数;</li>
-<li><code>--no-trunc</code>：不截断输出内容；</li>
-</ul>
-<p>举个列子，比如我们想搜索官方提供的 mysql 镜像，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search --filter&#x3D;is-official&#x3D;true mysql</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4t3o28nsj31nk042n0v.jpg" alt="image-20200525170645573"></p>
-<p>再比如，我们想搜索 Stars 数超过 100 的 mysql 镜像：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search --filter&#x3D;stars&#x3D;100 mysql</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h2><h3 id="4-1-通过标签删除镜像"><a href="#4-1-通过标签删除镜像" class="headerlink" title="4.1 通过标签删除镜像"></a>4.1 通过标签删除镜像</h3><p>通过如下两个都可以删除镜像：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi [image]</span><br></pre></td></tr></table></figure>
-
-<p>或者：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm [image]</span><br></pre></td></tr></table></figure>
-
-<p>支持的子命令如下：</p>
-<ul>
-<li><code>-f,-force</code>: 强制删除镜像，即便有容器引用该镜像；</li>
-<li><code>-no-prune</code>: 不要删除未带标签的父镜像；</li>
-</ul>
-<p>对于带有标签的镜像：</p>
-<p><strong>实际上，当同一个镜像拥有多个标签时，执行 <code>docker rmi</code> 命令，只是会删除了该镜像众多标签中，您指定的标签而已，并不会影响原始的那个镜像文件。</strong>如果某个镜像不存在多个标签，当且仅当只有一个标签时，执行删除命令时，您就要小心了，这会彻底删除镜像。</p>
-<h3 id="4-2-通过-ID-删除镜像"><a href="#4-2-通过-ID-删除镜像" class="headerlink" title="4.2 通过 ID 删除镜像"></a>4.2 通过 ID 删除镜像</h3><p>除了通过标签名称来删除镜像，我们还可以通过制定镜像 ID, 来删除镜像，如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<p><strong>一旦制定了通过 ID 来删除镜像，它会先尝试删除所有指向该镜像的标签，然后在删除镜像本身。</strong></p>
-<h3 id="4-3-删除镜像的限制"><a href="#4-3-删除镜像的限制" class="headerlink" title="4.3 删除镜像的限制"></a>4.3 删除镜像的限制</h3><p>删除镜像很简单，但也不是我们何时何地都能删除的，它存在一些限制条件。</p>
-<p>当通过该镜像创建的容器未被销毁时，镜像是无法被删除的。因为有容器正在引用他。同时，可以通过添加 <code>-f</code> 子命令，也就是强制删除，才能移除掉该镜像。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f IMAGE ID</span><br></pre></td></tr></table></figure>
-
-<p>但是，我们一般不推荐这样暴力的做法，正确的做法应该是：</p>
-<ol>
-<li>先删除引用这个镜像的容器；</li>
-<li>再删除这个镜像；</li>
+</li>
+<li><p><strong><code>mv 目录名称 新目录名称</code>：</strong> 修改目录的名称（改）</p>
+<p>注意：mv的语法不仅可以对目录进行重命名而且也可以对各种文件，压缩包等进行重命名的操作。mv命令用来对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。</p>
+</li>
+<li><p><strong><code>mv 目录名称 目录的新位置</code>：</strong> 移动目录的位置—剪切（改）</p>
+<p>注意：mv语法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作。另外mv与cp的结果不同，mv好像文件“搬家”，文件个数并未增加。而cp对文件进行复制，文件个数增加了。</p>
+</li>
+<li><p><strong><code>cp -r 目录名称 目录拷贝的目标位置</code>：</strong> 拷贝目录（改），-r代表递归拷贝</p>
+<p>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不 用写-r递归</p>
+</li>
+<li><p><strong><code>rm [-rf] 目录</code>:</strong> 删除目录（删）</p>
+<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆， 无论删除任何目录或文件，都直接使用<code>rm -rf</code> 目录/文件/压缩包</p>
+</li>
 </ol>
-<h3 id="4-4-清理镜像"><a href="#4-4-清理镜像" class="headerlink" title="4.4 清理镜像"></a>4.4 清理镜像</h3><p>我们在使用 Docker 一段时间后，系统一般都会残存一些临时的、没有被使用的镜像文件，可以通过以下命令进行清理：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image prune</span><br></pre></td></tr></table></figure>
-
-<p>它支持的子命令有：</p>
+<h3 id="文件的操作命令-增删改查"><a href="#文件的操作命令-增删改查" class="headerlink" title="文件的操作命令(增删改查)"></a>文件的操作命令(增删改查)</h3><ol>
+<li><p><strong><code>touch 文件名称</code>:</strong> 文件的创建（增）</p>
+</li>
+<li><p><strong><code>cat/more/less/tail 文件名称</code></strong> 文件的查看（查）</p>
 <ul>
-<li><code>-a,--all</code>: 删除所有没有用的镜像，而不仅仅是临时文件；</li>
-<li><code>-f,--force</code>：强制删除镜像文件，无需弹出提示确认；</li>
+<li><strong><code>cat</code>：</strong> 查看显示文件内容</li>
+<li><strong><code>more</code>：</strong> 可以显示百分比，回车可以向下一行， 空格可以向下一页，q可以退出查看</li>
+<li><strong><code>less</code>：</strong> 可以使用键盘上的PgUp和PgDn向上 和向下翻页，q结束查看</li>
+<li><strong><code>tail-10</code> ：</strong> 查看文件的后10行，Ctrl+C结束</li>
 </ul>
-<h2 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h2><p>Docker 创建镜像主要有三种：</p>
-<ol>
-<li>基于已有的镜像创建；</li>
-<li>基于 Dockerfile 来创建；</li>
-<li>基于本地模板来导入；</li>
+<p>注意：命令 tail -f 文件 可以对某个文件进行动态监控，例如tomcat的日志文件， 会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控 文 件的变化</p>
+</li>
+<li><p><strong><code>vim 文件</code>：</strong> 修改文件的内容（改）</p>
+<p>vim编辑器是Linux中的强大组件，是vi编辑器的加强版，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
+<p><strong>在实际开发中，使用vim编辑器主要作用就是修改配置文件，下面是一般步骤：</strong></p>
+<p>vim 文件——&gt;进入文件—–&gt;命令模式——&gt;按i进入编辑模式—–&gt;编辑文件 ——-&gt;按Esc进入底行模式—–&gt;输入：wq/q! （输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。）</p>
+</li>
+<li><p><strong><code>rm -rf 文件</code>：</strong> 删除文件（删）</p>
+<p>同目录删除：熟记 <code>rm -rf</code> 文件 即可</p>
+</li>
 </ol>
-<p>我们将主要介绍常用的 1，2 两种。</p>
-<h3 id="5-1-基于已有的镜像创建"><a href="#5-1-基于已有的镜像创建" class="headerlink" title="5.1 基于已有的镜像创建"></a>5.1 基于已有的镜像创建</h3><p>通过如下命令来创建：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container commit</span><br></pre></td></tr></table></figure>
-
-<p>支持的子命令如下：</p>
+<h3 id="压缩文件的操作命令"><a href="#压缩文件的操作命令" class="headerlink" title="压缩文件的操作命令"></a>压缩文件的操作命令</h3><p><strong>1）打包并压缩文件：</strong></p>
+<p>Linux中的打包文件一般是以.tar结尾的，压缩的命令一般是以.gz结尾的。</p>
+<p>而一般情况下打包和压缩是一起进行的，打包并压缩后的文件的后缀名一般.tar.gz。 </p>
+<p>命令：<strong><code>tar -zcvf 打包压缩后的文件名 要打包压缩的文件</code></strong>  其中：</p>
 <ul>
-<li><code>-a,--author</code>=””: 作者信息；</li>
-<li><code>-c,--change</code>=[]: 可以在提交的时候执行 Dockerfile 指令，如 CMD、ENTRYPOINT、ENV、EXPOSE、LABEL、ONBUILD、USER、VOLUME、WORIR 等；</li>
-<li><code>-m,--message</code>=””: 提交信息；</li>
-<li><code>-p,--pause</code>=true: 提交时，暂停容器运行。</li>
+<li>z：调用gzip压缩命令进行压缩</li>
+<li>c：打包文件</li>
+<li>v：显示运行过程</li>
+<li>f：指定文件名</li>
 </ul>
-<h3 id="5-2-基于-Dockerfile-创建"><a href="#5-2-基于-Dockerfile-创建" class="headerlink" title="5.2 基于 Dockerfile 创建"></a>5.2 基于 Dockerfile 创建</h3><p>通过 Dockerfile 的方式来创建镜像，是最常见的一种方式了，也是比较推荐的方式。Dockerfile 是一个文本指令文件，它描述了是如何基于一个父镜像，来创建一个新镜像的过程。</p>
-<h2 id="导出-amp-加载镜像"><a href="#导出-amp-加载镜像" class="headerlink" title="导出&amp;加载镜像"></a>导出&amp;加载镜像</h2><p>通常我们会有下面这种需求，需要将镜像分享给别人，这个时候，我们可以将镜像导出成 tar 包，别人直接通过加载这个 tar 包，快速地将镜像引入到本地镜像库。</p>
-<p>要想使用这两个功能，主要是通过如下两个命令：</p>
+<p>比如：假如test目录下有三个文件分别是：aaa.txt bbb.txt ccc.txt，如果我们要打包test目录并指定压缩后的压缩包名称为test.tar.gz可以使用命令：<strong><code>tar -zcvf test.tar.gz aaa.txt bbb.txt ccc.txt</code>或：<code>tar -zcvf test.tar.gz       /test/</code></strong></p>
+<p><strong>2）解压压缩包：</strong></p>
+<p>命令：<strong><code>tar [-xvf] 压缩文件</code></strong></p>
+<p>其中：</p>
+<ul>
+<li>x：代表解压</li>
+</ul>
+<p>示例：</p>
 <ol>
-<li><code>docker save</code></li>
-<li><code>docker load</code></li>
+<li><p>将/test下的test.tar.gz解压到当前目录下可以使用命令：<strong><code>tar -xvf test.tar.gz</code></strong></p>
+</li>
+<li><p>将/test下的test.tar.gz解压到根目录/usr下:<strong><code>tar -xvf test.tar.gz -C /usr</code></strong>（- C代表指定解压的位置）</p>
+</li>
 </ol>
-<h3 id="6-1-导出镜像"><a href="#6-1-导出镜像" class="headerlink" title="6.1 导出镜像"></a>6.1 导出镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o IMAGE ID</span><br></pre></td></tr></table></figure>
+<h3 id="权限命令"><a href="#权限命令" class="headerlink" title="权限命令"></a>权限命令</h3><p>操作系统中每个文件都拥有特定的权限、所属用户和所属组。权限是操作系统用来限制资源访问的机制，在Linux中权限一般分为读(readable)、写(writable)和执行(excutable)，分为三组。分别对应文件的属主(owner)，属组(group)和其他用户(other)，通过这样的机制来限制哪些用户、哪些组可以对特定的文件进行什么样的操作。通过 <strong><code>ls -l</code></strong> 命令我们可以 查看某个目录下的文件或目录的权限</p>
+<p>示例：在随意某个目录下<code>ls -l</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf5tzujt2nj30gd06ct9u.jpg" alt="img"></p>
+<p>第一列的内容的信息解释如下：</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4hogpjsnj30dl05tt9i.jpg" alt="img" style="zoom:67%;" />
 
-<h3 id="6-2-加载镜像"><a href="#6-2-加载镜像" class="headerlink" title="6.2 加载镜像"></a>6.2 加载镜像</h3><p>别人拿到了这个 <code>tar</code> 包后，要如何导入到本地的镜像库呢？</p>
-<p>通过执行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i xxx.tar</span><br></pre></td></tr></table></figure>
-
-<p>或者：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; xxx.tar</span><br></pre></td></tr></table></figure>
-
-<p>导入成功后，查看本地镜像信息，你就可以获得别人分享的镜像了。</p>
+<p><strong>文件的类型：</strong></p>
+<ul>
+<li>d： 代表目录</li>
+<li>-： 代表文件</li>
+<li>l： 代表软链接（可以认为是window中的快捷方式）</li>
+</ul>
+<p><strong>Linux中权限分为以下几种：</strong></p>
+<ul>
+<li>r： 代表权限是可读，r也可以用数字4表示</li>
+<li>w：代表权限是可写，w也可以用数字2表示</li>
+<li>x： 代表权限是可执行，x也可以用数字1表示</li>
+</ul>
+<p><strong>文件和目录权限的区别：</strong></p>
+<p>对文件和目录而言，读写执行表示不同的意义。</p>
+<p>对于文件：</p>
+<table>
+<thead>
+<tr>
+<th>权限名称</th>
+<th>可执行操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>可以使用cat查看文件的内容</td>
+</tr>
+<tr>
+<td>w</td>
+<td>可以修改文件的内容</td>
+</tr>
+<tr>
+<td>x</td>
+<td>可以将其运行为二进制文件</td>
+</tr>
+</tbody></table>
+<p>对于目录：</p>
+<table>
+<thead>
+<tr>
+<th>权限名称</th>
+<th>可执行操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>可以查看目录下列表</td>
+</tr>
+<tr>
+<td>w</td>
+<td>可以创建和删除目录下文件</td>
+</tr>
+<tr>
+<td>x</td>
+<td>可以使用cd进入目录</td>
+</tr>
+</tbody></table>
+<p><strong>需要注意的是超级用户可以无视普通用户的权限，即使文件目录权限是000，依旧可以访问。</strong> <strong>在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。</strong></p>
+<ul>
+<li><p><strong>所有者</strong></p>
+<p>一般为文件的创建者，谁创建了该文件，就天然的成为该文件的所有者，用ls ‐ahl命令可以看到文件的所有者 也可以使用chown 用户名 文件名来修改文件的所有者 。</p>
+</li>
+<li><p><strong>文件所在组</strong></p>
+<p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组，用<code>ls ‐ahl</code>命令可以看到文件的所有组，也可以使用 <code>chgrp 组名 文件名</code> 来修改文件所在的组。</p>
+</li>
+<li><p><strong>其它组</strong></p>
+<p>除开文件的所有者和所在组的用户外，系统的其它用户都是文件的其它组</p>
+</li>
+</ul>
+<p><strong>修改文件/目录的权限的命令：<code>chmod</code></strong></p>
+<p>示例：修改/test下的aaa.txt的权限为属主有全部权限，属主所在的组有读写权限， 其他用户只有读的权限</p>
+<p><strong><code>chmod u=rwx,g=rw,o=r aaa.txt</code></strong></p>
+<p><strong><code>chmod -R u=rwx,g=rwx,o=rwx ./log</code></strong>     // 递归给log目录下的所有文件授权</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf5tzvbeb2j30el06u0tf.jpg" alt="img"></p>
+<p>上述示例还可以使用数字表示：</p>
+<p><strong><code>chmod 764 aaa.txt</code></strong></p>
+<blockquote>
+<p>  <strong>补充一个比较常用的东西</strong>:</p>
+<p>  假如我们装了一个zookeeper，我们每次开机到要求其自动启动该怎么办？</p>
+<ol>
+<li>新建一个脚本zookeeper</li>
+<li>为新建的脚本zookeeper添加可执行权限，命令是:<code>chmod +x zookeeper</code></li>
+<li>把zookeeper这个脚本添加到开机启动项里面，命令是：<code>chkconfig --add zookeeper</code></li>
+<li>如果想看看是否添加成功，命令是：<code>chkconfig --list</code></li>
+</ol>
+</blockquote>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
+<p><strong>Linux用户管理相关命令:</strong></p>
+<ul>
+<li><code>useradd 选项 用户名</code>: 添加用户账号</li>
+<li><code>userdel 选项 用户名</code>: 删除用户帐号</li>
+<li><code>usermod 选项 用户名</code>: 修改帐号</li>
+<li><code>passwd 用户名</code>: 更改或创建用户的密码</li>
+<li><code>passwd -S 用户名</code> : 显示用户账号密码信息</li>
+<li><code>passwd -d 用户名</code>:  清除用户密码</li>
+</ul>
+<p><code>useradd</code>命令用于Linux中创建的新的系统用户。<code>useradd</code>可用来建立用户帐号。帐号建好之后，再用<code>passwd</code>设定帐号的密码。而可用<code>userdel</code>删除帐号。使用<code>useradd</code>指令所建立的帐号，实际上是保存在/etc/passwd文本文件中。</p>
+<p><code>passwd</code>命令用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。</p>
+<h3 id="用户组的管理"><a href="#用户组的管理" class="headerlink" title="用户组的管理"></a>用户组的管理</h3><p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。</p>
+<p>用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对/etc/group文件的更新。</p>
+<p><strong>Linux系统用户组的管理相关命令:</strong></p>
+<ul>
+<li><code>groupadd 选项 用户组</code> :增加一个新的用户组</li>
+<li><code>groupdel 用户组</code>:要删除一个已有的用户组</li>
+<li><code>groupmod 选项 用户组</code> : 修改用户组的属性</li>
+</ul>
+<h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><ul>
+<li><p><strong><code>pwd</code>：</strong> 显示当前所在位置</p>
+</li>
+<li><p><strong><code>sudo + 其他命令</code></strong>：以系统管理者的身份执行指令，也就是说，经由 sudo 所执行的指令就好像是 root 亲自执行。</p>
+</li>
+<li><p><strong><code>grep 要搜索的字符串 要搜索的文件 --color</code>：</strong> 搜索命令，–color代表高亮显示</p>
+</li>
+<li><p><strong><code>ps -ef</code>/<code>ps -aux</code>：</strong> 这两个命令都是查看当前系统正在运行进程，两者的区别是展示格式不同。如果想要查看特定的进程可以使用这样的格式：<strong><code>ps aux|grep redis</code></strong> （查看包括redis字符串的进程），也可使用 <strong><code>pgrep redis -a</code></strong>。</p>
+<p>注意：如果直接用ps（Process Status）命令，会显示所有进程的状态，通常结合grep命令查看某进程的状态。</p>
+</li>
+<li><p><strong><code>kill -9 进程的pid</code>：</strong> 杀死进程（-9 表示强制终止。）</p>
+<p>先用ps查找进程，然后用kill杀掉</p>
+</li>
+<li><p><strong>网络通信命令：</strong></p>
+<ul>
+<li>查看当前系统的网卡信息：ifconfig</li>
+<li>查看与某台机器的连接情况：ping</li>
+<li>查看当前系统的端口使用：netstat -an</li>
+</ul>
+</li>
+<li><p><strong><code>shutdown</code>：</strong> <code>shutdown -h now</code>： 指定现在立即关机；<code>shutdown +5 &quot;System will shutdown after 5 minutes&quot;</code>：指定5分钟后关机，同时送出警告信息给登入用户。</p>
+</li>
+<li><p><strong><code>reboot</code>：</strong>重开机。<strong><code>reboot -w</code>：</strong> 做个重开机的模拟（只有纪录并不会真的重开机）。</p>
+</li>
+</ul>
 
       
     </div>
