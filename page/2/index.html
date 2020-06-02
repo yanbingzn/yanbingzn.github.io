@@ -595,7 +595,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:37:27" itemprop="dateModified" datetime="2020-06-02T12:37:27+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-02 12:51:12" itemprop="dateModified" datetime="2020-06-02T12:51:12+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -791,177 +791,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; xxx.tar</span><br></pre></td></tr></table></figure>
 
 <p>导入成功后，查看本地镜像信息，你就可以获得别人分享的镜像了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" class="post-title-link" itemprop="url">Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:32:18" itemprop="dateModified" datetime="2020-06-02T12:32:18+08:00">2020-06-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/tools/Git" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/tools/Git</a></p>
-</blockquote>
-<h2 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h2><p>Git 有三种状态，你的文件可能处于其中之一：</p>
-<ol>
-<li><strong>已提交（committed）</strong>：数据已经安全的保存在本地数据库中。</li>
-<li><strong>已修改（modified）</strong>：已修改表示修改了文件，但还没保存到数据库中。</li>
-<li><strong>已暂存（staged）</strong>：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
-</ol>
-<p>由此引入 Git 项目的三个工作区域的概念：<strong>Git 仓库(.git directoty)</strong>、<strong>工作目录(Working Directory)</strong> 以及 <strong>暂存区域(Staging Area)</strong> 。</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4qcxem9oj30m80c90sy.jpg" alt="img" style="zoom:67%;" />
-
-<p><strong>基本的 Git 工作流程如下：</strong></p>
-<ol>
-<li>在工作目录中修改文件。</li>
-<li>暂存文件，将文件的快照放入暂存区域。</li>
-<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
-</ol>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="获取-Git-仓库"><a href="#获取-Git-仓库" class="headerlink" title="获取 Git 仓库"></a>获取 Git 仓库</h3><p>有两种取得 Git 项目仓库的方法。</p>
-<ol>
-<li>在现有目录中初始化仓库: 进入项目目录运行 <code>git init</code> 命令,该命令将创建一个名为 <code>.git</code> 的子目录。</li>
-<li>从一个服务器克隆一个现有的 Git 仓库: <code>git clone [url]</code> 自定义本地仓库的名字: <code>git clone [url]</code> directoryname</li>
-</ol>
-<h3 id="记录每次更新到仓库"><a href="#记录每次更新到仓库" class="headerlink" title="记录每次更新到仓库"></a>记录每次更新到仓库</h3><ol>
-<li><strong>检测当前文件状态</strong> : <code>git status</code></li>
-<li><strong>提出更改（把它们添加到暂存区</strong>）：<code>git add filename</code> (针对特定文件)、<code>git add *</code>(所有文件)、<code>git add *.txt</code>（支持通配符，所有 .txt 文件）</li>
-<li><strong>忽略文件</strong>：<code>.gitignore</code> 文件</li>
-<li><strong>提交更新:</strong> <code>git commit -m &quot;代码提交信息&quot;</code> （每次准备提交前，先用 <code>git status</code> 看下，是不是都已暂存起来了， 然后再运行提交命令 <code>git commit</code>）</li>
-<li><strong>跳过使用暂存区域更新的方式</strong> : <code>git commit -a -m &quot;代码提交信息&quot;</code>。 <code>git commit</code> 加上 <code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</li>
-<li><strong>移除文件</strong> ：<code>git rm filename</code> （从暂存区域移除，然后提交。）</li>
-<li><strong>对文件重命名</strong> ：<code>git mv README.md README</code>(这个命令相当于<code>mv README.md README</code>、<code>git rm README.md</code>、<code>git add README</code> 这三条命令的集合)</li>
-</ol>
-<h3 id="推送改动到远程仓库"><a href="#推送改动到远程仓库" class="headerlink" title="推送改动到远程仓库"></a>推送改动到远程仓库</h3><ul>
-<li><p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<code>git remote add origin &lt;server&gt;</code> ,比如我们要让本地的一个仓库和 Github 上创建的一个仓库关联可以这样<code>git remote add origin https://github.com/xxx/test.git</code></p>
-</li>
-<li><p>将这些改动提交到远端仓库：<code>git push origin master</code> (可以把 <em>master</em> 换成你想要推送的任何分支)</p>
-<p>如此就能够将你的改动推送到所添加的服务器上去了。</p>
-</li>
-</ul>
-<h3 id="远程仓库的移除与重命名"><a href="#远程仓库的移除与重命名" class="headerlink" title="远程仓库的移除与重命名"></a>远程仓库的移除与重命名</h3><ul>
-<li>将 test 重命名为 test1：<code>git remote rename test test1</code></li>
-<li>移除远程仓库 test1: <code>git remote rm test1</code></li>
-</ul>
-<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><p>在提交了若干更新，又或者克隆了某个项目之后，你也许想回顾下提交历史。 完成这个任务最简单而又有效的工具是 <code>git log</code> 命令。<code>git log</code> 会按提交时间列出所有的更新，最近的更新排在最上面。</p>
-<p><strong>可以添加一些参数来查看自己希望看到的内容：</strong></p>
-<p>只看某个人的提交记录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --author=slimshady</span><br></pre></td></tr></table></figure>
-
-<h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 <code>--amend</code> 选项的提交命令尝试重新提交：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<p>取消暂存的文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset filename</span><br></pre></td></tr></table></figure>
-
-<p>撤消对文件的修改:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- filename</span><br></pre></td></tr></table></figure>
-
-<p>假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
-
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是“默认的”分支。可以在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
-<p>我们通常在开发新功能、修复一个紧急 bug 等等时候会选择创建分支。单分支开发好还是多分支开发好，还是要看具体场景来说。</p>
-<p>创建一个名字叫做 test 的分支：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test</span><br></pre></td></tr></table></figure>
-
-<p>切换当前分支到 test（当你切换分支的时候，Git 会重置你的工作目录，使其看起来像回到了你在那个分支上最后一次提交的样子。 Git 会自动添加、删除、修改文件以确保此时你的工作目录和这个分支最后一次提交时的样子一模一样）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4qv777vdj30f8032q2w.jpg" alt="img"></p>
-<p>你也可以直接这样创建分支并切换过去(上面两条命令的合写)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b test</span><br></pre></td></tr></table></figure>
-
-<p>切换到主分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-
-<p>合并分支(可能会有冲突)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge test</span><br></pre></td></tr></table></figure>
-
-<p>把新建的分支删掉</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d test</span><br></pre></td></tr></table></figure>
-
-<p>将分支推送到远端仓库（推送成功后其他人可见）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -1308,6 +1137,177 @@
 <li><p><strong><code>reboot</code>：</strong>重开机。<strong><code>reboot -w</code>：</strong> 做个重开机的模拟（只有纪录并不会真的重开机）。</p>
 </li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" class="post-title-link" itemprop="url">Git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 12:32:18" itemprop="dateModified" datetime="2020-06-02T12:32:18+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/tools/Git" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/tools/Git</a></p>
+</blockquote>
+<h2 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h2><p>Git 有三种状态，你的文件可能处于其中之一：</p>
+<ol>
+<li><strong>已提交（committed）</strong>：数据已经安全的保存在本地数据库中。</li>
+<li><strong>已修改（modified）</strong>：已修改表示修改了文件，但还没保存到数据库中。</li>
+<li><strong>已暂存（staged）</strong>：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+</ol>
+<p>由此引入 Git 项目的三个工作区域的概念：<strong>Git 仓库(.git directoty)</strong>、<strong>工作目录(Working Directory)</strong> 以及 <strong>暂存区域(Staging Area)</strong> 。</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4qcxem9oj30m80c90sy.jpg" alt="img" style="zoom:67%;" />
+
+<p><strong>基本的 Git 工作流程如下：</strong></p>
+<ol>
+<li>在工作目录中修改文件。</li>
+<li>暂存文件，将文件的快照放入暂存区域。</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
+</ol>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="获取-Git-仓库"><a href="#获取-Git-仓库" class="headerlink" title="获取 Git 仓库"></a>获取 Git 仓库</h3><p>有两种取得 Git 项目仓库的方法。</p>
+<ol>
+<li>在现有目录中初始化仓库: 进入项目目录运行 <code>git init</code> 命令,该命令将创建一个名为 <code>.git</code> 的子目录。</li>
+<li>从一个服务器克隆一个现有的 Git 仓库: <code>git clone [url]</code> 自定义本地仓库的名字: <code>git clone [url]</code> directoryname</li>
+</ol>
+<h3 id="记录每次更新到仓库"><a href="#记录每次更新到仓库" class="headerlink" title="记录每次更新到仓库"></a>记录每次更新到仓库</h3><ol>
+<li><strong>检测当前文件状态</strong> : <code>git status</code></li>
+<li><strong>提出更改（把它们添加到暂存区</strong>）：<code>git add filename</code> (针对特定文件)、<code>git add *</code>(所有文件)、<code>git add *.txt</code>（支持通配符，所有 .txt 文件）</li>
+<li><strong>忽略文件</strong>：<code>.gitignore</code> 文件</li>
+<li><strong>提交更新:</strong> <code>git commit -m &quot;代码提交信息&quot;</code> （每次准备提交前，先用 <code>git status</code> 看下，是不是都已暂存起来了， 然后再运行提交命令 <code>git commit</code>）</li>
+<li><strong>跳过使用暂存区域更新的方式</strong> : <code>git commit -a -m &quot;代码提交信息&quot;</code>。 <code>git commit</code> 加上 <code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</li>
+<li><strong>移除文件</strong> ：<code>git rm filename</code> （从暂存区域移除，然后提交。）</li>
+<li><strong>对文件重命名</strong> ：<code>git mv README.md README</code>(这个命令相当于<code>mv README.md README</code>、<code>git rm README.md</code>、<code>git add README</code> 这三条命令的集合)</li>
+</ol>
+<h3 id="推送改动到远程仓库"><a href="#推送改动到远程仓库" class="headerlink" title="推送改动到远程仓库"></a>推送改动到远程仓库</h3><ul>
+<li><p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<code>git remote add origin &lt;server&gt;</code> ,比如我们要让本地的一个仓库和 Github 上创建的一个仓库关联可以这样<code>git remote add origin https://github.com/xxx/test.git</code></p>
+</li>
+<li><p>将这些改动提交到远端仓库：<code>git push origin master</code> (可以把 <em>master</em> 换成你想要推送的任何分支)</p>
+<p>如此就能够将你的改动推送到所添加的服务器上去了。</p>
+</li>
+</ul>
+<h3 id="远程仓库的移除与重命名"><a href="#远程仓库的移除与重命名" class="headerlink" title="远程仓库的移除与重命名"></a>远程仓库的移除与重命名</h3><ul>
+<li>将 test 重命名为 test1：<code>git remote rename test test1</code></li>
+<li>移除远程仓库 test1: <code>git remote rm test1</code></li>
+</ul>
+<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><p>在提交了若干更新，又或者克隆了某个项目之后，你也许想回顾下提交历史。 完成这个任务最简单而又有效的工具是 <code>git log</code> 命令。<code>git log</code> 会按提交时间列出所有的更新，最近的更新排在最上面。</p>
+<p><strong>可以添加一些参数来查看自己希望看到的内容：</strong></p>
+<p>只看某个人的提交记录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --author=slimshady</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 <code>--amend</code> 选项的提交命令尝试重新提交：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<p>取消暂存的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset filename</span><br></pre></td></tr></table></figure>
+
+<p>撤消对文件的修改:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- filename</span><br></pre></td></tr></table></figure>
+
+<p>假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是“默认的”分支。可以在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<p>我们通常在开发新功能、修复一个紧急 bug 等等时候会选择创建分支。单分支开发好还是多分支开发好，还是要看具体场景来说。</p>
+<p>创建一个名字叫做 test 的分支：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test</span><br></pre></td></tr></table></figure>
+
+<p>切换当前分支到 test（当你切换分支的时候，Git 会重置你的工作目录，使其看起来像回到了你在那个分支上最后一次提交的样子。 Git 会自动添加、删除、修改文件以确保此时你的工作目录和这个分支最后一次提交时的样子一模一样）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4qv777vdj30f8032q2w.jpg" alt="img"></p>
+<p>你也可以直接这样创建分支并切换过去(上面两条命令的合写)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b test</span><br></pre></td></tr></table></figure>
+
+<p>切换到主分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<p>合并分支(可能会有冲突)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge test</span><br></pre></td></tr></table></figure>
+
+<p>把新建的分支删掉</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d test</span><br></pre></td></tr></table></figure>
+
+<p>将分支推送到远端仓库（推送成功后其他人可见）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -1829,449 +1829,6 @@
 <li>在内存中，一个共享库的 .text 节（已编译程序的机器代码）的一个副本可以被不同的正在运行的进程共享。</li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf5u0gml0uj30cp0di0tl.jpg" alt="img"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">Redis与缓存</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:37:59" itemprop="dateModified" datetime="2020-06-02T12:37:59+08:00">2020-06-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h3><p>Redis(Remote Dictionary Server) 是一个使用 C 语言编写的，开源的（BSD许可）高性能非关系型（NoSQL）的键值对数据库。</p>
-<p>Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。</p>
-<p>与传统数据库不同的是， Redis 的数据是存在内存中的，所以读写速度非常快，因此 redis 被广泛应用于缓存方向，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。另外，Redis 也经常用来做分布式锁。除此之外，Redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p>
-<h3 id="Redis的优缺点"><a href="#Redis的优缺点" class="headerlink" title="Redis的优缺点"></a>Redis的优缺点</h3><p><strong>优点</strong></p>
-<ul>
-<li>读写性能优异， Redis能读的速度是110000次/s，写的速度是81000次/s。</li>
-<li>支持数据持久化，支持AOF和RDB两种持久化方式。</li>
-<li>支持事务，Redis的所有操作都是原子性的，同时Redis还支持对几个操作合并后的原子性执行。</li>
-<li>数据结构丰富，除了支持string类型的value外还支持hash、set、zset、list等数据结构。</li>
-<li>支持主从复制，主机会自动将数据同步到从机，可以进行读写分离。</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</li>
-<li>Redis 不具备自动容错和恢复功能，主机从机的宕机都会导致前端部分读写请求失败，需要等待机器重启或者手动切换前端的IP才能恢复。</li>
-<li>主机宕机，宕机前有部分数据未能及时同步到从机，切换IP后还会引入数据不一致的问题，降低了系统的可用性。</li>
-<li>Redis 较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
-</ul>
-<h3 id="为什么要用缓存"><a href="#为什么要用缓存" class="headerlink" title="为什么要用缓存"></a>为什么要用缓存</h3><p>主要从“高性能”和“高并发”这两点来看待这个问题。</p>
-<p><strong>高性能：</strong></p>
-<p>假如用户第一次访问数据库中的某些数据。这个过程会比较慢，因为是从硬盘上读取的。将该用户访问的数据存在数缓存中，这样下一次再访问这些数据的时候就可以直接从缓存中获取了。操作缓存就是直接操作内存，所以速度相当快。如果数据库中的对应数据改变的之后，同步改变缓存中相应的数据即可！</p>
-<p><strong>高并发：</strong></p>
-<p>直接操作缓存能够承受的请求是远远大于直接访问数据库的，所以我们可以考虑把数据库中的部分数据转移到缓存中去，这样用户的一部分请求会直接到缓存这里而不用经过数据库。</p>
-<h3 id="为什么不用-map做缓存"><a href="#为什么不用-map做缓存" class="headerlink" title="为什么不用 map做缓存"></a>为什么不用 map做缓存</h3><p>缓存分为本地缓存和分布式缓存。以 Java 为例，使用自带的 map 实现的是本地缓存，最主要的特点是轻量以及快速，生命周期随着 jvm 的销毁而结束，并且在多实例的情况下，每个实例都需要各自保存一份缓存，缓存不具有一致性。</p>
-<p>使用 redis之类的称为分布式缓存，在多实例的情况下，各实例共用一份缓存数据，缓存具有一致性。缺点是需要保持 redis 服务的高可用，整个程序架构上较为复杂。</p>
-<h3 id="Redis为什么这么快"><a href="#Redis为什么这么快" class="headerlink" title="Redis为什么这么快"></a>Redis为什么这么快</h3><ul>
-<li>完全基于内存，绝大部分请求是纯粹的内存操作，非常快速。数据存在内存中，类似于 HashMap，HashMap 的优势就是查找和操作的时间复杂度都是O(1)；</li>
-<li>数据结构简单，对数据操作也简单，Redis 中的数据结构是专门进行设计的；</li>
-<li>采用<strong>单线程</strong>，避免了不必要的上下文切换和竞争条件，也不存在多进程或者多线程导致的切换而消耗 CPU，不用去考虑各种锁的问题，<strong>不存在加锁释放锁操作</strong>，没有因为可能出现死锁而导致的性能消耗；</li>
-<li>使用多路 I/O 复用模型，非阻塞 IO；</li>
-<li>使用底层模型不同，它们之间底层实现方式以及与客户端之间通信的应用协议不一样，Redis 直接自己构建了 VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求；</li>
-</ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Redis相比其他缓存，有一个非常大的优势，就是支持多种数据类型。</p>
-<p>Redis主要有5种数据类型，包括String，List，Set，Zset，Hash，满足大部分的使用要求</p>
-<ul>
-<li><strong>string</strong>——适合最简单的k-v存储，类似于memcached的存储结构，短信验证码，配置信息等，就用这种类型来存储。</li>
-<li><strong>hash</strong>——一般key为ID或者唯一标示，value对应的就是详情了。如商品详情，个人信息详情，新闻详情等。</li>
-<li><strong>list</strong>——因为list是有序的，比较适合存储一些有序且数据相对固定的数据。如省市区表、字典表等。因为list是有序的，适合根据写入的时间来排序，如：最新的热点新闻，消息队列等。</li>
-<li><strong>set</strong>——可以简单的理解为ID-List的模式，如微博中一个人有哪些好友，set最牛的地方在于，可以对两个set提供交集、并集、差集操作。例如：查找两个人共同的好友等。</li>
-<li><strong>Sorted Set</strong>——是set的增强版本，增加了一个score参数，自动会根据score的值进行排序。比较适合类似于top 10等不根据插入的时间来排序的数据。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>类型</strong></th>
-<th align="center"><strong>存储值</strong></th>
-<th align="center"><strong>操作</strong></th>
-<th align="center"><strong>应用场景</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">STRING</td>
-<td align="center">字符串、整数或者浮点数</td>
-<td align="center">对整个字符串或者字符串的其中一部分执行操作； 对整数和浮点数执行自增或者自减操作</td>
-<td align="center">做简单的键值对缓存</td>
-</tr>
-<tr>
-<td align="center">LIST</td>
-<td align="center">列表</td>
-<td align="center">从两端压入或者弹出元素； 对单个或者多个元素进行修剪，只保留一个范围内的元素</td>
-<td align="center">存储一些列表型的数据结构，类似粉丝列表、文章的评论列表之类的数据</td>
-</tr>
-<tr>
-<td align="center">SET</td>
-<td align="center">无序集合</td>
-<td align="center">添加、获取、移除单个元素； 检查一个元素是否存在于集合中； 计算交集、并集、差集； 从集合里面随机获取元素</td>
-<td align="center">交集、并集、差集的操作，比如交集，可以把两个人的粉丝列表整一个交集</td>
-</tr>
-<tr>
-<td align="center">HASH</td>
-<td align="center">哈希</td>
-<td align="center">添加、获取、移除单个键值对； 获取所有键值对； 检查某个键是否存在</td>
-<td align="center">结构化的数据，比如一个对象</td>
-</tr>
-<tr>
-<td align="center">ZSET</td>
-<td align="center">有序集合</td>
-<td align="center">添加、获取、删除元素； 根据分值范围或者成员来获取元素； 计算一个键的排名</td>
-<td align="center">去重但可以排序，如获取排名前几名的用户</td>
-</tr>
-</tbody></table>
-<p>如上所述，虽然Redis不像关系数据库那么复杂的数据结构，但是，也能适合很多场景，比一般的缓存数据结构要多。了解每种数据结构适合的业务场景，不仅有利于提升开发效率，也能有效利用Redis的性能。</p>
-<h2 id="Redis的应用场景"><a href="#Redis的应用场景" class="headerlink" title="Redis的应用场景"></a>Redis的应用场景</h2><h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><p>可以对 String 进行自增自减运算，从而实现计数器功能。Redis 这种内存型数据库的读写性能非常高，很适合存储频繁读写的计数量。</p>
-<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来保证缓存的命中率。</p>
-<h3 id="会话缓存"><a href="#会话缓存" class="headerlink" title="会话缓存"></a>会话缓存</h3><p>可以使用 Redis 来统一存储多台应用服务器的会话信息。当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性。</p>
-<h3 id="全页缓存（FPC）"><a href="#全页缓存（FPC）" class="headerlink" title="全页缓存（FPC）"></a>全页缓存（FPC）</h3><p>除基本的会话token之外，Redis还提供很简便的FPC平台。以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
-<h3 id="查找表"><a href="#查找表" class="headerlink" title="查找表"></a>查找表</h3><p>例如 DNS 记录就很适合使用 Redis 进行存储。查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效，因为缓存不作为可靠的数据来源。</p>
-<h3 id="消息队列-发布-订阅功能"><a href="#消息队列-发布-订阅功能" class="headerlink" title="消息队列(发布/订阅功能)"></a>消息队列(发布/订阅功能)</h3><p>List 是一个双向链表，可以通过 lpush 和 rpop 写入和读取消息。不过最好使用 Kafka、RabbitMQ 等消息中间件。</p>
-<h3 id="分布式锁实现"><a href="#分布式锁实现" class="headerlink" title="分布式锁实现"></a>分布式锁实现</h3><p>在分布式场景下，无法使用单机环境下的锁来对多个节点上的进程进行同步。可以使用 Redis 自带的 SETNX 命令实现分布式锁，除此之外，还可以使用官方提供的 RedLock 分布式锁实现。</p>
-<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>Set 可以实现交集、并集等操作，从而实现共同好友等功能。ZSet 可以实现有序性操作，从而实现排行榜等功能。</p>
-<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><p>持久化就是把内存的数据写到磁盘中去，防止服务宕机了内存数据丢失。</p>
-<h3 id="持久化机制和优缺点"><a href="#持久化机制和优缺点" class="headerlink" title="持久化机制和优缺点"></a>持久化机制和优缺点</h3><p>Redis 提供两种持久化机制 RDB（默认） 和 AOF 机制；</p>
-<h4 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h4><p>RDB是Redis默认的持久化方式。按照一定的时间将内存的数据以快照的形式保存到硬盘中，对应产生的数据文件为dump.rdb。通过配置文件中的save参数来定义快照的周期。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>只有一个文件 dump.rdb，方便持久化。</li>
-<li>容灾性好，一个文件可以保存到安全的磁盘。</li>
-<li>性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以是 IO 最大化。使用单独子进程来进行持久化，主进程不会进行任何 IO 操作，保证了 redis 的高性能。</li>
-<li>相对于数据集大时，比 AOF 的启动效率更高。</li>
-</ol>
-<p><strong>缺点：</strong></p>
-<p>数据安全性低。RDB 是间隔一段时间进行持久化，如果持久化之间 redis 发生故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候)</p>
-<h4 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h4><p>AOF持久化(即Append Only File持久化)，则是将Redis执行的每次写命令记录到单独的日志文件中，当重启Redis会重新将持久化的日志中文件恢复数据。</p>
-<p>当两种方式同时开启时，数据恢复Redis会优先选择AOF恢复。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>数据安全，aof 持久化可以配置 appendfsync 属性，有 always，每进行一次 命令操作就记录到 aof 文件中一次。</li>
-<li>通过 append 模式写文件，即使中途服务器宕机，可以通过 redis-check-aof 工具解决数据一致性问题。</li>
-<li>AOF 机制的 rewrite 模式。AOF 文件没被 rewrite 之前（文件过大时会对命令 进行合并重写），可以删除其中的某些命令（比如误操作的 flushall）</li>
-</ol>
-<p><strong>缺点：</strong></p>
-<ol>
-<li>AOF 文件比 RDB 文件大，且恢复速度慢。</li>
-<li>数据集大的时候，比 rdb 启动效率低。</li>
-</ol>
-<h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><ul>
-<li>AOF文件比RDB更新频率高，优先使用AOF还原数据</li>
-<li>AOF比RDB更安全也更大</li>
-<li>RDB性能比AOF好</li>
-<li>如果两个都配了优先加载AOF</li>
-</ul>
-<h3 id="如何选择合适的持久化方式"><a href="#如何选择合适的持久化方式" class="headerlink" title="如何选择合适的持久化方式"></a>如何选择合适的持久化方式</h3><p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性，你应该同时使用两种持久化功能。在这种情况下，当 Redis 重启的时候会优先载入AOF文件来恢复原始的数据，因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整。</p>
-<p>如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用RDB持久化。</p>
-<p>有很多用户都只使用AOF持久化，但并不推荐这种方式，因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外，使用RDB还可以避免AOF程序的bug。</p>
-<p>如果你只希望你的数据在服务器运行的时候存在，你也可以不使用任何持久化方式。</p>
-<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p>如果Redis被当做缓存使用，使用<strong>一致性哈希</strong>实现动态扩容缩容。</p>
-<p>如果Redis被当做一个持久化存储使用，必须使用固定的keys-to-nodes映射关系，节点的数量一旦确定不能变化。否则的话(即Redis节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有Redis集群可以做到这样。</p>
-<h3 id="过期键的删除策略"><a href="#过期键的删除策略" class="headerlink" title="过期键的删除策略"></a>过期键的删除策略</h3><p>Redis是key-value数据库，我们可以设置Redis中缓存的key的过期时间。Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处理。</p>
-<p>过期策略通常有以下三种：</p>
-<ol>
-<li><strong>定时过期</strong>：每个设置过期时间的key都需要创建一个定时器，到过期时间就会立即清除。该策略可以立即清除过期的数据，对内存很友好；但是会占用大量的CPU资源去处理过期的数据，从而影响缓存的响应时间和吞吐量。</li>
-<li><strong>惰性过期</strong>：只有当访问一个key时，才会判断该key是否已过期，过期则清除。该策略可以最大化地节省CPU资源，却对内存非常不友好。极端情况可能出现大量的过期key没有再次被访问，从而不会被清除，占用大量内存。</li>
-<li><strong>定期过期</strong>：每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。该策略是前两者的一个折中方案。通过调整定时扫描的时间间隔和每次扫描的限定耗时，可以在不同情况下使得CPU和内存资源达到最优的平衡效果。</li>
-</ol>
-<p>(expires字典会保存所有设置了过期时间的key的过期时间数据，其中，key是指向键空间中的某个键的指针，value是该键的毫秒精度的UNIX时间戳表示的过期时间。键空间是指该Redis集群中保存的所有键。)</p>
-<p>Redis中同时使用了惰性过期和定期过期两种过期策略。</p>
-<p><strong>Redis key的过期时间和永久有效分别怎么设置？</strong></p>
-<p>EXPIRE和PERSIST命令。</p>
-<p><strong>我们知道通过expire来设置key 的过期时间，那么对过期的数据怎么处理呢?</strong></p>
-<p>除了缓存服务器自带的缓存失效策略之外（Redis默认的有6中策略可供选择），我们还可以根据具体的业务需求进行自定义的缓存淘汰，常见的策略有两种：</p>
-<ol>
-<li>定时去清理过期的缓存；</li>
-<li>当有用户请求过来时，再判断这个请求所用到的缓存是否过期，过期的话就去底层系统得到新数据并更新缓存。</li>
-</ol>
-<p>两者各有优劣，第一种的缺点是维护大量缓存的key是比较麻烦的，第二种的缺点就是每次用户请求过来都要判断缓存失效，逻辑相对比较复杂！具体用哪种方案，大家可以根据自己的应用场景来权衡。</p>
-<h2 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h2><p><strong>MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？</strong></p>
-<p>redis内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。</p>
-<h3 id="内存淘汰策略"><a href="#内存淘汰策略" class="headerlink" title="内存淘汰策略"></a>内存淘汰策略</h3><p>Redis的内存淘汰策略是指在Redis的用于缓存的内存不足时，怎么处理需要新写入且需要申请额外空间的数据。</p>
-<p>1、全局的键空间选择性移除</p>
-<ul>
-<li><strong>noeviction</strong>：当内存不足以容纳新写入数据时，新写入操作会报错。</li>
-<li><strong>allkeys-lru</strong>：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key。（这个是最常用的）</li>
-<li><strong>allkeys-random</strong>：当内存不足以容纳新写入数据时，在键空间中，随机移除某个key。</li>
-</ul>
-<p>2、设置过期时间的键空间选择性移除</p>
-<ul>
-<li><strong>volatile-lru</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，移除最近最少使用的key。</li>
-<li><strong>volatile-random</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，随机移除某个key。</li>
-<li><strong>volatile-ttl</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，有更早过期时间的key优先移除。</li>
-</ul>
-<p><strong>总结</strong></p>
-<p>Redis的内存淘汰策略的选取并不会影响过期的key的处理。内存淘汰策略用于处理内存不足时的需要申请额外空间的数据；过期策略用于处理过期的缓存数据。</p>
-<h3 id="内存用完了会发生什么"><a href="#内存用完了会发生什么" class="headerlink" title="内存用完了会发生什么"></a>内存用完了会发生什么</h3><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正常返回。）</p>
-<p>或者可以配置内存淘汰机制，当Redis达到内存上限时会冲刷掉旧的内容。</p>
-<h3 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h3><p>可以好好利用Hash,list,sorted set,set等集合类型数据，因为通常情况下很多小的Key-Value可以用更紧凑的方式存放到一起。</p>
-<p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key，而是应该把这个用户的所有信息存储到一张散列表里面。</p>
-<h2 id="线程模型"><a href="#线程模型" class="headerlink" title="线程模型"></a>线程模型</h2><p>Redis基于Reactor模式开发了网络事件处理器，这个处理器被称为文件事件处理器（file event handler）。它的组成结构为4部分：多个套接字、IO多路复用程序、文件事件分派器、事件处理器。因为文件事件分派器队列的消费是单线程的，所以Redis才叫<strong>单线程模型</strong>。</p>
-<p>文件事件处理器使用 I/O 多路复用（multiplexing）程序来同时监听多个套接字， 并根据套接字目前执行的任务来为套接字关联不同的事件处理器。</p>
-<p>当被监听的套接字准备好执行连接应答（accept）、读取（read）、写入（write）、关闭（close）等操作时， 与操作相对应的文件事件就会产生， 这时文件事件处理器就会调用套接字之前关联好的事件处理器来处理这些事件。</p>
-<p>虽然文件事件处理器以单线程方式运行， 但通过使用 I/O 多路复用程序来监听多个套接字， 文件事件处理器既实现了高性能的网络通信模型， 又可以很好地与 redis 服务器中其他同样以单线程方式运行的模块进行对接， 这保持了 Redis 内部单线程设计的简单性。</p>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="什么是事务"><a href="#什么是事务" class="headerlink" title="什么是事务"></a>什么是事务</h3><p>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
-<p>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
-<h3 id="Redis事务的概念"><a href="#Redis事务的概念" class="headerlink" title="Redis事务的概念"></a>Redis事务的概念</h3><p>Redis 事务的本质是通过MULTI、EXEC、WATCH等一组命令的集合。事务支持一次执行多个命令，一个事务中所有命令都会被序列化。在事务执行过程，会按照顺序串行化执行队列中的命令，其他客户端提交的命令请求不会插入到事务执行命令序列中。</p>
-<p>总结说：redis事务就是一次性、顺序性、排他性的执行一个队列中的一系列命令。</p>
-<h3 id="Redis事务的三个阶段"><a href="#Redis事务的三个阶段" class="headerlink" title="Redis事务的三个阶段"></a>Redis事务的三个阶段</h3><ul>
-<li>事务开始 MULTI</li>
-<li>命令入队</li>
-<li>事务执行 EXEC</li>
-</ul>
-<p>事务执行过程中，如果服务端收到有EXEC、DISCARD、WATCH、MULTI之外的请求，将会把请求放入队列中排队</p>
-<h3 id="Redis事务相关命令"><a href="#Redis事务相关命令" class="headerlink" title="Redis事务相关命令"></a>Redis事务相关命令</h3><p>Redis会将一个事务中的所有命令序列化，然后按顺序执行。</p>
-<ul>
-<li><strong>redis 不支持回滚</strong>，“Redis 在事务失败时不进行回滚，而是继续执行余下的命令”， 所以 Redis 的内部可以保持简单且快速。</li>
-<li>如果在一个事务中的命令出现错误，那么所有的命令都不会执行；</li>
-<li>如果在一个事务中出现运行错误，那么正确的命令会被执行。</li>
-</ul>
-<p>Redis事务功能是通过MULTI、EXEC、DISCARD和WATCH 四个原语实现的</p>
-<ul>
-<li><p>WATCH：WATCH 命令是一个乐观锁，可以为 Redis 事务提供 check-and-set （CAS）行为。可以监控一个或多个键，一旦其中有一个键被修改（或删除），之后的事务就不会执行，监控一直持续到EXEC命令。</p>
-</li>
-<li><p>MULTI：MULTI命令用于开启一个事务，它总是返回OK。MULTI执行之后，客户端可以继续向服务器发送任意多条命令，这些命令不会立即被执行，而是被放到一个队列中，当EXEC命令被调用时，所有队列中的命令才会被执行。</p>
-</li>
-<li><p>EXEC：执行所有事务块内的命令。返回事务块内所有命令的返回值，按命令执行的先后顺序排列。当操作被打断时，返回空值 nil 。</p>
-</li>
-<li><p>DISCARD：通过调用DISCARD，客户端可以清空事务队列，并放弃执行事务， 并且客户端会从事务状态中退出。</p>
-</li>
-<li><p>UNWATCH：UNWATCH命令可以取消watch对所有key的监控。</p>
-</li>
-</ul>
-<h3 id="事务管理（ACID）概述"><a href="#事务管理（ACID）概述" class="headerlink" title="事务管理（ACID）概述"></a>事务管理（ACID）概述</h3><h4 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h4><p>原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。</p>
-<h4 id="一致性（Consistency）"><a href="#一致性（Consistency）" class="headerlink" title="一致性（Consistency）"></a>一致性（Consistency）</h4><p>事务前后数据的完整性必须保持一致。</p>
-<h4 id="隔离性（Isolation）"><a href="#隔离性（Isolation）" class="headerlink" title="隔离性（Isolation）"></a>隔离性（Isolation）</h4><p>多个事务并发执行时，一个事务的执行不应影响其他事务的执行。</p>
-<h4 id="持久性（Durability）"><a href="#持久性（Durability）" class="headerlink" title="持久性（Durability）"></a>持久性（Durability）</h4><p>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，接下来即使数据库发生故障也不应该对其有任何影响。</p>
-<p>Redis的事务总是具有ACID中的一致性和隔离性，其他特性是不支持的。当服务器运行在AOF持久化模式下，并且appendfsync选项的值为always时，事务也具有耐久性。</p>
-<h3 id="Redis事务支持隔离性吗"><a href="#Redis事务支持隔离性吗" class="headerlink" title="Redis事务支持隔离性吗"></a>Redis事务支持隔离性吗</h3><p>Redis 是单进程程序，并且它保证在执行事务时，不会对事务进行中断，事务可以运行直到执行完所有事务队列中的命令为止。因此，<strong>Redis 的事务是总是带有隔离性的</strong>。</p>
-<h3 id="Redis事务保证原子性吗，支持回滚吗"><a href="#Redis事务保证原子性吗，支持回滚吗" class="headerlink" title="Redis事务保证原子性吗，支持回滚吗"></a>Redis事务保证原子性吗，支持回滚吗</h3><p>Redis中，单条命令是原子性执行的，但<strong>事务不保证原子性，且没有回滚</strong>。事务中任意命令执行失败，其余的命令仍会被执行。</p>
-<h3 id="Redis事务其他实现"><a href="#Redis事务其他实现" class="headerlink" title="Redis事务其他实现"></a>Redis事务其他实现</h3><ul>
-<li>基于Lua脚本，Redis可以保证脚本内的命令一次性、按顺序地执行，其同时也不提供事务运行错误的回滚，执行过程中如果部分命令运行错误，剩下的命令还是会继续运。</li>
-<li>基于中间标记变量，通过另外的标记变量来标识事务是否执行完成，读取数据时先读取该标记变量判断是否事务执行完成。但这样会需要额外写代码实现，比较繁琐。</li>
-</ul>
-<h2 id="集群方案"><a href="#集群方案" class="headerlink" title="集群方案"></a>集群方案</h2><h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><h4 id="哨兵的功能"><a href="#哨兵的功能" class="headerlink" title="哨兵的功能"></a>哨兵的功能</h4><p>sentinel，中文名是哨兵。哨兵是 redis 集群机构中非常重要的一个组件，主要有以下功能：</p>
-<ul>
-<li><strong>集群监控</strong>：负责监控 redis master 和 slave 进程是否正常工作。</li>
-<li><strong>消息通知</strong>：如果某个 redis 实例有故障，那么哨兵负责发送消息作为报警通知给管理员。</li>
-<li><strong>故障转移</strong>：如果 master node 挂掉了，会自动转移到 slave node 上。</li>
-<li><strong>配置中心</strong>：如果故障转移发生了，通知 client 客户端新的 master 地址。</li>
-</ul>
-<p><strong>哨兵用于实现 redis 集群的高可用</strong>，本身也是分布式的，作为一个哨兵集群去运行，互相协同工作。</p>
-<ol>
-<li>故障转移时，判断一个 master node 是否宕机了，需要大部分的哨兵都同意才行，涉及到了分布式选举的问题。</li>
-<li>即使部分哨兵节点挂掉了，哨兵集群还是能正常工作的，因为如果一个作为高可用机制重要组成部分的故障转移系统本身是单点的，那就很坑爹了。</li>
-</ol>
-<h4 id="哨兵的核心知识"><a href="#哨兵的核心知识" class="headerlink" title="哨兵的核心知识"></a>哨兵的核心知识</h4><ol>
-<li>哨兵至少需要 3 个实例，来保证自己的健壮性。</li>
-<li>哨兵 + redis 主从的部署架构，是不保证数据零丢失的，只能保证 redis 集群的高可用性。</li>
-<li>对于哨兵 + redis 主从这种复杂的部署架构，尽量在测试环境和生产环境，都进行充足的测试和演练。</li>
-</ol>
-<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><h3 id="Redis是单线程的，如何提高多核CPU的利用率"><a href="#Redis是单线程的，如何提高多核CPU的利用率" class="headerlink" title="Redis是单线程的，如何提高多核CPU的利用率"></a>Redis是单线程的，如何提高多核CPU的利用率</h3><p>可以在同一个服务器部署多个Redis的实例，并把他们当作不同的服务器来使用，在某些时候，无论如何一个服务器是不够的， 所以，如果你想使用多个CPU，你可以考虑一下分片（shard）。</p>
-<h3 id="为什么要做Redis分区"><a href="#为什么要做Redis分区" class="headerlink" title="为什么要做Redis分区"></a>为什么要做Redis分区</h3><p>分区可以让Redis管理更大的内存，Redis将可以使用所有机器的内存。如果没有分区，你最多只能使用一台机器的内存。分区使Redis的计算能力通过简单地增加计算机得到成倍提升，Redis的网络带宽也会随着计算机和网卡的增加而成倍增长。</p>
-<h3 id="Redis分区实现方案"><a href="#Redis分区实现方案" class="headerlink" title="Redis分区实现方案"></a>Redis分区实现方案</h3><ol>
-<li><strong>客户端分区</strong>就是在客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。大多数客户端已经实现了客户端分区。</li>
-<li><strong>代理分区</strong>意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些Redis实例，然后根据Redis的响应结果返回给客户端。redis和memcached的一种代理实现就是Twemproxy。</li>
-<li><strong>查询路由</strong>(Query routing) 的意思是客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。Redis Cluster实现了一种混合形式的查询路由，但并不是直接将请求从一个redis节点转发到另一个redis节点，而是在客户端的帮助下直接redirected到正确的redis节点。</li>
-</ol>
-<h3 id="Redis分区有什么缺点"><a href="#Redis分区有什么缺点" class="headerlink" title="Redis分区有什么缺点"></a>Redis分区有什么缺点</h3><ol>
-<li>涉及多个key的操作通常不会被支持。例如你不能对两个集合求交集，因为他们可能被存储到不同的Redis实例（实际上这种情况也有办法，但是不能直接使用交集指令）。</li>
-<li>同时操作多个key，则不能使用Redis事务。</li>
-<li>分区使用的粒度是key，不能使用一个非常长的排序key存储一个数据集</li>
-<li>当使用分区的时候，数据处理会非常复杂，例如为了备份你必须从不同的Redis实例和主机同时收集RDB / AOF文件。</li>
-<li>分区时动态扩容或缩容可能非常复杂。Redis集群在运行时增加或者删除Redis节点，能做到最大程度对用户透明地数据再平衡，但其他一些客户端分区或者代理分区方法则不支持这种特性。然而，有一种预分片的技术也可以较好的解决这个问题。</li>
-</ol>
-<h2 id="分布式问题"><a href="#分布式问题" class="headerlink" title="分布式问题"></a>分布式问题</h2><h3 id="Redis实现分布式锁"><a href="#Redis实现分布式锁" class="headerlink" title="Redis实现分布式锁"></a>Redis实现分布式锁</h3><p>Redis为单进程单线程模式，采用队列模式将并发访问变成串行访问，且多客户端对Redis的连接并不存在竞争关系Redis中可以使用SETNX命令实现分布式锁。</p>
-<p>当且仅当 key 不存在，将 key 的值设为 value。若给定的 key 已经存在，则 SETNX 不做任何动作</p>
-<p>SETNX 是『SET if Not eXists』(如果不存在，则 SET)的简写。</p>
-<p>返回值：设置成功，返回 1 。设置失败，返回 0 。</p>
-<p>使用SETNX完成同步锁的流程及事项如下：</p>
-<p>使用SETNX命令获取锁，若返回0（key已存在，锁已存在）则获取失败，反之获取成功</p>
-<p>为了防止获取锁后E程序出现异常，导致其他线程/进程调用SETNX命令总是返回0而进入死锁状态，需要为该key设置一个“合理”的过期时间</p>
-<p>释放锁，使用DEL命令将锁数据删除</p>
-<h3 id="如何解决-Redis-的并发竞争-Key-问题"><a href="#如何解决-Redis-的并发竞争-Key-问题" class="headerlink" title="如何解决 Redis 的并发竞争 Key 问题"></a>如何解决 Redis 的并发竞争 Key 问题</h3><p>所谓 Redis 的并发竞争 Key 的问题也就是多个系统同时对一个 key 进行操作，但是最后执行的顺序和我们期望的顺序不同，这样也就导致了结果的不同！</p>
-<p>推荐一种方案：分布式锁（zookeeper 和 redis 都可以实现分布式锁）。（如果不存在 Redis 的并发竞争 Key 问题，不要使用分布式锁，这样会影响性能）</p>
-<p>基于zookeeper临时有序节点可以实现的分布式锁。大致思想为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。完成业务流程后，删除对应的子节点释放锁。</p>
-<p>在实践中，当然是从以可靠性为主。所以首推Zookeeper。</p>
-<h3 id="分布式Redis是前期做还是后期规模上来了再做好？为什么？"><a href="#分布式Redis是前期做还是后期规模上来了再做好？为什么？" class="headerlink" title="分布式Redis是前期做还是后期规模上来了再做好？为什么？"></a>分布式Redis是前期做还是后期规模上来了再做好？为什么？</h3><p>既然Redis是如此的轻量（单实例只使用1M内存），为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便你只有一台服务器，你也可以一开始就让Redis以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。d</p>
-<p>一开始就多设置几个Redis实例，例如32或者64个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。</p>
-<p>这样的话，当你的数据不断增长，需要更多的Redis服务器时，你需要做的就是仅仅将Redis实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的Redis实例从第一台机器迁移到第二台机器。</p>
-<h3 id="什么是-RedLock"><a href="#什么是-RedLock" class="headerlink" title="什么是 RedLock"></a>什么是 RedLock</h3><p>Redis 官方站提出了一种权威的基于 Redis 实现分布式锁的方式名叫 Redlock，此种方式比原先的单节点的方法更安全。它可以保证以下特性：</p>
-<ol>
-<li>安全特性：互斥访问，即永远只有一个 client 能拿到锁</li>
-<li>避免死锁：最终 client 都可能拿到锁，不会出现死锁的情况，即使原本锁住某资源的 client crash 了或者出现了网络分区</li>
-<li>容错性：只要大部分 Redis 节点存活就可以正常提供服务</li>
-</ol>
-<h2 id="缓存特征"><a href="#缓存特征" class="headerlink" title="缓存特征"></a>缓存特征</h2><h3 id="命中率"><a href="#命中率" class="headerlink" title="命中率"></a>命中率</h3><p>当某个请求能够通过访问缓存而得到响应时，称为缓存命中。</p>
-<p>缓存命中率越高，缓存的利用率也就越高。</p>
-<h3 id="最大空间"><a href="#最大空间" class="headerlink" title="最大空间"></a>最大空间</h3><p>缓存通常位于内存中，内存的空间通常比磁盘空间小的多，因此缓存的最大空间不可能非常大。</p>
-<p>当缓存存放的数据量超过最大空间时，就需要淘汰部分数据来存放新到达的数据。</p>
-<h3 id="淘汰策略"><a href="#淘汰策略" class="headerlink" title="淘汰策略"></a>淘汰策略</h3><ul>
-<li>FIFO（First In First Out）：先进先出策略，在实时性的场景下，需要经常访问最新的数据，那么就可以使用 FIFO，使得最先进入的数据（最晚的数据）被淘汰。</li>
-<li>LRU（Least Recently Used）：最近最久未使用策略，优先淘汰最久未使用的数据，也就是上次被访问时间距离现在最久的数据。该策略可以保证内存中的数据都是热点数据，也就是经常被访问的数据，从而保证缓存命中率。</li>
-<li>LFU（Least Frequently Used）：最不经常使用策略，优先淘汰一段时间内使用次数最少的数据。</li>
-</ul>
-<h2 id="缓存使用举例"><a href="#缓存使用举例" class="headerlink" title="缓存使用举例"></a>缓存使用举例</h2><h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>当 HTTP 响应允许进行缓存时，浏览器会将 HTML、CSS、JavaScript、图片等静态资源进行缓存。</p>
-<h3 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h3><p>网络服务提供商（ISP）是网络访问的第一跳，通过将数据缓存在 ISP 中能够大大提高用户的访问速度。</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理位于服务器之前，请求与响应都需要经过反向代理。通过将数据缓存在反向代理，在用户请求反向代理时就可以直接使用缓存进行响应。</p>
-<h3 id="本地缓存"><a href="#本地缓存" class="headerlink" title="本地缓存"></a>本地缓存</h3><p>使用 Guava Cache 将数据缓存在服务器本地内存中，服务器代码可以直接读取本地内存中的缓存，速度非常快。</p>
-<h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><p>使用 Redis、Memcache 等分布式缓存将数据缓存在分布式缓存系统中。</p>
-<p>相对于本地缓存来说，分布式缓存单独部署，可以根据需求分配硬件资源。不仅如此，服务器集群都可以访问分布式缓存，而本地缓存需要在服务器集群之间进行同步，实现难度和性能开销上都非常大。</p>
-<h3 id="数据库缓存"><a href="#数据库缓存" class="headerlink" title="数据库缓存"></a>数据库缓存</h3><p>MySQL 等数据库管理系统具有自己的查询缓存机制来提高查询效率。</p>
-<h3 id="Java-内部的缓存"><a href="#Java-内部的缓存" class="headerlink" title="Java 内部的缓存"></a>Java 内部的缓存</h3><p>Java 为了优化空间，提高字符串、基本数据类型包装类的创建效率，设计了字符串常量池及 Byte、Short、Character、Integer、Long、Boolean 这六种包装类缓冲池。</p>
-<h3 id="CPU-多级缓存"><a href="#CPU-多级缓存" class="headerlink" title="CPU 多级缓存"></a>CPU 多级缓存</h3><p>CPU 为了解决运算速度与主存 IO 速度不匹配的问题，引入了多级缓存结构，同时使用 MESI 等缓存一致性协议来解决多核 CPU 缓存数据一致性的问题。</p>
-<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>内容分发网络（Content distribution network，CDN）是一种互连的网络系统，它利用更靠近用户的服务器从而更快更可靠地将 HTML、CSS、JavaScript、音乐、图片、视频等静态资源分发给用户。</p>
-<p>CDN 主要有以下优点：</p>
-<ul>
-<li>更快地将数据分发给用户；</li>
-<li>通过部署多台服务器，从而提高系统整体的带宽性能；</li>
-<li>多台服务器可以看成是一种冗余机制，从而具有高可用性。</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgd7wvhj30k20960td.jpg" alt="img"></p>
-<h2 id="缓存异常"><a href="#缓存异常" class="headerlink" title="缓存异常"></a>缓存异常</h2><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>缓存雪崩是指缓存同一时间大面积的失效，所以，后面的请求都会落到数据库上，造成数据库短时间内承受大量请求而崩掉。</p>
-<p><strong>解决方案</strong></p>
-<p>1、缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。</p>
-<p>2、一般并发量不是特别多的时候，使用最多的解决方案是加锁排队。</p>
-<p>3、给每一个缓存数据增加相应的缓存标记，记录缓存的是否失效，如果缓存标记失效，则更新数据缓存。</p>
-<h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><p>缓存穿透是指缓存和数据库中都没有的数据，导致所有的请求都落到数据库上，造成数据库短时间内承受大量请求而崩掉。</p>
-<p><strong>解决方案</strong></p>
-<p>1、接口层增加校验，如用户鉴权校验，id做基础校验，id&lt;=0的直接拦截；</p>
-<p>2、从缓存取不到的数据，在数据库中也没有取到，这时也可以将key-value对写为key-null，缓存有效时间可以设置短点，如30秒（设置太长会导致正常情况也没法使用）。这样可以防止攻击用户反复用同一个id暴力攻击；</p>
-<p>3、采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的 bitmap 中，一个一定不存在的数据会被这个 bitmap 拦截掉，从而避免了对底层存储系统的查询压力。</p>
-<p><strong>附加</strong></p>
-<p>对于空间的利用到达了一种极致，那就是Bitmap和布隆过滤器(Bloom Filter)。</p>
-<p><strong>Bitmap</strong>：典型的就是哈希表</p>
-<p>缺点是，Bitmap对于每个元素只能记录1bit信息，如果还想完成额外的功能，恐怕只能靠牺牲更多的空间、时间来完成了。</p>
-<p><strong>布隆过滤器（推荐）</strong></p>
-<p>就是引入了k(k&gt;1)k(k&gt;1)个相互独立的哈希函数，保证在给定的空间、误判率下，完成元素判重的过程。</p>
-<p>它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除困难。</p>
-<p>Bloom-Filter算法的核心思想就是利用多个不同的Hash函数来解决“冲突”。</p>
-<p>Hash存在一个冲突（碰撞）的问题，用同一个Hash得到的两个URL的值有可能相同。为了减少冲突，我们可以多引入几个Hash，如果通过其中的一个Hash值我们得出某元素不在集合中，那么该元素肯定不在集合中。只有在所有的Hash函数告诉我们该元素在集合中时，才能确定该元素存在于集合中。这便是Bloom-Filter的基本思想。</p>
-<p>Bloom-Filter一般用于在大数据量的集合中判定某元素是否存在。</p>
-<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>缓存击穿是指缓存中没有但数据库中有的数据（一般是缓存时间到期），这时由于并发用户特别多，同时读缓存没读到数据，又同时去数据库去取数据，引起数据库压力瞬间增大，造成过大压力。和缓存雪崩不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同数据都过期了，很多数据都查不到从而查数据库。</p>
-<p><strong>解决方案</strong></p>
-<p>1、设置热点数据永远不过期</p>
-<p>2、加互斥锁，互斥锁</p>
-<h3 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h3><p>缓存预热就是系统上线后，将相关的缓存数据直接加载到缓存系统。这样就可以避免在用户请求的时候，先查询数据库，然后再将数据缓存的问题！用户直接查询事先被预热的缓存数据！</p>
-<p><strong>解决方案</strong></p>
-<p>1、直接写个缓存刷新页面，上线时手工操作一下；</p>
-<p>2、数据量不大，可以在项目启动的时候自动进行加载；</p>
-<p>3、定时刷新缓存；</p>
-<h3 id="缓存降级"><a href="#缓存降级" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>当访问量剧增、服务出现问题（如响应时间慢或不响应）或非核心服务影响到核心流程的性能时，仍然需要保证服务还是可用的，即使是有损服务。系统可以根据一些关键数据进行自动降级，也可以配置开关实现人工降级。</p>
-<p>缓存降级的最终目的是保证核心服务可用，即使是有损的。而且有些服务是无法降级的（如加入购物车、结算）。</p>
-<p>在进行降级之前要对系统进行梳理，看看系统是不是可以丢卒保帅；从而梳理出哪些必须誓死保护，哪些可降级；比如可以参考日志级别设置预案：</p>
-<p>1、一般：比如有些服务偶尔因为网络抖动或者服务正在上线而超时，可以自动降级；</p>
-<p>2、警告：有些服务在一段时间内成功率有波动（如在95~100%之间），可以自动降级或人工降级，并发送告警；</p>
-<p>3、错误：比如可用率低于90%，或者数据库连接池被打爆了，或者访问量突然猛增到系统能承受的最大阀值，此时可以根据情况自动降级或者人工降级；</p>
-<p>4、严重错误：比如因为特殊原因数据错误了，此时需要紧急人工降级。</p>
-<p>服务降级的目的，是为了防止Redis服务故障，导致数据库跟着一起发生雪崩问题。因此，对于不重要的缓存数据，可以采取服务降级策略，例如一个比较常见的做法就是，Redis出现问题，不去数据库查询，而是直接返回默认值给用户。</p>
-<h3 id="热点数据和冷数据"><a href="#热点数据和冷数据" class="headerlink" title="热点数据和冷数据"></a>热点数据和冷数据</h3><p>热点数据，缓存才有价值</p>
-<p>对于冷数据而言，大部分数据可能还没有再次访问到就已经被挤出内存，不仅占用内存，而且价值不大。频繁修改的数据，看情况考虑使用缓存</p>
-<p>对于热点数据，比如我们的某IM产品，生日祝福模块，当天的寿星列表，缓存以后可能读取数十万次。再举个例子，某导航产品，我们将导航信息，缓存以后可能读取数百万次。</p>
-<p>数据更新前至少读取两次，缓存才有意义。这个是最基本的策略，如果缓存还没有起作用就失效了，那就没有太大价值了。</p>
-<p>那存不存在，修改频率很高，但是又不得不考虑缓存的场景呢？有！比如，这个读取接口对数据库的压力很大，但是又是热点数据，这个时候就需要考虑通过缓存手段，减少数据库的压力，比如我们的某助手产品的，点赞数，收藏数，分享数等是非常典型的热点数据，但是又不断变化，此时就需要将数据同步保存到Redis缓存，减少数据库压力。</p>
-<p><strong>缓存热点key</strong></p>
-<p>缓存中的一个Key(比如一个促销商品)，在某个时间点过期的时候，恰好在这个时间点对这个Key有大量的并发请求过来，这些请求发现缓存过期一般都会从后端DB加载数据并回设到缓存，这个时候大并发的请求可能会瞬间把后端DB压垮。</p>
-<p><strong>解决方案</strong></p>
-<p>对缓存查询加锁，如果KEY不存在，就加锁，然后查DB入缓存，然后解锁；其他进程如果发现有锁就等待，然后等解锁后返回数据或者进入DB查询</p>
-<p><strong>如何保证缓存与数据库双写时的数据一致性？</strong></p>
-<p>你只要用缓存，就可能会涉及到缓存与数据库双存储双写，你只要是双写，就一定会有数据一致性的问题，那么你如何解决一致性问题？</p>
-<p>一般来说，就是如果你的系统不是严格要求缓存+数据库必须一致性的话，缓存可以稍微的跟数据库偶尔有不一致的情况，最好不要做这个方案，读请求和写请求串行化，串到一个内存队列里去，这样就可以保证一定不会出现不一致的情况</p>
-<p>串行化之后，就会导致系统的吞吐量会大幅度的降低，用比正常情况下多几倍的机器去支撑线上的一个请求。</p>
-<p>还有一种方式就是可能会暂时产生不一致的情况，但是发生的几率特别小，就是<strong>先更新数据库，然后再删除缓存</strong>。</p>
-<h2 id="数据分布"><a href="#数据分布" class="headerlink" title="数据分布"></a>数据分布</h2><h3 id="顺序分布"><a href="#顺序分布" class="headerlink" title="顺序分布"></a>顺序分布</h3><p>将数据划分为多个连续的部分，按数据的 ID 或者时间分布到不同节点上。例如 User 表的 ID 范围为 1 ~ 7000，使用顺序分布可以将其划分成多个子表，对应的主键范围为 1 ~ 1000，1001 ~ 2000，..…，6001 ~ 7000。</p>
-<p>顺序分布相比于哈希分布的主要优点如下：</p>
-<ul>
-<li>能保持数据原有的顺序；</li>
-<li>并且能够准确控制每台服务器存储的数据量，从而使得存储空间的利用率最大。</li>
-</ul>
-<h3 id="哈希分布"><a href="#哈希分布" class="headerlink" title="哈希分布"></a>哈希分布</h3><p>哈希分布就是将数据计算哈希值之后，按照哈希值分配到不同的节点上。例如有 N 个节点，数据的主键为 key，则将该数据分配的节点序号为：hash(key)%N。</p>
-<p>传统的哈希分布算法存在一个问题：<strong>当节点数量变化时，也就是 N 值变化，那么几乎所有的数据都需要重新分布，将导致大量的数据迁移。</strong></p>
-<h3 id="一致性哈希"><a href="#一致性哈希" class="headerlink" title="一致性哈希"></a>一致性哈希</h3><p>Distributed Hash Table（DHT） 是一种哈希分布方式，其目的是为了克服传统哈希分布在服务器节点数量变化时大量数据迁移的问题。</p>
-<p><strong>基本原理</strong></p>
-<p>将哈希空间 [0, 2^n^-1] 看成一个哈希环，每个服务器节点都配置到哈希环上。每个数据对象通过哈希取模得到哈希值之后，存放到哈希环中顺时针方向第一个大于等于该哈希值的节点上。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgeci4vj30fa0fd0te.jpg" alt="img"></p>
-<p>一致性哈希在增加或者删除节点时只会影响到哈希环中相邻的节点，例如下图中新增节点 X，只需要将它前一个节点 C 上的数据重新进行分布即可，对于节点 A、B、D 都没有影响。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgf7o3rj30f60fo0ti.jpg" alt="img"></p>
-<h3 id="虚拟节点"><a href="#虚拟节点" class="headerlink" title="虚拟节点"></a>虚拟节点</h3><p>上面描述的一致性哈希存在数据分布不均匀的问题，节点存储的数据量有可能会存在很大的不同。</p>
-<p>数据不均匀主要是因为节点在哈希环上分布的不均匀，这种情况在节点数量很少的情况下尤其明显。</p>
-<p>解决方式是通过增加虚拟节点，然后将虚拟节点映射到真实节点上。虚拟节点的数量比真实节点来得多，那么虚拟节点在哈希环上分布的均匀性就会比原来的真实节点好，从而使得数据分布也更加均匀。</p>
 
       
     </div>
@@ -2853,6 +2410,449 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">Redis与缓存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 12:37:59" itemprop="dateModified" datetime="2020-06-02T12:37:59+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h3><p>Redis(Remote Dictionary Server) 是一个使用 C 语言编写的，开源的（BSD许可）高性能非关系型（NoSQL）的键值对数据库。</p>
+<p>Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。</p>
+<p>与传统数据库不同的是， Redis 的数据是存在内存中的，所以读写速度非常快，因此 redis 被广泛应用于缓存方向，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。另外，Redis 也经常用来做分布式锁。除此之外，Redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p>
+<h3 id="Redis的优缺点"><a href="#Redis的优缺点" class="headerlink" title="Redis的优缺点"></a>Redis的优缺点</h3><p><strong>优点</strong></p>
+<ul>
+<li>读写性能优异， Redis能读的速度是110000次/s，写的速度是81000次/s。</li>
+<li>支持数据持久化，支持AOF和RDB两种持久化方式。</li>
+<li>支持事务，Redis的所有操作都是原子性的，同时Redis还支持对几个操作合并后的原子性执行。</li>
+<li>数据结构丰富，除了支持string类型的value外还支持hash、set、zset、list等数据结构。</li>
+<li>支持主从复制，主机会自动将数据同步到从机，可以进行读写分离。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</li>
+<li>Redis 不具备自动容错和恢复功能，主机从机的宕机都会导致前端部分读写请求失败，需要等待机器重启或者手动切换前端的IP才能恢复。</li>
+<li>主机宕机，宕机前有部分数据未能及时同步到从机，切换IP后还会引入数据不一致的问题，降低了系统的可用性。</li>
+<li>Redis 较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
+</ul>
+<h3 id="为什么要用缓存"><a href="#为什么要用缓存" class="headerlink" title="为什么要用缓存"></a>为什么要用缓存</h3><p>主要从“高性能”和“高并发”这两点来看待这个问题。</p>
+<p><strong>高性能：</strong></p>
+<p>假如用户第一次访问数据库中的某些数据。这个过程会比较慢，因为是从硬盘上读取的。将该用户访问的数据存在数缓存中，这样下一次再访问这些数据的时候就可以直接从缓存中获取了。操作缓存就是直接操作内存，所以速度相当快。如果数据库中的对应数据改变的之后，同步改变缓存中相应的数据即可！</p>
+<p><strong>高并发：</strong></p>
+<p>直接操作缓存能够承受的请求是远远大于直接访问数据库的，所以我们可以考虑把数据库中的部分数据转移到缓存中去，这样用户的一部分请求会直接到缓存这里而不用经过数据库。</p>
+<h3 id="为什么不用-map做缓存"><a href="#为什么不用-map做缓存" class="headerlink" title="为什么不用 map做缓存"></a>为什么不用 map做缓存</h3><p>缓存分为本地缓存和分布式缓存。以 Java 为例，使用自带的 map 实现的是本地缓存，最主要的特点是轻量以及快速，生命周期随着 jvm 的销毁而结束，并且在多实例的情况下，每个实例都需要各自保存一份缓存，缓存不具有一致性。</p>
+<p>使用 redis之类的称为分布式缓存，在多实例的情况下，各实例共用一份缓存数据，缓存具有一致性。缺点是需要保持 redis 服务的高可用，整个程序架构上较为复杂。</p>
+<h3 id="Redis为什么这么快"><a href="#Redis为什么这么快" class="headerlink" title="Redis为什么这么快"></a>Redis为什么这么快</h3><ul>
+<li>完全基于内存，绝大部分请求是纯粹的内存操作，非常快速。数据存在内存中，类似于 HashMap，HashMap 的优势就是查找和操作的时间复杂度都是O(1)；</li>
+<li>数据结构简单，对数据操作也简单，Redis 中的数据结构是专门进行设计的；</li>
+<li>采用<strong>单线程</strong>，避免了不必要的上下文切换和竞争条件，也不存在多进程或者多线程导致的切换而消耗 CPU，不用去考虑各种锁的问题，<strong>不存在加锁释放锁操作</strong>，没有因为可能出现死锁而导致的性能消耗；</li>
+<li>使用多路 I/O 复用模型，非阻塞 IO；</li>
+<li>使用底层模型不同，它们之间底层实现方式以及与客户端之间通信的应用协议不一样，Redis 直接自己构建了 VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求；</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Redis相比其他缓存，有一个非常大的优势，就是支持多种数据类型。</p>
+<p>Redis主要有5种数据类型，包括String，List，Set，Zset，Hash，满足大部分的使用要求</p>
+<ul>
+<li><strong>string</strong>——适合最简单的k-v存储，类似于memcached的存储结构，短信验证码，配置信息等，就用这种类型来存储。</li>
+<li><strong>hash</strong>——一般key为ID或者唯一标示，value对应的就是详情了。如商品详情，个人信息详情，新闻详情等。</li>
+<li><strong>list</strong>——因为list是有序的，比较适合存储一些有序且数据相对固定的数据。如省市区表、字典表等。因为list是有序的，适合根据写入的时间来排序，如：最新的热点新闻，消息队列等。</li>
+<li><strong>set</strong>——可以简单的理解为ID-List的模式，如微博中一个人有哪些好友，set最牛的地方在于，可以对两个set提供交集、并集、差集操作。例如：查找两个人共同的好友等。</li>
+<li><strong>Sorted Set</strong>——是set的增强版本，增加了一个score参数，自动会根据score的值进行排序。比较适合类似于top 10等不根据插入的时间来排序的数据。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>类型</strong></th>
+<th align="center"><strong>存储值</strong></th>
+<th align="center"><strong>操作</strong></th>
+<th align="center"><strong>应用场景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">STRING</td>
+<td align="center">字符串、整数或者浮点数</td>
+<td align="center">对整个字符串或者字符串的其中一部分执行操作； 对整数和浮点数执行自增或者自减操作</td>
+<td align="center">做简单的键值对缓存</td>
+</tr>
+<tr>
+<td align="center">LIST</td>
+<td align="center">列表</td>
+<td align="center">从两端压入或者弹出元素； 对单个或者多个元素进行修剪，只保留一个范围内的元素</td>
+<td align="center">存储一些列表型的数据结构，类似粉丝列表、文章的评论列表之类的数据</td>
+</tr>
+<tr>
+<td align="center">SET</td>
+<td align="center">无序集合</td>
+<td align="center">添加、获取、移除单个元素； 检查一个元素是否存在于集合中； 计算交集、并集、差集； 从集合里面随机获取元素</td>
+<td align="center">交集、并集、差集的操作，比如交集，可以把两个人的粉丝列表整一个交集</td>
+</tr>
+<tr>
+<td align="center">HASH</td>
+<td align="center">哈希</td>
+<td align="center">添加、获取、移除单个键值对； 获取所有键值对； 检查某个键是否存在</td>
+<td align="center">结构化的数据，比如一个对象</td>
+</tr>
+<tr>
+<td align="center">ZSET</td>
+<td align="center">有序集合</td>
+<td align="center">添加、获取、删除元素； 根据分值范围或者成员来获取元素； 计算一个键的排名</td>
+<td align="center">去重但可以排序，如获取排名前几名的用户</td>
+</tr>
+</tbody></table>
+<p>如上所述，虽然Redis不像关系数据库那么复杂的数据结构，但是，也能适合很多场景，比一般的缓存数据结构要多。了解每种数据结构适合的业务场景，不仅有利于提升开发效率，也能有效利用Redis的性能。</p>
+<h2 id="Redis的应用场景"><a href="#Redis的应用场景" class="headerlink" title="Redis的应用场景"></a>Redis的应用场景</h2><h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><p>可以对 String 进行自增自减运算，从而实现计数器功能。Redis 这种内存型数据库的读写性能非常高，很适合存储频繁读写的计数量。</p>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来保证缓存的命中率。</p>
+<h3 id="会话缓存"><a href="#会话缓存" class="headerlink" title="会话缓存"></a>会话缓存</h3><p>可以使用 Redis 来统一存储多台应用服务器的会话信息。当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性。</p>
+<h3 id="全页缓存（FPC）"><a href="#全页缓存（FPC）" class="headerlink" title="全页缓存（FPC）"></a>全页缓存（FPC）</h3><p>除基本的会话token之外，Redis还提供很简便的FPC平台。以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
+<h3 id="查找表"><a href="#查找表" class="headerlink" title="查找表"></a>查找表</h3><p>例如 DNS 记录就很适合使用 Redis 进行存储。查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效，因为缓存不作为可靠的数据来源。</p>
+<h3 id="消息队列-发布-订阅功能"><a href="#消息队列-发布-订阅功能" class="headerlink" title="消息队列(发布/订阅功能)"></a>消息队列(发布/订阅功能)</h3><p>List 是一个双向链表，可以通过 lpush 和 rpop 写入和读取消息。不过最好使用 Kafka、RabbitMQ 等消息中间件。</p>
+<h3 id="分布式锁实现"><a href="#分布式锁实现" class="headerlink" title="分布式锁实现"></a>分布式锁实现</h3><p>在分布式场景下，无法使用单机环境下的锁来对多个节点上的进程进行同步。可以使用 Redis 自带的 SETNX 命令实现分布式锁，除此之外，还可以使用官方提供的 RedLock 分布式锁实现。</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>Set 可以实现交集、并集等操作，从而实现共同好友等功能。ZSet 可以实现有序性操作，从而实现排行榜等功能。</p>
+<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><p>持久化就是把内存的数据写到磁盘中去，防止服务宕机了内存数据丢失。</p>
+<h3 id="持久化机制和优缺点"><a href="#持久化机制和优缺点" class="headerlink" title="持久化机制和优缺点"></a>持久化机制和优缺点</h3><p>Redis 提供两种持久化机制 RDB（默认） 和 AOF 机制；</p>
+<h4 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h4><p>RDB是Redis默认的持久化方式。按照一定的时间将内存的数据以快照的形式保存到硬盘中，对应产生的数据文件为dump.rdb。通过配置文件中的save参数来定义快照的周期。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>只有一个文件 dump.rdb，方便持久化。</li>
+<li>容灾性好，一个文件可以保存到安全的磁盘。</li>
+<li>性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以是 IO 最大化。使用单独子进程来进行持久化，主进程不会进行任何 IO 操作，保证了 redis 的高性能。</li>
+<li>相对于数据集大时，比 AOF 的启动效率更高。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<p>数据安全性低。RDB 是间隔一段时间进行持久化，如果持久化之间 redis 发生故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候)</p>
+<h4 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h4><p>AOF持久化(即Append Only File持久化)，则是将Redis执行的每次写命令记录到单独的日志文件中，当重启Redis会重新将持久化的日志中文件恢复数据。</p>
+<p>当两种方式同时开启时，数据恢复Redis会优先选择AOF恢复。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>数据安全，aof 持久化可以配置 appendfsync 属性，有 always，每进行一次 命令操作就记录到 aof 文件中一次。</li>
+<li>通过 append 模式写文件，即使中途服务器宕机，可以通过 redis-check-aof 工具解决数据一致性问题。</li>
+<li>AOF 机制的 rewrite 模式。AOF 文件没被 rewrite 之前（文件过大时会对命令 进行合并重写），可以删除其中的某些命令（比如误操作的 flushall）</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>AOF 文件比 RDB 文件大，且恢复速度慢。</li>
+<li>数据集大的时候，比 rdb 启动效率低。</li>
+</ol>
+<h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><ul>
+<li>AOF文件比RDB更新频率高，优先使用AOF还原数据</li>
+<li>AOF比RDB更安全也更大</li>
+<li>RDB性能比AOF好</li>
+<li>如果两个都配了优先加载AOF</li>
+</ul>
+<h3 id="如何选择合适的持久化方式"><a href="#如何选择合适的持久化方式" class="headerlink" title="如何选择合适的持久化方式"></a>如何选择合适的持久化方式</h3><p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性，你应该同时使用两种持久化功能。在这种情况下，当 Redis 重启的时候会优先载入AOF文件来恢复原始的数据，因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整。</p>
+<p>如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用RDB持久化。</p>
+<p>有很多用户都只使用AOF持久化，但并不推荐这种方式，因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外，使用RDB还可以避免AOF程序的bug。</p>
+<p>如果你只希望你的数据在服务器运行的时候存在，你也可以不使用任何持久化方式。</p>
+<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p>如果Redis被当做缓存使用，使用<strong>一致性哈希</strong>实现动态扩容缩容。</p>
+<p>如果Redis被当做一个持久化存储使用，必须使用固定的keys-to-nodes映射关系，节点的数量一旦确定不能变化。否则的话(即Redis节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有Redis集群可以做到这样。</p>
+<h3 id="过期键的删除策略"><a href="#过期键的删除策略" class="headerlink" title="过期键的删除策略"></a>过期键的删除策略</h3><p>Redis是key-value数据库，我们可以设置Redis中缓存的key的过期时间。Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处理。</p>
+<p>过期策略通常有以下三种：</p>
+<ol>
+<li><strong>定时过期</strong>：每个设置过期时间的key都需要创建一个定时器，到过期时间就会立即清除。该策略可以立即清除过期的数据，对内存很友好；但是会占用大量的CPU资源去处理过期的数据，从而影响缓存的响应时间和吞吐量。</li>
+<li><strong>惰性过期</strong>：只有当访问一个key时，才会判断该key是否已过期，过期则清除。该策略可以最大化地节省CPU资源，却对内存非常不友好。极端情况可能出现大量的过期key没有再次被访问，从而不会被清除，占用大量内存。</li>
+<li><strong>定期过期</strong>：每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。该策略是前两者的一个折中方案。通过调整定时扫描的时间间隔和每次扫描的限定耗时，可以在不同情况下使得CPU和内存资源达到最优的平衡效果。</li>
+</ol>
+<p>(expires字典会保存所有设置了过期时间的key的过期时间数据，其中，key是指向键空间中的某个键的指针，value是该键的毫秒精度的UNIX时间戳表示的过期时间。键空间是指该Redis集群中保存的所有键。)</p>
+<p>Redis中同时使用了惰性过期和定期过期两种过期策略。</p>
+<p><strong>Redis key的过期时间和永久有效分别怎么设置？</strong></p>
+<p>EXPIRE和PERSIST命令。</p>
+<p><strong>我们知道通过expire来设置key 的过期时间，那么对过期的数据怎么处理呢?</strong></p>
+<p>除了缓存服务器自带的缓存失效策略之外（Redis默认的有6中策略可供选择），我们还可以根据具体的业务需求进行自定义的缓存淘汰，常见的策略有两种：</p>
+<ol>
+<li>定时去清理过期的缓存；</li>
+<li>当有用户请求过来时，再判断这个请求所用到的缓存是否过期，过期的话就去底层系统得到新数据并更新缓存。</li>
+</ol>
+<p>两者各有优劣，第一种的缺点是维护大量缓存的key是比较麻烦的，第二种的缺点就是每次用户请求过来都要判断缓存失效，逻辑相对比较复杂！具体用哪种方案，大家可以根据自己的应用场景来权衡。</p>
+<h2 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h2><p><strong>MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？</strong></p>
+<p>redis内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。</p>
+<h3 id="内存淘汰策略"><a href="#内存淘汰策略" class="headerlink" title="内存淘汰策略"></a>内存淘汰策略</h3><p>Redis的内存淘汰策略是指在Redis的用于缓存的内存不足时，怎么处理需要新写入且需要申请额外空间的数据。</p>
+<p>1、全局的键空间选择性移除</p>
+<ul>
+<li><strong>noeviction</strong>：当内存不足以容纳新写入数据时，新写入操作会报错。</li>
+<li><strong>allkeys-lru</strong>：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key。（这个是最常用的）</li>
+<li><strong>allkeys-random</strong>：当内存不足以容纳新写入数据时，在键空间中，随机移除某个key。</li>
+</ul>
+<p>2、设置过期时间的键空间选择性移除</p>
+<ul>
+<li><strong>volatile-lru</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，移除最近最少使用的key。</li>
+<li><strong>volatile-random</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，随机移除某个key。</li>
+<li><strong>volatile-ttl</strong>：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，有更早过期时间的key优先移除。</li>
+</ul>
+<p><strong>总结</strong></p>
+<p>Redis的内存淘汰策略的选取并不会影响过期的key的处理。内存淘汰策略用于处理内存不足时的需要申请额外空间的数据；过期策略用于处理过期的缓存数据。</p>
+<h3 id="内存用完了会发生什么"><a href="#内存用完了会发生什么" class="headerlink" title="内存用完了会发生什么"></a>内存用完了会发生什么</h3><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正常返回。）</p>
+<p>或者可以配置内存淘汰机制，当Redis达到内存上限时会冲刷掉旧的内容。</p>
+<h3 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h3><p>可以好好利用Hash,list,sorted set,set等集合类型数据，因为通常情况下很多小的Key-Value可以用更紧凑的方式存放到一起。</p>
+<p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key，而是应该把这个用户的所有信息存储到一张散列表里面。</p>
+<h2 id="线程模型"><a href="#线程模型" class="headerlink" title="线程模型"></a>线程模型</h2><p>Redis基于Reactor模式开发了网络事件处理器，这个处理器被称为文件事件处理器（file event handler）。它的组成结构为4部分：多个套接字、IO多路复用程序、文件事件分派器、事件处理器。因为文件事件分派器队列的消费是单线程的，所以Redis才叫<strong>单线程模型</strong>。</p>
+<p>文件事件处理器使用 I/O 多路复用（multiplexing）程序来同时监听多个套接字， 并根据套接字目前执行的任务来为套接字关联不同的事件处理器。</p>
+<p>当被监听的套接字准备好执行连接应答（accept）、读取（read）、写入（write）、关闭（close）等操作时， 与操作相对应的文件事件就会产生， 这时文件事件处理器就会调用套接字之前关联好的事件处理器来处理这些事件。</p>
+<p>虽然文件事件处理器以单线程方式运行， 但通过使用 I/O 多路复用程序来监听多个套接字， 文件事件处理器既实现了高性能的网络通信模型， 又可以很好地与 redis 服务器中其他同样以单线程方式运行的模块进行对接， 这保持了 Redis 内部单线程设计的简单性。</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="什么是事务"><a href="#什么是事务" class="headerlink" title="什么是事务"></a>什么是事务</h3><p>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
+<p>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
+<h3 id="Redis事务的概念"><a href="#Redis事务的概念" class="headerlink" title="Redis事务的概念"></a>Redis事务的概念</h3><p>Redis 事务的本质是通过MULTI、EXEC、WATCH等一组命令的集合。事务支持一次执行多个命令，一个事务中所有命令都会被序列化。在事务执行过程，会按照顺序串行化执行队列中的命令，其他客户端提交的命令请求不会插入到事务执行命令序列中。</p>
+<p>总结说：redis事务就是一次性、顺序性、排他性的执行一个队列中的一系列命令。</p>
+<h3 id="Redis事务的三个阶段"><a href="#Redis事务的三个阶段" class="headerlink" title="Redis事务的三个阶段"></a>Redis事务的三个阶段</h3><ul>
+<li>事务开始 MULTI</li>
+<li>命令入队</li>
+<li>事务执行 EXEC</li>
+</ul>
+<p>事务执行过程中，如果服务端收到有EXEC、DISCARD、WATCH、MULTI之外的请求，将会把请求放入队列中排队</p>
+<h3 id="Redis事务相关命令"><a href="#Redis事务相关命令" class="headerlink" title="Redis事务相关命令"></a>Redis事务相关命令</h3><p>Redis会将一个事务中的所有命令序列化，然后按顺序执行。</p>
+<ul>
+<li><strong>redis 不支持回滚</strong>，“Redis 在事务失败时不进行回滚，而是继续执行余下的命令”， 所以 Redis 的内部可以保持简单且快速。</li>
+<li>如果在一个事务中的命令出现错误，那么所有的命令都不会执行；</li>
+<li>如果在一个事务中出现运行错误，那么正确的命令会被执行。</li>
+</ul>
+<p>Redis事务功能是通过MULTI、EXEC、DISCARD和WATCH 四个原语实现的</p>
+<ul>
+<li><p>WATCH：WATCH 命令是一个乐观锁，可以为 Redis 事务提供 check-and-set （CAS）行为。可以监控一个或多个键，一旦其中有一个键被修改（或删除），之后的事务就不会执行，监控一直持续到EXEC命令。</p>
+</li>
+<li><p>MULTI：MULTI命令用于开启一个事务，它总是返回OK。MULTI执行之后，客户端可以继续向服务器发送任意多条命令，这些命令不会立即被执行，而是被放到一个队列中，当EXEC命令被调用时，所有队列中的命令才会被执行。</p>
+</li>
+<li><p>EXEC：执行所有事务块内的命令。返回事务块内所有命令的返回值，按命令执行的先后顺序排列。当操作被打断时，返回空值 nil 。</p>
+</li>
+<li><p>DISCARD：通过调用DISCARD，客户端可以清空事务队列，并放弃执行事务， 并且客户端会从事务状态中退出。</p>
+</li>
+<li><p>UNWATCH：UNWATCH命令可以取消watch对所有key的监控。</p>
+</li>
+</ul>
+<h3 id="事务管理（ACID）概述"><a href="#事务管理（ACID）概述" class="headerlink" title="事务管理（ACID）概述"></a>事务管理（ACID）概述</h3><h4 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h4><p>原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。</p>
+<h4 id="一致性（Consistency）"><a href="#一致性（Consistency）" class="headerlink" title="一致性（Consistency）"></a>一致性（Consistency）</h4><p>事务前后数据的完整性必须保持一致。</p>
+<h4 id="隔离性（Isolation）"><a href="#隔离性（Isolation）" class="headerlink" title="隔离性（Isolation）"></a>隔离性（Isolation）</h4><p>多个事务并发执行时，一个事务的执行不应影响其他事务的执行。</p>
+<h4 id="持久性（Durability）"><a href="#持久性（Durability）" class="headerlink" title="持久性（Durability）"></a>持久性（Durability）</h4><p>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，接下来即使数据库发生故障也不应该对其有任何影响。</p>
+<p>Redis的事务总是具有ACID中的一致性和隔离性，其他特性是不支持的。当服务器运行在AOF持久化模式下，并且appendfsync选项的值为always时，事务也具有耐久性。</p>
+<h3 id="Redis事务支持隔离性吗"><a href="#Redis事务支持隔离性吗" class="headerlink" title="Redis事务支持隔离性吗"></a>Redis事务支持隔离性吗</h3><p>Redis 是单进程程序，并且它保证在执行事务时，不会对事务进行中断，事务可以运行直到执行完所有事务队列中的命令为止。因此，<strong>Redis 的事务是总是带有隔离性的</strong>。</p>
+<h3 id="Redis事务保证原子性吗，支持回滚吗"><a href="#Redis事务保证原子性吗，支持回滚吗" class="headerlink" title="Redis事务保证原子性吗，支持回滚吗"></a>Redis事务保证原子性吗，支持回滚吗</h3><p>Redis中，单条命令是原子性执行的，但<strong>事务不保证原子性，且没有回滚</strong>。事务中任意命令执行失败，其余的命令仍会被执行。</p>
+<h3 id="Redis事务其他实现"><a href="#Redis事务其他实现" class="headerlink" title="Redis事务其他实现"></a>Redis事务其他实现</h3><ul>
+<li>基于Lua脚本，Redis可以保证脚本内的命令一次性、按顺序地执行，其同时也不提供事务运行错误的回滚，执行过程中如果部分命令运行错误，剩下的命令还是会继续运。</li>
+<li>基于中间标记变量，通过另外的标记变量来标识事务是否执行完成，读取数据时先读取该标记变量判断是否事务执行完成。但这样会需要额外写代码实现，比较繁琐。</li>
+</ul>
+<h2 id="集群方案"><a href="#集群方案" class="headerlink" title="集群方案"></a>集群方案</h2><h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><h4 id="哨兵的功能"><a href="#哨兵的功能" class="headerlink" title="哨兵的功能"></a>哨兵的功能</h4><p>sentinel，中文名是哨兵。哨兵是 redis 集群机构中非常重要的一个组件，主要有以下功能：</p>
+<ul>
+<li><strong>集群监控</strong>：负责监控 redis master 和 slave 进程是否正常工作。</li>
+<li><strong>消息通知</strong>：如果某个 redis 实例有故障，那么哨兵负责发送消息作为报警通知给管理员。</li>
+<li><strong>故障转移</strong>：如果 master node 挂掉了，会自动转移到 slave node 上。</li>
+<li><strong>配置中心</strong>：如果故障转移发生了，通知 client 客户端新的 master 地址。</li>
+</ul>
+<p><strong>哨兵用于实现 redis 集群的高可用</strong>，本身也是分布式的，作为一个哨兵集群去运行，互相协同工作。</p>
+<ol>
+<li>故障转移时，判断一个 master node 是否宕机了，需要大部分的哨兵都同意才行，涉及到了分布式选举的问题。</li>
+<li>即使部分哨兵节点挂掉了，哨兵集群还是能正常工作的，因为如果一个作为高可用机制重要组成部分的故障转移系统本身是单点的，那就很坑爹了。</li>
+</ol>
+<h4 id="哨兵的核心知识"><a href="#哨兵的核心知识" class="headerlink" title="哨兵的核心知识"></a>哨兵的核心知识</h4><ol>
+<li>哨兵至少需要 3 个实例，来保证自己的健壮性。</li>
+<li>哨兵 + redis 主从的部署架构，是不保证数据零丢失的，只能保证 redis 集群的高可用性。</li>
+<li>对于哨兵 + redis 主从这种复杂的部署架构，尽量在测试环境和生产环境，都进行充足的测试和演练。</li>
+</ol>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><h3 id="Redis是单线程的，如何提高多核CPU的利用率"><a href="#Redis是单线程的，如何提高多核CPU的利用率" class="headerlink" title="Redis是单线程的，如何提高多核CPU的利用率"></a>Redis是单线程的，如何提高多核CPU的利用率</h3><p>可以在同一个服务器部署多个Redis的实例，并把他们当作不同的服务器来使用，在某些时候，无论如何一个服务器是不够的， 所以，如果你想使用多个CPU，你可以考虑一下分片（shard）。</p>
+<h3 id="为什么要做Redis分区"><a href="#为什么要做Redis分区" class="headerlink" title="为什么要做Redis分区"></a>为什么要做Redis分区</h3><p>分区可以让Redis管理更大的内存，Redis将可以使用所有机器的内存。如果没有分区，你最多只能使用一台机器的内存。分区使Redis的计算能力通过简单地增加计算机得到成倍提升，Redis的网络带宽也会随着计算机和网卡的增加而成倍增长。</p>
+<h3 id="Redis分区实现方案"><a href="#Redis分区实现方案" class="headerlink" title="Redis分区实现方案"></a>Redis分区实现方案</h3><ol>
+<li><strong>客户端分区</strong>就是在客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。大多数客户端已经实现了客户端分区。</li>
+<li><strong>代理分区</strong>意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些Redis实例，然后根据Redis的响应结果返回给客户端。redis和memcached的一种代理实现就是Twemproxy。</li>
+<li><strong>查询路由</strong>(Query routing) 的意思是客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。Redis Cluster实现了一种混合形式的查询路由，但并不是直接将请求从一个redis节点转发到另一个redis节点，而是在客户端的帮助下直接redirected到正确的redis节点。</li>
+</ol>
+<h3 id="Redis分区有什么缺点"><a href="#Redis分区有什么缺点" class="headerlink" title="Redis分区有什么缺点"></a>Redis分区有什么缺点</h3><ol>
+<li>涉及多个key的操作通常不会被支持。例如你不能对两个集合求交集，因为他们可能被存储到不同的Redis实例（实际上这种情况也有办法，但是不能直接使用交集指令）。</li>
+<li>同时操作多个key，则不能使用Redis事务。</li>
+<li>分区使用的粒度是key，不能使用一个非常长的排序key存储一个数据集</li>
+<li>当使用分区的时候，数据处理会非常复杂，例如为了备份你必须从不同的Redis实例和主机同时收集RDB / AOF文件。</li>
+<li>分区时动态扩容或缩容可能非常复杂。Redis集群在运行时增加或者删除Redis节点，能做到最大程度对用户透明地数据再平衡，但其他一些客户端分区或者代理分区方法则不支持这种特性。然而，有一种预分片的技术也可以较好的解决这个问题。</li>
+</ol>
+<h2 id="分布式问题"><a href="#分布式问题" class="headerlink" title="分布式问题"></a>分布式问题</h2><h3 id="Redis实现分布式锁"><a href="#Redis实现分布式锁" class="headerlink" title="Redis实现分布式锁"></a>Redis实现分布式锁</h3><p>Redis为单进程单线程模式，采用队列模式将并发访问变成串行访问，且多客户端对Redis的连接并不存在竞争关系Redis中可以使用SETNX命令实现分布式锁。</p>
+<p>当且仅当 key 不存在，将 key 的值设为 value。若给定的 key 已经存在，则 SETNX 不做任何动作</p>
+<p>SETNX 是『SET if Not eXists』(如果不存在，则 SET)的简写。</p>
+<p>返回值：设置成功，返回 1 。设置失败，返回 0 。</p>
+<p>使用SETNX完成同步锁的流程及事项如下：</p>
+<p>使用SETNX命令获取锁，若返回0（key已存在，锁已存在）则获取失败，反之获取成功</p>
+<p>为了防止获取锁后E程序出现异常，导致其他线程/进程调用SETNX命令总是返回0而进入死锁状态，需要为该key设置一个“合理”的过期时间</p>
+<p>释放锁，使用DEL命令将锁数据删除</p>
+<h3 id="如何解决-Redis-的并发竞争-Key-问题"><a href="#如何解决-Redis-的并发竞争-Key-问题" class="headerlink" title="如何解决 Redis 的并发竞争 Key 问题"></a>如何解决 Redis 的并发竞争 Key 问题</h3><p>所谓 Redis 的并发竞争 Key 的问题也就是多个系统同时对一个 key 进行操作，但是最后执行的顺序和我们期望的顺序不同，这样也就导致了结果的不同！</p>
+<p>推荐一种方案：分布式锁（zookeeper 和 redis 都可以实现分布式锁）。（如果不存在 Redis 的并发竞争 Key 问题，不要使用分布式锁，这样会影响性能）</p>
+<p>基于zookeeper临时有序节点可以实现的分布式锁。大致思想为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。完成业务流程后，删除对应的子节点释放锁。</p>
+<p>在实践中，当然是从以可靠性为主。所以首推Zookeeper。</p>
+<h3 id="分布式Redis是前期做还是后期规模上来了再做好？为什么？"><a href="#分布式Redis是前期做还是后期规模上来了再做好？为什么？" class="headerlink" title="分布式Redis是前期做还是后期规模上来了再做好？为什么？"></a>分布式Redis是前期做还是后期规模上来了再做好？为什么？</h3><p>既然Redis是如此的轻量（单实例只使用1M内存），为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便你只有一台服务器，你也可以一开始就让Redis以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。d</p>
+<p>一开始就多设置几个Redis实例，例如32或者64个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。</p>
+<p>这样的话，当你的数据不断增长，需要更多的Redis服务器时，你需要做的就是仅仅将Redis实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的Redis实例从第一台机器迁移到第二台机器。</p>
+<h3 id="什么是-RedLock"><a href="#什么是-RedLock" class="headerlink" title="什么是 RedLock"></a>什么是 RedLock</h3><p>Redis 官方站提出了一种权威的基于 Redis 实现分布式锁的方式名叫 Redlock，此种方式比原先的单节点的方法更安全。它可以保证以下特性：</p>
+<ol>
+<li>安全特性：互斥访问，即永远只有一个 client 能拿到锁</li>
+<li>避免死锁：最终 client 都可能拿到锁，不会出现死锁的情况，即使原本锁住某资源的 client crash 了或者出现了网络分区</li>
+<li>容错性：只要大部分 Redis 节点存活就可以正常提供服务</li>
+</ol>
+<h2 id="缓存特征"><a href="#缓存特征" class="headerlink" title="缓存特征"></a>缓存特征</h2><h3 id="命中率"><a href="#命中率" class="headerlink" title="命中率"></a>命中率</h3><p>当某个请求能够通过访问缓存而得到响应时，称为缓存命中。</p>
+<p>缓存命中率越高，缓存的利用率也就越高。</p>
+<h3 id="最大空间"><a href="#最大空间" class="headerlink" title="最大空间"></a>最大空间</h3><p>缓存通常位于内存中，内存的空间通常比磁盘空间小的多，因此缓存的最大空间不可能非常大。</p>
+<p>当缓存存放的数据量超过最大空间时，就需要淘汰部分数据来存放新到达的数据。</p>
+<h3 id="淘汰策略"><a href="#淘汰策略" class="headerlink" title="淘汰策略"></a>淘汰策略</h3><ul>
+<li>FIFO（First In First Out）：先进先出策略，在实时性的场景下，需要经常访问最新的数据，那么就可以使用 FIFO，使得最先进入的数据（最晚的数据）被淘汰。</li>
+<li>LRU（Least Recently Used）：最近最久未使用策略，优先淘汰最久未使用的数据，也就是上次被访问时间距离现在最久的数据。该策略可以保证内存中的数据都是热点数据，也就是经常被访问的数据，从而保证缓存命中率。</li>
+<li>LFU（Least Frequently Used）：最不经常使用策略，优先淘汰一段时间内使用次数最少的数据。</li>
+</ul>
+<h2 id="缓存使用举例"><a href="#缓存使用举例" class="headerlink" title="缓存使用举例"></a>缓存使用举例</h2><h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>当 HTTP 响应允许进行缓存时，浏览器会将 HTML、CSS、JavaScript、图片等静态资源进行缓存。</p>
+<h3 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h3><p>网络服务提供商（ISP）是网络访问的第一跳，通过将数据缓存在 ISP 中能够大大提高用户的访问速度。</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理位于服务器之前，请求与响应都需要经过反向代理。通过将数据缓存在反向代理，在用户请求反向代理时就可以直接使用缓存进行响应。</p>
+<h3 id="本地缓存"><a href="#本地缓存" class="headerlink" title="本地缓存"></a>本地缓存</h3><p>使用 Guava Cache 将数据缓存在服务器本地内存中，服务器代码可以直接读取本地内存中的缓存，速度非常快。</p>
+<h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><p>使用 Redis、Memcache 等分布式缓存将数据缓存在分布式缓存系统中。</p>
+<p>相对于本地缓存来说，分布式缓存单独部署，可以根据需求分配硬件资源。不仅如此，服务器集群都可以访问分布式缓存，而本地缓存需要在服务器集群之间进行同步，实现难度和性能开销上都非常大。</p>
+<h3 id="数据库缓存"><a href="#数据库缓存" class="headerlink" title="数据库缓存"></a>数据库缓存</h3><p>MySQL 等数据库管理系统具有自己的查询缓存机制来提高查询效率。</p>
+<h3 id="Java-内部的缓存"><a href="#Java-内部的缓存" class="headerlink" title="Java 内部的缓存"></a>Java 内部的缓存</h3><p>Java 为了优化空间，提高字符串、基本数据类型包装类的创建效率，设计了字符串常量池及 Byte、Short、Character、Integer、Long、Boolean 这六种包装类缓冲池。</p>
+<h3 id="CPU-多级缓存"><a href="#CPU-多级缓存" class="headerlink" title="CPU 多级缓存"></a>CPU 多级缓存</h3><p>CPU 为了解决运算速度与主存 IO 速度不匹配的问题，引入了多级缓存结构，同时使用 MESI 等缓存一致性协议来解决多核 CPU 缓存数据一致性的问题。</p>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>内容分发网络（Content distribution network，CDN）是一种互连的网络系统，它利用更靠近用户的服务器从而更快更可靠地将 HTML、CSS、JavaScript、音乐、图片、视频等静态资源分发给用户。</p>
+<p>CDN 主要有以下优点：</p>
+<ul>
+<li>更快地将数据分发给用户；</li>
+<li>通过部署多台服务器，从而提高系统整体的带宽性能；</li>
+<li>多台服务器可以看成是一种冗余机制，从而具有高可用性。</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgd7wvhj30k20960td.jpg" alt="img"></p>
+<h2 id="缓存异常"><a href="#缓存异常" class="headerlink" title="缓存异常"></a>缓存异常</h2><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>缓存雪崩是指缓存同一时间大面积的失效，所以，后面的请求都会落到数据库上，造成数据库短时间内承受大量请求而崩掉。</p>
+<p><strong>解决方案</strong></p>
+<p>1、缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。</p>
+<p>2、一般并发量不是特别多的时候，使用最多的解决方案是加锁排队。</p>
+<p>3、给每一个缓存数据增加相应的缓存标记，记录缓存的是否失效，如果缓存标记失效，则更新数据缓存。</p>
+<h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><p>缓存穿透是指缓存和数据库中都没有的数据，导致所有的请求都落到数据库上，造成数据库短时间内承受大量请求而崩掉。</p>
+<p><strong>解决方案</strong></p>
+<p>1、接口层增加校验，如用户鉴权校验，id做基础校验，id&lt;=0的直接拦截；</p>
+<p>2、从缓存取不到的数据，在数据库中也没有取到，这时也可以将key-value对写为key-null，缓存有效时间可以设置短点，如30秒（设置太长会导致正常情况也没法使用）。这样可以防止攻击用户反复用同一个id暴力攻击；</p>
+<p>3、采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的 bitmap 中，一个一定不存在的数据会被这个 bitmap 拦截掉，从而避免了对底层存储系统的查询压力。</p>
+<p><strong>附加</strong></p>
+<p>对于空间的利用到达了一种极致，那就是Bitmap和布隆过滤器(Bloom Filter)。</p>
+<p><strong>Bitmap</strong>：典型的就是哈希表</p>
+<p>缺点是，Bitmap对于每个元素只能记录1bit信息，如果还想完成额外的功能，恐怕只能靠牺牲更多的空间、时间来完成了。</p>
+<p><strong>布隆过滤器（推荐）</strong></p>
+<p>就是引入了k(k&gt;1)k(k&gt;1)个相互独立的哈希函数，保证在给定的空间、误判率下，完成元素判重的过程。</p>
+<p>它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除困难。</p>
+<p>Bloom-Filter算法的核心思想就是利用多个不同的Hash函数来解决“冲突”。</p>
+<p>Hash存在一个冲突（碰撞）的问题，用同一个Hash得到的两个URL的值有可能相同。为了减少冲突，我们可以多引入几个Hash，如果通过其中的一个Hash值我们得出某元素不在集合中，那么该元素肯定不在集合中。只有在所有的Hash函数告诉我们该元素在集合中时，才能确定该元素存在于集合中。这便是Bloom-Filter的基本思想。</p>
+<p>Bloom-Filter一般用于在大数据量的集合中判定某元素是否存在。</p>
+<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>缓存击穿是指缓存中没有但数据库中有的数据（一般是缓存时间到期），这时由于并发用户特别多，同时读缓存没读到数据，又同时去数据库去取数据，引起数据库压力瞬间增大，造成过大压力。和缓存雪崩不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同数据都过期了，很多数据都查不到从而查数据库。</p>
+<p><strong>解决方案</strong></p>
+<p>1、设置热点数据永远不过期</p>
+<p>2、加互斥锁，互斥锁</p>
+<h3 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h3><p>缓存预热就是系统上线后，将相关的缓存数据直接加载到缓存系统。这样就可以避免在用户请求的时候，先查询数据库，然后再将数据缓存的问题！用户直接查询事先被预热的缓存数据！</p>
+<p><strong>解决方案</strong></p>
+<p>1、直接写个缓存刷新页面，上线时手工操作一下；</p>
+<p>2、数据量不大，可以在项目启动的时候自动进行加载；</p>
+<p>3、定时刷新缓存；</p>
+<h3 id="缓存降级"><a href="#缓存降级" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>当访问量剧增、服务出现问题（如响应时间慢或不响应）或非核心服务影响到核心流程的性能时，仍然需要保证服务还是可用的，即使是有损服务。系统可以根据一些关键数据进行自动降级，也可以配置开关实现人工降级。</p>
+<p>缓存降级的最终目的是保证核心服务可用，即使是有损的。而且有些服务是无法降级的（如加入购物车、结算）。</p>
+<p>在进行降级之前要对系统进行梳理，看看系统是不是可以丢卒保帅；从而梳理出哪些必须誓死保护，哪些可降级；比如可以参考日志级别设置预案：</p>
+<p>1、一般：比如有些服务偶尔因为网络抖动或者服务正在上线而超时，可以自动降级；</p>
+<p>2、警告：有些服务在一段时间内成功率有波动（如在95~100%之间），可以自动降级或人工降级，并发送告警；</p>
+<p>3、错误：比如可用率低于90%，或者数据库连接池被打爆了，或者访问量突然猛增到系统能承受的最大阀值，此时可以根据情况自动降级或者人工降级；</p>
+<p>4、严重错误：比如因为特殊原因数据错误了，此时需要紧急人工降级。</p>
+<p>服务降级的目的，是为了防止Redis服务故障，导致数据库跟着一起发生雪崩问题。因此，对于不重要的缓存数据，可以采取服务降级策略，例如一个比较常见的做法就是，Redis出现问题，不去数据库查询，而是直接返回默认值给用户。</p>
+<h3 id="热点数据和冷数据"><a href="#热点数据和冷数据" class="headerlink" title="热点数据和冷数据"></a>热点数据和冷数据</h3><p>热点数据，缓存才有价值</p>
+<p>对于冷数据而言，大部分数据可能还没有再次访问到就已经被挤出内存，不仅占用内存，而且价值不大。频繁修改的数据，看情况考虑使用缓存</p>
+<p>对于热点数据，比如我们的某IM产品，生日祝福模块，当天的寿星列表，缓存以后可能读取数十万次。再举个例子，某导航产品，我们将导航信息，缓存以后可能读取数百万次。</p>
+<p>数据更新前至少读取两次，缓存才有意义。这个是最基本的策略，如果缓存还没有起作用就失效了，那就没有太大价值了。</p>
+<p>那存不存在，修改频率很高，但是又不得不考虑缓存的场景呢？有！比如，这个读取接口对数据库的压力很大，但是又是热点数据，这个时候就需要考虑通过缓存手段，减少数据库的压力，比如我们的某助手产品的，点赞数，收藏数，分享数等是非常典型的热点数据，但是又不断变化，此时就需要将数据同步保存到Redis缓存，减少数据库压力。</p>
+<p><strong>缓存热点key</strong></p>
+<p>缓存中的一个Key(比如一个促销商品)，在某个时间点过期的时候，恰好在这个时间点对这个Key有大量的并发请求过来，这些请求发现缓存过期一般都会从后端DB加载数据并回设到缓存，这个时候大并发的请求可能会瞬间把后端DB压垮。</p>
+<p><strong>解决方案</strong></p>
+<p>对缓存查询加锁，如果KEY不存在，就加锁，然后查DB入缓存，然后解锁；其他进程如果发现有锁就等待，然后等解锁后返回数据或者进入DB查询</p>
+<p><strong>如何保证缓存与数据库双写时的数据一致性？</strong></p>
+<p>你只要用缓存，就可能会涉及到缓存与数据库双存储双写，你只要是双写，就一定会有数据一致性的问题，那么你如何解决一致性问题？</p>
+<p>一般来说，就是如果你的系统不是严格要求缓存+数据库必须一致性的话，缓存可以稍微的跟数据库偶尔有不一致的情况，最好不要做这个方案，读请求和写请求串行化，串到一个内存队列里去，这样就可以保证一定不会出现不一致的情况</p>
+<p>串行化之后，就会导致系统的吞吐量会大幅度的降低，用比正常情况下多几倍的机器去支撑线上的一个请求。</p>
+<p>还有一种方式就是可能会暂时产生不一致的情况，但是发生的几率特别小，就是<strong>先更新数据库，然后再删除缓存</strong>。</p>
+<h2 id="数据分布"><a href="#数据分布" class="headerlink" title="数据分布"></a>数据分布</h2><h3 id="顺序分布"><a href="#顺序分布" class="headerlink" title="顺序分布"></a>顺序分布</h3><p>将数据划分为多个连续的部分，按数据的 ID 或者时间分布到不同节点上。例如 User 表的 ID 范围为 1 ~ 7000，使用顺序分布可以将其划分成多个子表，对应的主键范围为 1 ~ 1000，1001 ~ 2000，..…，6001 ~ 7000。</p>
+<p>顺序分布相比于哈希分布的主要优点如下：</p>
+<ul>
+<li>能保持数据原有的顺序；</li>
+<li>并且能够准确控制每台服务器存储的数据量，从而使得存储空间的利用率最大。</li>
+</ul>
+<h3 id="哈希分布"><a href="#哈希分布" class="headerlink" title="哈希分布"></a>哈希分布</h3><p>哈希分布就是将数据计算哈希值之后，按照哈希值分配到不同的节点上。例如有 N 个节点，数据的主键为 key，则将该数据分配的节点序号为：hash(key)%N。</p>
+<p>传统的哈希分布算法存在一个问题：<strong>当节点数量变化时，也就是 N 值变化，那么几乎所有的数据都需要重新分布，将导致大量的数据迁移。</strong></p>
+<h3 id="一致性哈希"><a href="#一致性哈希" class="headerlink" title="一致性哈希"></a>一致性哈希</h3><p>Distributed Hash Table（DHT） 是一种哈希分布方式，其目的是为了克服传统哈希分布在服务器节点数量变化时大量数据迁移的问题。</p>
+<p><strong>基本原理</strong></p>
+<p>将哈希空间 [0, 2^n^-1] 看成一个哈希环，每个服务器节点都配置到哈希环上。每个数据对象通过哈希取模得到哈希值之后，存放到哈希环中顺时针方向第一个大于等于该哈希值的节点上。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgeci4vj30fa0fd0te.jpg" alt="img"></p>
+<p>一致性哈希在增加或者删除节点时只会影响到哈希环中相邻的节点，例如下图中新增节点 X，只需要将它前一个节点 C 上的数据重新进行分布即可，对于节点 A、B、D 都没有影响。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pgf7o3rj30f60fo0ti.jpg" alt="img"></p>
+<h3 id="虚拟节点"><a href="#虚拟节点" class="headerlink" title="虚拟节点"></a>虚拟节点</h3><p>上面描述的一致性哈希存在数据分布不均匀的问题，节点存储的数据量有可能会存在很大的不同。</p>
+<p>数据不均匀主要是因为节点在哈希环上分布的不均匀，这种情况在节点数量很少的情况下尤其明显。</p>
+<p>解决方式是通过增加虚拟节点，然后将虚拟节点映射到真实节点上。虚拟节点的数量比真实节点来得多，那么虚拟节点在哈希环上分布的均匀性就会比原来的真实节点好，从而使得数据分布也更加均匀。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2884,7 +2884,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:38:09" itemprop="dateModified" datetime="2020-06-02T12:38:09+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-02 12:46:40" itemprop="dateModified" datetime="2020-06-02T12:46:40+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3393,6 +3393,186 @@
 <td align="left">必需。规定格式。</td>
 </tr>
 </tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 12:34:58" itemprop="dateModified" datetime="2020-06-02T12:34:58+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h2><p><strong>二叉树（Binary Tree）</strong></p>
+<p>二叉树（Binary Tree）是有限个节点的集合，这个集合可以是空集，也可以是一个根节点和两颗不相交的子二叉树组成的集合，其中一颗树叫根的左子树，另一颗树叫右子树。所以二叉树是一个递归地概念。</p>
+<p><strong>满二叉树（Full Binary Tree）</strong><br>一棵满二叉树就是高度为k，且拥有<code>(2^k)-1</code>个节点的二叉树，一棵满二叉树每个节点，要么都有两棵子树，要么都没有子树；而且每一层所有的节点之间必须要么都有两棵子树，要么都没子树。</p>
+<p><strong>完全二叉树（Complete Binary Tree）</strong><br>完全二叉树是一颗特殊的二叉树，假设完全二叉树高度为k，则完全二叉树需要符合以下两点：</p>
+<ol>
+<li>所有叶子节点都出现在k层或k-1层，并且从1~k-1层必须达到最大节点数</li>
+<li>第k层可以是不满的，但是第k层的所有节点必须集中在最左边</li>
+</ol>
+<h2 id="二叉树的实现"><a href="#二叉树的实现" class="headerlink" title="二叉树的实现"></a>二叉树的实现</h2><p>二叉树的左右链表表示法：</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4f6hekj3j30m80bvab1.jpg" alt="二叉树的左右链表表示法" style="zoom:67%;" />
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeNode</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> data;  <span class="comment">//数据</span></span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode leftChild ;  <span class="comment">//左孩子</span></span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode rightChild ; <span class="comment">//右孩子</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getLeftChild</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> leftChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeftChild</span> <span class="params">(BinaryTreeNode leftChild )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.leftChild  = leftChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getRightChild</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> rightChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRightChild</span> <span class="params">(BinaryTreeNode rightChild )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rightChild  = rightChild ;</span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二叉树的操作"><a href="#二叉树的操作" class="headerlink" title="二叉树的操作"></a>二叉树的操作</h2><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h4 id="先根遍历-Pre-Order"><a href="#先根遍历-Pre-Order" class="headerlink" title="先根遍历(Pre Order)"></a>先根遍历(Pre Order)</h4><p>若二叉树为空，则退出，否则进行下面操作：</p>
+<ul>
+<li>访问根节点</li>
+<li>先根遍历左子树</li>
+<li>先根遍历右子树</li>
+<li>退出</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        System.out.println(node.getData()); 	<span class="comment">//先访问根节点</span></span><br><span class="line">        PreOrder(node.getLeftChild ());  		<span class="comment">//先根遍历左子树</span></span><br><span class="line">        PreOrder(node.getRightChild ());  		<span class="comment">//先根遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="中根遍历-In-Order"><a href="#中根遍历-In-Order" class="headerlink" title="中根遍历(In Order)"></a>中根遍历(In Order)</h4><p>若二叉树为空，则退出，否则进行下面操作</p>
+<ul>
+<li>中根遍历左子树</li>
+<li>访问根节点</li>
+<li>中根遍历右子树</li>
+<li>退出</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        InOrder(node.getLeftChild());  				<span class="comment">//中根遍历左子树</span></span><br><span class="line">        System.out.println(node.getData());    		<span class="comment">//访问根节点</span></span><br><span class="line">        InOrder(node.getRightChild());  			<span class="comment">//中根遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="后根遍历-Post-Order"><a href="#后根遍历-Post-Order" class="headerlink" title="后根遍历(Post Order)"></a>后根遍历(Post Order)</h4><p>若二叉树为空，则退出，否则进行下面操作</p>
+<ul>
+<li>后根遍历左子树</li>
+<li>后根遍历右子树</li>
+<li>访问根节点</li>
+<li>退出</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        PostOrder(node.getLeftChild());  				<span class="comment">//后根遍历左子树</span></span><br><span class="line">        PostOrder(node.getRightChild());  				<span class="comment">//后根遍历右子树</span></span><br><span class="line">        System.out.println(node.getData());   			<span class="comment">//访问根节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="层次遍历-Level-Traverse"><a href="#层次遍历-Level-Traverse" class="headerlink" title="层次遍历(Level Traverse)"></a>层次遍历(Level Traverse)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelTraverse</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;  </span><br><span class="line">        <span class="keyword">return</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    LinkedList&lt;BinaryTreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();  </span><br><span class="line">    queue.offer(root);  </span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;  </span><br><span class="line">        BinaryTreeNode node = queue.poll();  </span><br><span class="line">        System.out.print(node.getData()+<span class="string">"  "</span>);  </span><br><span class="line">        <span class="keyword">if</span> (node.getLeftChild() != <span class="keyword">null</span>) &#123;  </span><br><span class="line">            queue.offer(node.getLeftChild());  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">if</span> (node.getRightChild() != <span class="keyword">null</span>) &#123;  </span><br><span class="line">            queue.offer(node.getRightChild());  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>创建二叉树，一般有两种情况：初始化一个根节点或者初始化一棵空二叉树。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode root;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化二叉树</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryTree</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryTree</span><span class="params">(BinaryTreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoot</span><span class="params">(BinaryTreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getRoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><p>对于二叉树的清空，首先提供一个清空某个节点为根节点的子树的方法，即递归的删除每个节点；接着提供删除一个删除树的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//清除某个子树的所有节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        clear(node.getLeftChild());</span><br><span class="line">        clear(node.getRightChild());</span><br><span class="line">        node = <span class="keyword">null</span>; <span class="comment">//删除节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//清空整个树</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</span><br><span class="line">    clear(root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断是否为空"><a href="#判断是否为空" class="headerlink" title="判断是否为空"></a>判断是否为空</h4><p>只需判断根节点是否存在即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断二叉树是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root == <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="求最大深度-高度"><a href="#求最大深度-高度" class="headerlink" title="求最大深度(高度)"></a>求最大深度(高度)</h4><p>首先需要一种获取以某个节点为子树的高度方法，使用递归实现。如果一个节点为空，那么这个节点肯定是一颗空树，高度为0；如果不为空，则遍历地比较它的左右子树高度，高的一个为这颗子树的最大高度，然后加上自身的高度即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取二叉树的高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getMaxDepth(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取以某节点为子树的高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//递归结束，空子树高度为0</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//递归获取左子树高度</span></span><br><span class="line">        <span class="keyword">int</span> l = getMaxDepth(node.getLeftChild());</span><br><span class="line">        <span class="comment">//递归获取右子树高度</span></span><br><span class="line">        <span class="keyword">int</span> r = getMaxDepth(node.getRightChild());</span><br><span class="line">        <span class="comment">//高度应该算更高的一边，（+1是因为要算上自身这一层）</span></span><br><span class="line">        <span class="keyword">return</span> l &gt; r ? (l+<span class="number">1</span>) : (r+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="求最小深度"><a href="#求最小深度" class="headerlink" title="求最小深度"></a>求最小深度</h4><p>根节点到最近叶子结点的距离</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMinDepth</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getMinDepth (root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMinDepth</span><span class="params">(BinaryTreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == node) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == node.getLeftChild()) &#123;</span><br><span class="line">        <span class="keyword">return</span> getMinDepth(node.getRightChild()) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root.getRightChild()) &#123;</span><br><span class="line">        <span class="keyword">return</span> getMinDepth(node.getLeftChild()) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//递归获取左子树高度</span></span><br><span class="line">    <span class="keyword">int</span> l = getMaxDepth(node.getLeftChild());</span><br><span class="line">    <span class="comment">//递归获取右子树高度</span></span><br><span class="line">    <span class="keyword">int</span> r = getMaxDepth(node.getRightChild());</span><br><span class="line">    <span class="comment">//高度应该算更低的一边，（+1是因为要算上自身这一层）</span></span><br><span class="line">    <span class="keyword">return</span> l &lt; r ? (l+<span class="number">1</span>) : (r+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="求所有节点数"><a href="#求所有节点数" class="headerlink" title="求所有节点数"></a>求所有节点数</h4><p>获取二叉树节点数，需要获取以某个节点为根的子树的节点数实现。如果节点为空，则个数肯定为0；如果不为空，则算上这个节点之后，继续递归计算所有子树的节点数，全部相加即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> size(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">//如果节点为空，则返回节点数为0</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//计算本节点 所以要+1</span></span><br><span class="line">        <span class="comment">//递归获取左子树节点数和右子树节点数，最终相加</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + size(node.getLeftChild ()) + size(node.getRightChild ());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="求叶子节点个数"><a href="#求叶子节点个数" class="headerlink" title="求叶子节点个数"></a>求叶子节点个数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNumOfChildNode</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root.getLeftChild() &amp;&amp; <span class="keyword">null</span> == root.RightChild()) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> getNumOfChildNode(root.getLeftChild())+getNumOfChildNode(root.getLeftChild());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="求第k层节点数"><a href="#求第k层节点数" class="headerlink" title="求第k层节点数"></a>求第k层节点数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNumOfLevelNode</span><span class="params">(BinaryTreeNode root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root || k &lt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">1</span> == k) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> numleft = getNumOfLevelNode(root.getLeftChild(), k - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> numright = getNumOfLevelNode(root.RightChild,k - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> numleft + numright;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回某节点的父亲节点"><a href="#返回某节点的父亲节点" class="headerlink" title="返回某节点的父亲节点"></a>返回某节点的父亲节点</h4><p>首先，同样需要通过一种方法来获取某个节点在某个子树中的父节点，这里使用递归实现，接着通过这种方法获取这个节点在二叉树中的父节点。</p>
+<p>事实上，以现有的这种二叉树的形式，我们并没有办法直接获取一个节点的父节点， 这里只能通过从根节点遍历来比较获取。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node节点在subTree子树中的父节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getParent</span><span class="params">(BinaryTreeNode subTree, BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果是空子树，则没有父节点</span></span><br><span class="line">    <span class="keyword">if</span>(subTree == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果子树的根节点的左右孩子之一是待查节点，则返回子树的根节点</span></span><br><span class="line">    <span class="keyword">if</span>(subTree.getLeftChild () == node || subTree.getRightChild () == node)&#123;</span><br><span class="line">        <span class="keyword">return</span> subTree;   </span><br><span class="line">    &#125;</span><br><span class="line">    BinaryTreeNode parent = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//递归左右子树</span></span><br><span class="line">    <span class="keyword">if</span>(getParent(subTree.getLeftChild (), node) != <span class="keyword">null</span>)&#123;</span><br><span class="line">        parent = getParent(subTree.getLeftChild (), node);</span><br><span class="line">        <span class="keyword">return</span> parent;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getParent(subTree.getRightChild (), node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查找node节点在二叉树中的父节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getParent</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (root == <span class="keyword">null</span> || root == node) ? <span class="keyword">null</span> : getParent(root, node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">findNode</span><span class="params">(BinaryTreeNode root, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(root.getData() == x)&#123;</span><br><span class="line">		<span class="keyword">return</span> root;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//递归搜索左子树</span></span><br><span class="line">	BinaryTreeNode leftNode = findNode(root.getLeftChild(), x);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> != leftNode)</span><br><span class="line">		<span class="keyword">return</span> leftNode;</span><br><span class="line">    <span class="comment">//递归搜索右子树</span></span><br><span class="line">	BinaryTreeNode rightNode = findNode(root.getRightChild(), x);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> != rightNode)</span><br><span class="line">		<span class="keyword">return</span> rightNode;</span><br><span class="line">    <span class="comment">//没找到，返回null</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断两棵二叉树是否相等"><a href="#判断两棵二叉树是否相等" class="headerlink" title="判断两棵二叉树是否相等"></a>判断两棵二叉树是否相等</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEquals</span><span class="params">(BinaryTreeNode root1, BinaryTreeNode root2)</span></span>&#123;</span><br><span class="line">    <span class="comment">//当前节点均为空或者相等，返回true</span></span><br><span class="line">    <span class="keyword">if</span>((root1 == <span class="keyword">null</span> &amp;&amp; root2 == <span class="keyword">null</span>) ||root1.getData() == root2.getData())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//递归判断所有左右子树，均相等返回true</span></span><br><span class="line">    <span class="keyword">if</span>(isEquals(root1.getLeftChild(), root2.getLeftChild()) </span><br><span class="line">       &amp;&amp; isEquals(root1.getRightChild(), root2.getRightChild()))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//否则返回false</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断两棵二叉树是否镜像"><a href="#判断两棵二叉树是否镜像" class="headerlink" title="判断两棵二叉树是否镜像"></a>判断两棵二叉树是否镜像</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMirrorBTree</span><span class="params">(BinaryTreeNode root1, BinaryTreeNode root2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root1 &amp;&amp; <span class="keyword">null</span> == root2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">null</span> == root1 || <span class="keyword">null</span> == root2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(root1.getData() != root2.getData()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//此处注意相反比较</span></span><br><span class="line">    <span class="keyword">return</span> isMirrorBTree(root1.getLeftChild(),root2.getRightChild())</span><br><span class="line">        &amp;&amp; isMirrorBTree(root1.getRightChild(),root2.getLeftChild());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断是否为完全二叉树"><a href="#判断是否为完全二叉树" class="headerlink" title="判断是否为完全二叉树"></a>判断是否为完全二叉树</h4><p>我们可以根据题意做题即可，我们可以采用分层遍历的方式，在判断一个具体的节点的时候，我们可以有如下的判断依据:</p>
+<ol>
+<li>如果这个节点的左子树为null，右子树不为null，则一定不是完全二叉树</li>
+<li>如果这个节点的左右子树均为null，或者这个节点的左子树不为null但是右子树为null，则当前层或者下一层不能再出现含有左右子树的节点</li>
+<li>如果当前节点的左右子树均不为null，则观察下一个节点</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isCompleteBTree</span><span class="params">(BinaryTreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> hasLeaf = <span class="keyword">false</span>;</span><br><span class="line">    List&lt;BinaryTreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    queue.offer(node);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        BinaryTreeNode tmp = queue.poll();</span><br><span class="line">        <span class="keyword">if</span> (tmp.getLeftChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况1，左子树为null，右子树不为null，则一定不是完全二叉树</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况2，左右子树均为null</span></span><br><span class="line">                <span class="comment">//则当前层或者下一层不能再出现含有左右子树的节点</span></span><br><span class="line">                hasLeaf = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (hasLeaf) &#123;</span><br><span class="line">                <span class="comment">//出现了含有左子树的节点，直接返回false</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况2，左子树不为null，右子树为null</span></span><br><span class="line">                <span class="comment">//则当前层或者下一层不能再出现含有左右子树的节点</span></span><br><span class="line">                hasLeaf = <span class="keyword">true</span>;</span><br><span class="line">                queue.add(tmp.getLeftChild());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRight() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况3，左右子树均不为null，则观察下一个节点</span></span><br><span class="line">                queue.add(tmp.getLeftChild());</span><br><span class="line">                queue.add(tmp.getRightChild());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="翻转二叉树-镜像二叉树"><a href="#翻转二叉树-镜像二叉树" class="headerlink" title="翻转二叉树(镜像二叉树)"></a>翻转二叉树(镜像二叉树)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">invertTree</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//递归反转左右子树</span></span><br><span class="line">    BinaryTreeNode temp = root.getLeftChild();</span><br><span class="line">    root.getLeftChild() = invertTree(root.getRightChild());</span><br><span class="line">    root.getRightChild() = invertTree(temp);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断是否是二叉查找树"><a href="#判断是否是二叉查找树" class="headerlink" title="判断是否是二叉查找树"></a>判断是否是二叉查找树</h4><p>一棵BST定义为：</p>
+<ul>
+<li>节点的左子树中的值要严格小于该节点的值</li>
+<li>节点的右子树中的值要严格大于该节点的值</li>
+<li>左右子树也必须是二叉查找树</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根节点的值data必然在(minVal,maxVal)这个范围内</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidBST</span><span class="params">(BinaryTreeNode root, <span class="keyword">long</span> minVal, <span class="keyword">long</span> maxVal)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(root.getData() &gt;= maxVal || root.getData() &lt;= minVal) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root.getLeftChild(), minVal, root.data)</span><br><span class="line">        &amp;&amp; isValidBST(root.getRightChild(), root.data, maxVal);		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断是否是平衡二叉树"><a href="#判断是否是平衡二叉树" class="headerlink" title="判断是否是平衡二叉树"></a>判断是否是平衡二叉树</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">IsBalancedTree</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//左右子树高度绝对值大于1，返回false</span></span><br><span class="line">    <span class="keyword">if</span>(Math.abs(getMaxDepth(root.getLeftChild())-getMaxDepth(root.getRightChild()))&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//递归检查左右子树</span></span><br><span class="line">        <span class="keyword">return</span> IsBalancedTree(root.getLeftChild()) </span><br><span class="line">            &amp;&amp; IsBalancedTree(root.getRightChild());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> left = getMaxDepth(root.getLeftChild());</span><br><span class="line">    <span class="keyword">int</span> right = getMaxDepth(root.getRightChild());</span><br><span class="line">    <span class="keyword">return</span> left &gt; right ? left + <span class="number">1</span> : right + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -3925,186 +4105,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:34:58" itemprop="dateModified" datetime="2020-06-02T12:34:58+08:00">2020-06-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h2><p><strong>二叉树（Binary Tree）</strong></p>
-<p>二叉树（Binary Tree）是有限个节点的集合，这个集合可以是空集，也可以是一个根节点和两颗不相交的子二叉树组成的集合，其中一颗树叫根的左子树，另一颗树叫右子树。所以二叉树是一个递归地概念。</p>
-<p><strong>满二叉树（Full Binary Tree）</strong><br>一棵满二叉树就是高度为k，且拥有<code>(2^k)-1</code>个节点的二叉树，一棵满二叉树每个节点，要么都有两棵子树，要么都没有子树；而且每一层所有的节点之间必须要么都有两棵子树，要么都没子树。</p>
-<p><strong>完全二叉树（Complete Binary Tree）</strong><br>完全二叉树是一颗特殊的二叉树，假设完全二叉树高度为k，则完全二叉树需要符合以下两点：</p>
-<ol>
-<li>所有叶子节点都出现在k层或k-1层，并且从1~k-1层必须达到最大节点数</li>
-<li>第k层可以是不满的，但是第k层的所有节点必须集中在最左边</li>
-</ol>
-<h2 id="二叉树的实现"><a href="#二叉树的实现" class="headerlink" title="二叉树的实现"></a>二叉树的实现</h2><p>二叉树的左右链表表示法：</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4f6hekj3j30m80bvab1.jpg" alt="二叉树的左右链表表示法" style="zoom:67%;" />
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeNode</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> data;  <span class="comment">//数据</span></span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode leftChild ;  <span class="comment">//左孩子</span></span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode rightChild ; <span class="comment">//右孩子</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getLeftChild</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> leftChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeftChild</span> <span class="params">(BinaryTreeNode leftChild )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.leftChild  = leftChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getRightChild</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> rightChild ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRightChild</span> <span class="params">(BinaryTreeNode rightChild )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rightChild  = rightChild ;</span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="二叉树的操作"><a href="#二叉树的操作" class="headerlink" title="二叉树的操作"></a>二叉树的操作</h2><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h4 id="先根遍历-Pre-Order"><a href="#先根遍历-Pre-Order" class="headerlink" title="先根遍历(Pre Order)"></a>先根遍历(Pre Order)</h4><p>若二叉树为空，则退出，否则进行下面操作：</p>
-<ul>
-<li>访问根节点</li>
-<li>先根遍历左子树</li>
-<li>先根遍历右子树</li>
-<li>退出</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        System.out.println(node.getData()); 	<span class="comment">//先访问根节点</span></span><br><span class="line">        PreOrder(node.getLeftChild ());  		<span class="comment">//先根遍历左子树</span></span><br><span class="line">        PreOrder(node.getRightChild ());  		<span class="comment">//先根遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="中根遍历-In-Order"><a href="#中根遍历-In-Order" class="headerlink" title="中根遍历(In Order)"></a>中根遍历(In Order)</h4><p>若二叉树为空，则退出，否则进行下面操作</p>
-<ul>
-<li>中根遍历左子树</li>
-<li>访问根节点</li>
-<li>中根遍历右子树</li>
-<li>退出</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        InOrder(node.getLeftChild());  				<span class="comment">//中根遍历左子树</span></span><br><span class="line">        System.out.println(node.getData());    		<span class="comment">//访问根节点</span></span><br><span class="line">        InOrder(node.getRightChild());  			<span class="comment">//中根遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="后根遍历-Post-Order"><a href="#后根遍历-Post-Order" class="headerlink" title="后根遍历(Post Order)"></a>后根遍历(Post Order)</h4><p>若二叉树为空，则退出，否则进行下面操作</p>
-<ul>
-<li>后根遍历左子树</li>
-<li>后根遍历右子树</li>
-<li>访问根节点</li>
-<li>退出</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        PostOrder(node.getLeftChild());  				<span class="comment">//后根遍历左子树</span></span><br><span class="line">        PostOrder(node.getRightChild());  				<span class="comment">//后根遍历右子树</span></span><br><span class="line">        System.out.println(node.getData());   			<span class="comment">//访问根节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="层次遍历-Level-Traverse"><a href="#层次遍历-Level-Traverse" class="headerlink" title="层次遍历(Level Traverse)"></a>层次遍历(Level Traverse)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelTraverse</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;  </span><br><span class="line">        <span class="keyword">return</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    LinkedList&lt;BinaryTreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();  </span><br><span class="line">    queue.offer(root);  </span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;  </span><br><span class="line">        BinaryTreeNode node = queue.poll();  </span><br><span class="line">        System.out.print(node.getData()+<span class="string">"  "</span>);  </span><br><span class="line">        <span class="keyword">if</span> (node.getLeftChild() != <span class="keyword">null</span>) &#123;  </span><br><span class="line">            queue.offer(node.getLeftChild());  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">if</span> (node.getRightChild() != <span class="keyword">null</span>) &#123;  </span><br><span class="line">            queue.offer(node.getRightChild());  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>创建二叉树，一般有两种情况：初始化一个根节点或者初始化一棵空二叉树。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> BinaryTreeNode root;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化二叉树</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryTree</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryTree</span><span class="params">(BinaryTreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoot</span><span class="params">(BinaryTreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getRoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><p>对于二叉树的清空，首先提供一个清空某个节点为根节点的子树的方法，即递归的删除每个节点；接着提供删除一个删除树的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//清除某个子树的所有节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        clear(node.getLeftChild());</span><br><span class="line">        clear(node.getRightChild());</span><br><span class="line">        node = <span class="keyword">null</span>; <span class="comment">//删除节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//清空整个树</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</span><br><span class="line">    clear(root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="判断是否为空"><a href="#判断是否为空" class="headerlink" title="判断是否为空"></a>判断是否为空</h4><p>只需判断根节点是否存在即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断二叉树是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root == <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="求最大深度-高度"><a href="#求最大深度-高度" class="headerlink" title="求最大深度(高度)"></a>求最大深度(高度)</h4><p>首先需要一种获取以某个节点为子树的高度方法，使用递归实现。如果一个节点为空，那么这个节点肯定是一颗空树，高度为0；如果不为空，则遍历地比较它的左右子树高度，高的一个为这颗子树的最大高度，然后加上自身的高度即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取二叉树的高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getMaxDepth(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取以某节点为子树的高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//递归结束，空子树高度为0</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//递归获取左子树高度</span></span><br><span class="line">        <span class="keyword">int</span> l = getMaxDepth(node.getLeftChild());</span><br><span class="line">        <span class="comment">//递归获取右子树高度</span></span><br><span class="line">        <span class="keyword">int</span> r = getMaxDepth(node.getRightChild());</span><br><span class="line">        <span class="comment">//高度应该算更高的一边，（+1是因为要算上自身这一层）</span></span><br><span class="line">        <span class="keyword">return</span> l &gt; r ? (l+<span class="number">1</span>) : (r+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="求最小深度"><a href="#求最小深度" class="headerlink" title="求最小深度"></a>求最小深度</h4><p>根节点到最近叶子结点的距离</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMinDepth</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getMinDepth (root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMinDepth</span><span class="params">(BinaryTreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == node) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == node.getLeftChild()) &#123;</span><br><span class="line">        <span class="keyword">return</span> getMinDepth(node.getRightChild()) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root.getRightChild()) &#123;</span><br><span class="line">        <span class="keyword">return</span> getMinDepth(node.getLeftChild()) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//递归获取左子树高度</span></span><br><span class="line">    <span class="keyword">int</span> l = getMaxDepth(node.getLeftChild());</span><br><span class="line">    <span class="comment">//递归获取右子树高度</span></span><br><span class="line">    <span class="keyword">int</span> r = getMaxDepth(node.getRightChild());</span><br><span class="line">    <span class="comment">//高度应该算更低的一边，（+1是因为要算上自身这一层）</span></span><br><span class="line">    <span class="keyword">return</span> l &lt; r ? (l+<span class="number">1</span>) : (r+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="求所有节点数"><a href="#求所有节点数" class="headerlink" title="求所有节点数"></a>求所有节点数</h4><p>获取二叉树节点数，需要获取以某个节点为根的子树的节点数实现。如果节点为空，则个数肯定为0；如果不为空，则算上这个节点之后，继续递归计算所有子树的节点数，全部相加即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> size(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">//如果节点为空，则返回节点数为0</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//计算本节点 所以要+1</span></span><br><span class="line">        <span class="comment">//递归获取左子树节点数和右子树节点数，最终相加</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + size(node.getLeftChild ()) + size(node.getRightChild ());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="求叶子节点个数"><a href="#求叶子节点个数" class="headerlink" title="求叶子节点个数"></a>求叶子节点个数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNumOfChildNode</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root.getLeftChild() &amp;&amp; <span class="keyword">null</span> == root.RightChild()) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> getNumOfChildNode(root.getLeftChild())+getNumOfChildNode(root.getLeftChild());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="求第k层节点数"><a href="#求第k层节点数" class="headerlink" title="求第k层节点数"></a>求第k层节点数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNumOfLevelNode</span><span class="params">(BinaryTreeNode root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> == root || k &lt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">1</span> == k) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> numleft = getNumOfLevelNode(root.getLeftChild(), k - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> numright = getNumOfLevelNode(root.RightChild,k - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> numleft + numright;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="返回某节点的父亲节点"><a href="#返回某节点的父亲节点" class="headerlink" title="返回某节点的父亲节点"></a>返回某节点的父亲节点</h4><p>首先，同样需要通过一种方法来获取某个节点在某个子树中的父节点，这里使用递归实现，接着通过这种方法获取这个节点在二叉树中的父节点。</p>
-<p>事实上，以现有的这种二叉树的形式，我们并没有办法直接获取一个节点的父节点， 这里只能通过从根节点遍历来比较获取。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node节点在subTree子树中的父节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getParent</span><span class="params">(BinaryTreeNode subTree, BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果是空子树，则没有父节点</span></span><br><span class="line">    <span class="keyword">if</span>(subTree == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果子树的根节点的左右孩子之一是待查节点，则返回子树的根节点</span></span><br><span class="line">    <span class="keyword">if</span>(subTree.getLeftChild () == node || subTree.getRightChild () == node)&#123;</span><br><span class="line">        <span class="keyword">return</span> subTree;   </span><br><span class="line">    &#125;</span><br><span class="line">    BinaryTreeNode parent = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//递归左右子树</span></span><br><span class="line">    <span class="keyword">if</span>(getParent(subTree.getLeftChild (), node) != <span class="keyword">null</span>)&#123;</span><br><span class="line">        parent = getParent(subTree.getLeftChild (), node);</span><br><span class="line">        <span class="keyword">return</span> parent;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getParent(subTree.getRightChild (), node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查找node节点在二叉树中的父节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">getParent</span><span class="params">(BinaryTreeNode node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (root == <span class="keyword">null</span> || root == node) ? <span class="keyword">null</span> : getParent(root, node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">findNode</span><span class="params">(BinaryTreeNode root, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(root.getData() == x)&#123;</span><br><span class="line">		<span class="keyword">return</span> root;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//递归搜索左子树</span></span><br><span class="line">	BinaryTreeNode leftNode = findNode(root.getLeftChild(), x);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> != leftNode)</span><br><span class="line">		<span class="keyword">return</span> leftNode;</span><br><span class="line">    <span class="comment">//递归搜索右子树</span></span><br><span class="line">	BinaryTreeNode rightNode = findNode(root.getRightChild(), x);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">null</span> != rightNode)</span><br><span class="line">		<span class="keyword">return</span> rightNode;</span><br><span class="line">    <span class="comment">//没找到，返回null</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="判断两棵二叉树是否相等"><a href="#判断两棵二叉树是否相等" class="headerlink" title="判断两棵二叉树是否相等"></a>判断两棵二叉树是否相等</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEquals</span><span class="params">(BinaryTreeNode root1, BinaryTreeNode root2)</span></span>&#123;</span><br><span class="line">    <span class="comment">//当前节点均为空或者相等，返回true</span></span><br><span class="line">    <span class="keyword">if</span>((root1 == <span class="keyword">null</span> &amp;&amp; root2 == <span class="keyword">null</span>) ||root1.getData() == root2.getData())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//递归判断所有左右子树，均相等返回true</span></span><br><span class="line">    <span class="keyword">if</span>(isEquals(root1.getLeftChild(), root2.getLeftChild()) </span><br><span class="line">       &amp;&amp; isEquals(root1.getRightChild(), root2.getRightChild()))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//否则返回false</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="判断两棵二叉树是否镜像"><a href="#判断两棵二叉树是否镜像" class="headerlink" title="判断两棵二叉树是否镜像"></a>判断两棵二叉树是否镜像</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMirrorBTree</span><span class="params">(BinaryTreeNode root1, BinaryTreeNode root2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root1 &amp;&amp; <span class="keyword">null</span> == root2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">null</span> == root1 || <span class="keyword">null</span> == root2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(root1.getData() != root2.getData()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//此处注意相反比较</span></span><br><span class="line">    <span class="keyword">return</span> isMirrorBTree(root1.getLeftChild(),root2.getRightChild())</span><br><span class="line">        &amp;&amp; isMirrorBTree(root1.getRightChild(),root2.getLeftChild());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="判断是否为完全二叉树"><a href="#判断是否为完全二叉树" class="headerlink" title="判断是否为完全二叉树"></a>判断是否为完全二叉树</h4><p>我们可以根据题意做题即可，我们可以采用分层遍历的方式，在判断一个具体的节点的时候，我们可以有如下的判断依据:</p>
-<ol>
-<li>如果这个节点的左子树为null，右子树不为null，则一定不是完全二叉树</li>
-<li>如果这个节点的左右子树均为null，或者这个节点的左子树不为null但是右子树为null，则当前层或者下一层不能再出现含有左右子树的节点</li>
-<li>如果当前节点的左右子树均不为null，则观察下一个节点</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isCompleteBTree</span><span class="params">(BinaryTreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> hasLeaf = <span class="keyword">false</span>;</span><br><span class="line">    List&lt;BinaryTreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    queue.offer(node);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        BinaryTreeNode tmp = queue.poll();</span><br><span class="line">        <span class="keyword">if</span> (tmp.getLeftChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况1，左子树为null，右子树不为null，则一定不是完全二叉树</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况2，左右子树均为null</span></span><br><span class="line">                <span class="comment">//则当前层或者下一层不能再出现含有左右子树的节点</span></span><br><span class="line">                hasLeaf = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (hasLeaf) &#123;</span><br><span class="line">                <span class="comment">//出现了含有左子树的节点，直接返回false</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRightChild() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况2，左子树不为null，右子树为null</span></span><br><span class="line">                <span class="comment">//则当前层或者下一层不能再出现含有左右子树的节点</span></span><br><span class="line">                hasLeaf = <span class="keyword">true</span>;</span><br><span class="line">                queue.add(tmp.getLeftChild());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (tmp.getRight() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//情况3，左右子树均不为null，则观察下一个节点</span></span><br><span class="line">                queue.add(tmp.getLeftChild());</span><br><span class="line">                queue.add(tmp.getRightChild());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="翻转二叉树-镜像二叉树"><a href="#翻转二叉树-镜像二叉树" class="headerlink" title="翻转二叉树(镜像二叉树)"></a>翻转二叉树(镜像二叉树)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BinaryTreeNode <span class="title">invertTree</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//递归反转左右子树</span></span><br><span class="line">    BinaryTreeNode temp = root.getLeftChild();</span><br><span class="line">    root.getLeftChild() = invertTree(root.getRightChild());</span><br><span class="line">    root.getRightChild() = invertTree(temp);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="判断是否是二叉查找树"><a href="#判断是否是二叉查找树" class="headerlink" title="判断是否是二叉查找树"></a>判断是否是二叉查找树</h4><p>一棵BST定义为：</p>
-<ul>
-<li>节点的左子树中的值要严格小于该节点的值</li>
-<li>节点的右子树中的值要严格大于该节点的值</li>
-<li>左右子树也必须是二叉查找树</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根节点的值data必然在(minVal,maxVal)这个范围内</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidBST</span><span class="params">(BinaryTreeNode root, <span class="keyword">long</span> minVal, <span class="keyword">long</span> maxVal)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> == root) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(root.getData() &gt;= maxVal || root.getData() &lt;= minVal) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root.getLeftChild(), minVal, root.data)</span><br><span class="line">        &amp;&amp; isValidBST(root.getRightChild(), root.data, maxVal);		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="判断是否是平衡二叉树"><a href="#判断是否是平衡二叉树" class="headerlink" title="判断是否是平衡二叉树"></a>判断是否是平衡二叉树</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">IsBalancedTree</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//左右子树高度绝对值大于1，返回false</span></span><br><span class="line">    <span class="keyword">if</span>(Math.abs(getMaxDepth(root.getLeftChild())-getMaxDepth(root.getRightChild()))&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//递归检查左右子树</span></span><br><span class="line">        <span class="keyword">return</span> IsBalancedTree(root.getLeftChild()) </span><br><span class="line">            &amp;&amp; IsBalancedTree(root.getRightChild());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求高度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDepth</span><span class="params">(BinaryTreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> left = getMaxDepth(root.getLeftChild());</span><br><span class="line">    <span class="keyword">int</span> right = getMaxDepth(root.getRightChild());</span><br><span class="line">    <span class="keyword">return</span> left &gt; right ? left + <span class="number">1</span> : right + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -4176,20 +4176,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
