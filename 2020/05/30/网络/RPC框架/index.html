@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="参考文档：https:&#x2F;&#x2F;snailclimb.gitee.io&#x2F;javaguide&#x2F;#&#x2F;docs&#x2F;system-design&#x2F;data-communication&#x2F;why-use-rpcRPC简介什么是 RPC？RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同">
+  <meta name="description" content="参考文档：https:&#x2F;&#x2F;snailclimb.gitee.io&#x2F;javaguide&#x2F;#&#x2F;docs&#x2F;system-design&#x2F;data-communication&#x2F;why-use-rpc  RPC简介什么是 RPC？RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RPC框架">
 <meta property="og:url" content="http://yoursite.com/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="严冰的博客">
-<meta property="og:description" content="参考文档：https:&#x2F;&#x2F;snailclimb.gitee.io&#x2F;javaguide&#x2F;#&#x2F;docs&#x2F;system-design&#x2F;data-communication&#x2F;why-use-rpcRPC简介什么是 RPC？RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同">
+<meta property="og:description" content="参考文档：https:&#x2F;&#x2F;snailclimb.gitee.io&#x2F;javaguide&#x2F;#&#x2F;docs&#x2F;system-design&#x2F;data-communication&#x2F;why-use-rpc  RPC简介什么是 RPC？RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4olrump8j30dv08t77k.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4ondbhbfj30gh0fsq51.jpg">
@@ -238,7 +238,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <!-- build time:Sat Jun 06 2020 01:17:29 GMT+0800 (GMT+08:00) --><blockquote><p>参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc</a></p></blockquote><h2 id="RPC简介"><a href="#RPC简介" class="headerlink" title="RPC简介"></a>RPC简介</h2><h4 id="什么是-RPC？"><a href="#什么是-RPC？" class="headerlink" title="什么是 RPC？"></a>什么是 RPC？</h4><p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同的机器上，那么服务 A 如果想要调用服务 B 中的某个方法该怎么办呢？使用 HTTP请求当然可以，但是可能会比较慢而且一些优化做的并不好。 RPC 的出现就是为了解决这个问题。</p><h2 id="RPC原理"><a href="#RPC原理" class="headerlink" title="RPC原理"></a>RPC原理</h2><p><a href="https://www.cnblogs.com/swordfall/p/8683905.html" target="_blank" rel="noopener">RPC原理解析</a></p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4olrump8j30dv08t77k.jpg" alt="RPC原理图" style="zoom:67%"><ol><li>服务消费方（client）调用以本地调用方式调用服务；</li><li>client stub接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体；</li><li>client stub找到服务地址，并将消息发送到服务端；</li><li>server stub收到消息后进行解码；</li><li>server stub根据解码结果调用本地的服务；</li><li>本地服务执行并将结果返回给server stub；</li><li>server stub将返回结果打包成消息并发送至消费方；</li><li>client stub接收到消息，并进行解码；</li><li>服务消费方得到最终结果。</li></ol><p>时序图：</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4ondbhbfj30gh0fsq51.jpg" alt="RPC原理时序图"><h2 id="RPC-解决了什么问题？"><a href="#RPC-解决了什么问题？" class="headerlink" title="RPC 解决了什么问题？"></a>RPC 解决了什么问题？</h2><p><strong>让分布式或者微服务系统中不同服务之间的调用像本地调用一样简单。</strong></p><h2 id="常见的-RPC-框架"><a href="#常见的-RPC-框架" class="headerlink" title="常见的 RPC 框架"></a>常见的 RPC 框架</h2><ul><li><strong>RMI（JDK自带）：</strong> JDK自带的RPC，有很多局限性，不推荐使用。</li><li><strong>Dubbo:</strong> Dubbo是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 Spring框架无缝集成。目前 Dubbo 已经成为 Spring Cloud Alibaba 中的官方组件。</li><li><strong>gRPC</strong> ：gRPC是可以在任何环境中运行的现代开源高性能RPC框架。它可以通过可插拔的支持来有效地连接数据中心内和跨数据中心的服务，以实现负载平衡，跟踪，运行状况检查和身份验证。它也适用于分布式计算的最后一英里，以将设备，移动应用程序和浏览器连接到后端服务。</li><li><strong>Hessian：</strong> Hessian是一个轻量级的remotingonhttp工具，使用简单的方法提供了RMI的功能。 相比WebService，Hessian更简单、快捷。采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据。</li><li><strong>Thrift：</strong> Apache Thrift是Facebook开源的跨语言的RPC通信框架，目前已经捐献给Apache基金会管理，由于其跨语言特性和出色的性能，在很多互联网公司得到应用，有能力的公司甚至会基于thrift研发一套分布式服务框架，增加诸如服务注册、服务发现等功能。</li></ul><h2 id="HTTP和RPC比较"><a href="#HTTP和RPC比较" class="headerlink" title="HTTP和RPC比较"></a>HTTP和RPC比较</h2><p>RPC 是一种概念、一种设计，就是为了解决 <strong>不同服务之间的调用问题</strong>, 它一般会包含有 <strong>传输协议</strong> 和 <strong>序列化协议</strong> 这两个。</p><p>HTTP 是一种协议，RPC框架可以使用 HTTP协议作为传输协议或者直接使用TCP作为传输协议，使用不同的协议一般也是为了适应不同的场景。</p><!-- rebuild by neat -->
+        <blockquote>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc</a></p>
+</blockquote>
+<h2 id="RPC简介"><a href="#RPC简介" class="headerlink" title="RPC简介"></a>RPC简介</h2><h4 id="什么是-RPC？"><a href="#什么是-RPC？" class="headerlink" title="什么是 RPC？"></a>什么是 RPC？</h4><p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同的机器上，那么服务 A 如果想要调用服务 B 中的某个方法该怎么办呢？使用 HTTP请求当然可以，但是可能会比较慢而且一些优化做的并不好。 RPC 的出现就是为了解决这个问题。</p>
+<h2 id="RPC原理"><a href="#RPC原理" class="headerlink" title="RPC原理"></a>RPC原理</h2><p><a href="https://www.cnblogs.com/swordfall/p/8683905.html" target="_blank" rel="noopener">RPC原理解析</a></p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4olrump8j30dv08t77k.jpg" alt="RPC原理图" style="zoom:67%;" />
+
+<ol>
+<li>服务消费方（client）调用以本地调用方式调用服务；</li>
+<li>client stub接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体；</li>
+<li>client stub找到服务地址，并将消息发送到服务端；</li>
+<li>server stub收到消息后进行解码；</li>
+<li>server stub根据解码结果调用本地的服务；</li>
+<li>本地服务执行并将结果返回给server stub；</li>
+<li>server stub将返回结果打包成消息并发送至消费方；</li>
+<li>client stub接收到消息，并进行解码；</li>
+<li>服务消费方得到最终结果。</li>
+</ol>
+<p>时序图：</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4ondbhbfj30gh0fsq51.jpg" alt="RPC原理时序图"  />
+
+<h2 id="RPC-解决了什么问题？"><a href="#RPC-解决了什么问题？" class="headerlink" title="RPC 解决了什么问题？"></a>RPC 解决了什么问题？</h2><p><strong>让分布式或者微服务系统中不同服务之间的调用像本地调用一样简单。</strong></p>
+<h2 id="常见的-RPC-框架"><a href="#常见的-RPC-框架" class="headerlink" title="常见的 RPC 框架"></a>常见的 RPC 框架</h2><ul>
+<li><strong>RMI（JDK自带）：</strong> JDK自带的RPC，有很多局限性，不推荐使用。</li>
+<li><strong>Dubbo:</strong> Dubbo是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 Spring框架无缝集成。目前 Dubbo 已经成为 Spring Cloud Alibaba 中的官方组件。</li>
+<li><strong>gRPC</strong> ：gRPC是可以在任何环境中运行的现代开源高性能RPC框架。它可以通过可插拔的支持来有效地连接数据中心内和跨数据中心的服务，以实现负载平衡，跟踪，运行状况检查和身份验证。它也适用于分布式计算的最后一英里，以将设备，移动应用程序和浏览器连接到后端服务。</li>
+<li><strong>Hessian：</strong> Hessian是一个轻量级的remotingonhttp工具，使用简单的方法提供了RMI的功能。 相比WebService，Hessian更简单、快捷。采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据。</li>
+<li><strong>Thrift：</strong> Apache Thrift是Facebook开源的跨语言的RPC通信框架，目前已经捐献给Apache基金会管理，由于其跨语言特性和出色的性能，在很多互联网公司得到应用，有能力的公司甚至会基于thrift研发一套分布式服务框架，增加诸如服务注册、服务发现等功能。</li>
+</ul>
+<h2 id="HTTP和RPC比较"><a href="#HTTP和RPC比较" class="headerlink" title="HTTP和RPC比较"></a>HTTP和RPC比较</h2><p>RPC 是一种概念、一种设计，就是为了解决 <strong>不同服务之间的调用问题</strong>, 它一般会包含有 <strong>传输协议</strong> 和 <strong>序列化协议</strong> 这两个。</p>
+<p>HTTP 是一种协议，RPC框架可以使用 HTTP协议作为传输协议或者直接使用TCP作为传输协议，使用不同的协议一般也是为了适应不同的场景。</p>
+
     </div>
 
     
@@ -257,8 +288,8 @@
       <i class="fa fa-chevron-left"></i> Http协议
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" rel="next" title="查找算法">
-      查找算法 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/" rel="next" title="红黑树">
+      红黑树 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
