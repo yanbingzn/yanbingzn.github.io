@@ -28,7 +28,7 @@
 <meta property="og:description" content="参考文档：   Java8-Stream API 详解   java8 stream常用方法  简介Stream 作为 Java 8 的一大亮点，它与 java.io 包里的 InputStream 和 OutputStream 是完全不同的概念。 Java 8 中的 Stream 是对集合（Collection）对象功能的增强，它专注于对集合对象进行各种非常便利、高效的聚合操作（aggre">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-30T12:50:49.000Z">
-<meta property="article:modified_time" content="2020-06-02T04:42:49.933Z">
+<meta property="article:modified_time" content="2020-06-08T00:53:20.127Z">
 <meta property="article:author" content="yanbing">
 <meta name="twitter:card" content="summary">
 
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:42:49" itemprop="dateModified" datetime="2020-06-02T12:42:49+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-08 08:53:20" itemprop="dateModified" datetime="2020-06-08T08:53:20+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,6 +273,8 @@
 <p>Stream API 借助于同样新出现的 Lambda 表达式，极大的提高编程效率和程序可读性。同时它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。</p>
 <p>通常编写并行代码很难而且容易出错, 但使用 Stream API 无需编写一行多线程的代码，就可以很方便地写出高性能的并发程序。</p>
 <p>所以说，Java 8 中首次出现的 java.util.stream 是一个函数式语言+多核时代综合影响的产物。</p>
+<a id="more"></a>
+
 <h2 id="Stream的概念"><a href="#Stream的概念" class="headerlink" title="Stream的概念"></a>Stream的概念</h2><p>流（Stream）是数据通道，用于操作数据源（集合，数组等）所生成的元素序列。整个流操作就是一条流水线，将元素放在流水线上一个个地进行处理。</p>
 <p><strong>集合讲的的是数据，流讲的是计算。</strong></p>
 <p>其中数据源便是原始集合，然后将如 <code>List&lt;T&gt;</code> 的集合转换为 <code>Stream&lt;T&gt;</code> 类型的流，并对流进行一系列的中间操作，比如过滤保留部分元素、对元素进行排序、类型转换等；最后再进行一个终端操作，可以把 Stream 转换回集合类型，也可以直接对其中的各个元素进行处理，比如打印、比如计算总数、计算最大值等等。</p>
@@ -479,12 +481,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/30/Java/Java%E5%9F%BA%E7%A1%80/" rel="prev" title="Java基础">
-      <i class="fa fa-chevron-left"></i> Java基础
+    <a href="/2020/05/30/Java/Java%E5%BC%82%E5%B8%B8/" rel="prev" title="Java异常">
+      <i class="fa fa-chevron-left"></i> Java异常
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/30/Java/Java%E9%9B%86%E5%90%88/" rel="next" title="Java集合">
-      Java集合 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/30/%E5%89%91%E6%8C%87offer/" rel="next" title="剑指offer">
+      剑指offer <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -561,7 +563,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

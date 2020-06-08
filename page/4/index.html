@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -200,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">查找算法</a>
+            <a href="/2020/05/30/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">Java多线程</a>
         </h2>
 
         <div class="post-meta">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 12:33:57" itemprop="dateModified" datetime="2020-06-02T12:33:57+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
             </span>
 
@@ -238,8 +238,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -254,270 +254,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="查找算法说明"><a href="#查找算法说明" class="headerlink" title="查找算法说明"></a>查找算法说明</h2><p><strong>查找定义</strong>：</p>
-<p>根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。</p>
-<p><strong>查找算法分类：</strong></p>
-<ol>
-<li><p>静态查找和动态查找</p>
-<p>注：静态或者动态都是针对查找表而言的。<strong>动态表指查找表中有删除和插入操作的表。</strong></p>
-</li>
-<li><p>无序查找和有序查找</p>
-<p>无序查找：被查找数列有序无序均可</p>
-<p>有序查找：被查找数列必须为有序数列</p>
-</li>
-</ol>
-<p><strong>平均查找长度（Average Search Length，ASL）</strong>：</p>
-<p>需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。</p>
-<p>对于含有n个数据元素的查找表，查找成功的平均查找长度为：<code>ASL = Pi * Ci</code> 的和。</p>
+          <h4 id="并发编程的优缺点"><a href="#并发编程的优缺点" class="headerlink" title="并发编程的优缺点"></a>并发编程的优缺点</h4><p><strong>优点</strong></p>
 <ul>
-<li>​    <strong>Pi</strong>：查找表中第i个数据元素的概率。</li>
-<li>​    <strong>Ci</strong>：找到第i个数据元素时已经比较过的次数。</li>
+<li>充分利用多核CPU的计算能力：通过并发编程的形式可以将多核CPU的计算能力发挥到极致，性能得到提升</li>
+<li>方便进行业务拆分，提升系统并发能力和性能：在特殊的业务场景下，先天的就适合于并发编程。现在的系统动不动就要求百万级甚至千万级的并发量，而多线程并发编程正是开发高并发系统的基础，利用好多线程机制可以大大提高系统整体的并发能力以及性能。面对复杂业务模型，并行程序会比串行程序更适应业务需求，而并发编程更能吻合这种业务拆分 。</li>
 </ul>
-<h2 id="顺序查找（Sequence-Search）"><a href="#顺序查找（Sequence-Search）" class="headerlink" title="顺序查找（Sequence Search）"></a>顺序查找（Sequence Search）</h2><p><strong>基本思想</strong></p>
-<p>顺序查找也称为线形查找，属于<strong>无序查找</strong>算法。从数据结构线形表的一端开始，顺序扫描，依次将扫描到的结点关键字与给定值k相比较，若相等则表示查找成功；若扫描结束仍没有找到关键字等于k的结点，表示查找失败。顺序查找适合于存储结构为<strong>顺序存储</strong>或<strong>链接存储</strong>的线性表。</p>
-<p><strong>复杂度分析</strong>　</p>
-<p>查找成功时的平均查找长度为（假设每个数据元素的概率相等）： <code>ASL = (1+2+3+…+n)/n = (n+1)/2</code> </p>
-<p>当查找不成功时，需要n+1次比较，时间复杂度为O(n)，所以，顺序查找的时间复杂度为O(n)。</p>
-<p><strong>代码实现</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">SequenceSearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = a.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] == value) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">SequenceSearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = a.length - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//如果最后一个数是要找的，直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (key == a[index])</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    <span class="comment">//将最后一个数设置为哨兵</span></span><br><span class="line">    a[index] = key;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (a[i++] != key);</span><br><span class="line">    <span class="comment">//若i == index + 1，说明没有查到，返回-1</span></span><br><span class="line">    <span class="keyword">return</span> i == index + <span class="number">1</span> ? -<span class="number">1</span> : i - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="二分查找（Binary-Search）"><a href="#二分查找（Binary-Search）" class="headerlink" title="二分查找（Binary Search）"></a>二分查找（Binary Search）</h2><p><strong>基本思想</strong></p>
-<ol>
-<li>从已经排好序的数组或区间中取出中间位置的元素，判断该元素是否满足要搜索的条件，如果满足，停止搜索，程序结束。</li>
-<li>如果正中间的元素不满足条件，则从它两边的区域进行搜索。由于数组是排好序的，可以利用排除法，确定接下来应该从这两个区间中的哪一个去搜索。</li>
-<li>通过判断，如果发现真正要找的元素在左半区间的话，就继续在左半区间里进行二分搜索。反之，就在右半区间里进行二分搜索。</li>
-</ol>
-<p><strong>核心步骤：</strong></p>
-<ol>
-<li>确定搜索的范围和区间</li>
-<li>取中间的数判断是否满足条件</li>
-<li>如果不满足条件，判定应该往哪个半边继续进行搜索</li>
-</ol>
-<p><strong>时间复杂度分析：</strong></p>
-<p>假设我们要对长度为 n 的数组进行二分搜索，T(n) 是执行时间函数，我们可以得到：<br>$$<br>T(n) = T(n/2) + 1<br>$$<br>代入公式法得：a = 1，b = 2，f(n) = 1，因此：O(nlog(b)a) = O(n0) = 1 等于 O(f(n))，时间复杂度就是 O(nlog(b)alogn) = <strong>O(logn)</strong>。非常高效。因此也称为<strong>对数搜索</strong>，但要求待查找的数组或者区间是<strong>排好序</strong>的。</p>
-<p><strong>代码实现</strong></p>
-<p>递归解法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 为了避免无限循环，先判断，如果起点位置大于终点位置，表明这是一个非法的区间</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt; high) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 取正中间那个数的下标 middle。</span></span><br><span class="line">    <span class="keyword">int</span> middle = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 判断一下正中间的那个数是不是要找的目标数 target，是，就返回下标 middle。    </span></span><br><span class="line">    <span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果发现目标数在左边，就递归地从左半边进行二分搜索。</span></span><br><span class="line">    <span class="comment">// 否则从右半边递归地进行二分搜索</span></span><br><span class="line">    <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(nums, target, low, middle - <span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(nums, target, middle + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<p><strong>缺点</strong></p>
 <ul>
-<li>在计算 middle 下标的时候，不能简单地用 (low + hight) / 2，可能会导致<strong>溢出</strong>。</li>
-<li>在取左半边以及右半边的区间时，左半边是 [low, middle - 1]，右半边是 [middle + 1, high]，这是两个闭区间。因为已经确定了 middle 那个点不是我们要找的，就没有必要再把它加入到左、右半边了。</li>
-<li>对于一个长度为奇数的数组，例如：{1, 2, 3, 4, 5}，按照 low + (high - low) / 2 来计算，middle 就是正中间的那个位置，对于一个长度为偶数的数组，例如 {1, 2, 3, 4}，middle 就是<strong>正中间靠左边</strong>的一个位置。</li>
+<li>并发编程的目的就是为了能提高程序的执行效率，提高程序运行速度，但是并发编程并不总是能提高程序运行速度的，而且并发编程可能会遇到很多问题，比如<strong>：内存泄漏、上下文切换、线程安全、死锁</strong>等问题。</li>
 </ul>
-</blockquote>
-<p>非递归解法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 在 while 循环里，判断搜索的区间范围是否有效</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">        <span class="comment">// 计算正中间的数的下标</span></span><br><span class="line">        <span class="keyword">int</span> middle = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// 判断正中间的那个数是不是要找的目标数 target。如果是，就返回下标 middle</span></span><br><span class="line">    	<span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">    	&#125;</span><br><span class="line">        <span class="comment">// 如果发现目标数在左边，调整搜索区间的终点为 middle - 1；</span></span><br><span class="line">        <span class="comment">//否则，调整搜索区间的起点为 middle + 1</span></span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果超出了搜索区间，表明无法找到目标数，返回 -1  </span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="插值查找（Insert-Search）"><a href="#插值查找（Insert-Search）" class="headerlink" title="插值查找（Insert Search）"></a>插值查找（Insert Search）</h2><p><strong>基本思想</strong></p>
-<ul>
-<li>差值查找算法是对二分查找（折半查找）的一个优化</li>
-<li>二分查找算法选取的是中间位置：<code>mid = (low + high)/2</code></li>
-<li>插值查找算法选取的是自适应<code>mid</code>位置开始查找: <code>mid= low + (key - a[low])(high - low)/(a[high] - a[low])</code></li>
-</ul>
-<p><strong>使用场景</strong></p>
-<ul>
-<li>插值查找算法通过上面计算的mid，可以判断要查找的位置大概在哪里，对于<strong>表较长，且关键字分布比较均匀</strong>时候，查找比较快。</li>
-<li>关键字分布不均匀的情况下，该方法不一定比折半查找要好</li>
-</ul>
-<p><strong>时间复杂度分析</strong></p>
-<p>如果元素均匀分布，则O(log2n)，在最坏的情况下可能需要 O(n)。</p>
-<p><strong>代码实现</strong></p>
-<p>递归实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">insertSearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 为了避免无限循环，先判断，如果起点位置大于终点位置，表明这是一个非法的区间</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt; high) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 二分查找</span></span><br><span class="line">    <span class="comment">//int middle = low + (high - low) / 2;</span></span><br><span class="line">    <span class="comment">// 插值查找</span></span><br><span class="line">  	<span class="keyword">int</span> middle = low + (high - low)*(target - nums[low])/(nums[high] - nums[low]);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断一下是不是要找的目标数 target，是，就返回下标 middle。    </span></span><br><span class="line">    <span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果发现目标数在左边，就递归地从左半边进行插值查找</span></span><br><span class="line">    <span class="comment">// 否则从右半边递归地进行插值查找</span></span><br><span class="line">    <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">        <span class="keyword">return</span> insertSearch(nums, target, low, middle - <span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> insertSearch(nums, target, middle + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>非递归解法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 在 while 循环里，判断搜索的区间范围是否有效</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">         <span class="comment">// 二分查找</span></span><br><span class="line">    	<span class="comment">//int middle = low + (high - low) / 2;</span></span><br><span class="line">    	<span class="comment">// 插值查找</span></span><br><span class="line">  		<span class="keyword">int</span> middle = low + (high - low)*(target - nums[low])/(nums[high] - nums[low]);</span><br><span class="line">        <span class="comment">// 判断一下是不是要找的目标数 target，是，就返回下标 middle</span></span><br><span class="line">    	<span class="keyword">if</span> (nums[middle] == target) &#123;</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">    	&#125;</span><br><span class="line">        <span class="comment">// 如果发现目标数在左边，调整搜索区间的终点为 middle - 1；</span></span><br><span class="line">        <span class="comment">//否则，调整搜索区间的起点为 middle + 1</span></span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[middle]) &#123;</span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果超出了搜索区间，表明无法找到目标数，返回 -1  </span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/tags/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/tags/" class="post-title-link" itemprop="url">tags</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 13:28:35" itemprop="dateCreated datePublished" datetime="2020-05-30T13:28:35+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 17:08:27" itemprop="dateModified" datetime="2020-06-05T17:08:27+08:00">2020-06-05</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/tags/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/tags/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <!--
-
----
-title: 1
-date: 2020-5-30 20:50:49
-categories: 
-- 算法
-tags:
-- 算法
----
-
-
-## 
-### 题目描述
-
-### 解题思路
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p>*/</p>
-<p>–&gt;</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/29/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-29 18:48:20" itemprop="dateCreated datePublished" datetime="2020-04-29T18:48:20+08:00">2020-04-29</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/29/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/29/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -567,7 +320,7 @@ tags:
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 08:10:45" itemprop="dateModified" datetime="2020-06-06T08:10:45+08:00">2020-06-06</time>
+                <time title="修改时间：2020-06-08 08:50:23" itemprop="dateModified" datetime="2020-06-08T08:50:23+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -606,10 +359,6 @@ tags:
       
           <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><p>+正文直接输入就可以了</p>
 <p>换行注意，要在代码中实际空一行，直接换行的话，渲染输出的是没有换行的</p>
-<p>行内代码块</p>
-<p><code>print (
-    “hello world!”
-)</code></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/05/26/vscode%E5%86%99%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9/#more" rel="contents">
@@ -703,7 +452,7 @@ tags:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
