@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -200,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/" class="post-title-link" itemprop="url">图算法</a>
+            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" class="post-title-link" itemprop="url">Git</a>
         </h2>
 
         <div class="post-meta">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:55:51" itemprop="dateModified" datetime="2020-06-08T08:55:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
                 </span>
             </span>
 
@@ -238,8 +238,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -254,10 +254,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="图的定义和常用术语"><a href="#图的定义和常用术语" class="headerlink" title="图的定义和常用术语"></a>图的定义和常用术语</h2><p>图是一系列顶点（结点）和描述顶点之间的关系边（弧）组成。图是数据元素的集合，这些数据元素相互连接形成网络。其形式化定义为：G=（V，E）。其中，G表示图，V是顶点的集合，E是边或弧的集合。并且E可以表示为：E=（Vi，Vj），表示顶点Vi和Vj之间有边或弧相连。</p>
+          <blockquote>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/tools/Git" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/tools/Git</a></p>
+</blockquote>
+<h2 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h2><p>Git 有三种状态，你的文件可能处于其中之一：</p>
+<ol>
+<li><strong>已提交（committed）</strong>：数据已经安全的保存在本地数据库中。</li>
+<li><strong>已修改（modified）</strong>：已修改表示修改了文件，但还没保存到数据库中。</li>
+<li><strong>已暂存（staged）</strong>：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+</ol>
+<p>由此引入 Git 项目的三个工作区域的概念：<strong>Git 仓库(.git directoty)</strong>、<strong>工作目录(Working Directory)</strong> 以及 <strong>暂存区域(Staging Area)</strong> 。</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf4qcxem9oj30m80c90sy.jpg" alt="img" style="zoom:67%;" />
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -281,7 +291,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -295,7 +305,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">排序算法</a>
+            <a href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/" class="post-title-link" itemprop="url">Linux</a>
         </h2>
 
         <div class="post-meta">
@@ -320,7 +330,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
                 </span>
             </span>
 
@@ -333,8 +343,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -349,20 +359,113 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h2><p><strong>排序的定义</strong></p>
-<p>对一序列对象根据某个关键字进行排序。</p>
-<p><strong>术语说明</strong></p>
-<ul>
-<li>稳定 ：如果a原本在b前面，并且a=b，则排序之后a仍然在b的前面；</li>
-<li>不稳定 ：如果a原本在b的前面，而a=b，则排序之后a可能会出现在b的后面；</li>
-<li>内排序 ：所有排序操作都在<strong>内存中</strong>完成；</li>
-<li>外排序 ：由于数据太大，因此把<strong>数据放在磁盘中</strong>，而排序通过磁盘和内存的数据传输才能进行；</li>
-<li>时间复杂度 ： 一个算法执行所耗费的时间。</li>
-<li>空间复杂度 ：运行完一个程序所需内存的大小。</li>
+          <blockquote>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux</a></p>
+</blockquote>
+<h2 id="初探Linux"><a href="#初探Linux" class="headerlink" title="初探Linux"></a>初探Linux</h2><h3 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h3><ul>
+<li><strong>类Unix系统：</strong> Linux是一种自由、开放源码的类似Unix的操作系统</li>
+<li><strong>Linux内核：</strong> 严格来说，Linux这个词本身只表示Linux内核。</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/child.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">Redis与缓存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:55:11" itemprop="dateModified" datetime="2020-06-08T08:55:11+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h3><p>Redis(Remote Dictionary Server) 是一个使用 C 语言编写的，开源的（BSD许可）高性能非关系型（NoSQL）的键值对数据库。</p>
+<p>Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。</p>
+<p>与传统数据库不同的是， Redis 的数据是存在内存中的，所以读写速度非常快，因此 redis 被广泛应用于缓存方向，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。另外，Redis 也经常用来做分布式锁。除此之外，Redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -492,7 +595,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -506,7 +609,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">查找算法</a>
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">sql基础</a>
         </h2>
 
         <div class="post-meta">
@@ -523,320 +626,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="查找算法说明"><a href="#查找算法说明" class="headerlink" title="查找算法说明"></a>查找算法说明</h2><p><strong>查找定义</strong>：</p>
-<p>根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。</p>
-<p><strong>查找算法分类：</strong></p>
-<ol>
-<li><p>静态查找和动态查找</p>
-<p>注：静态或者动态都是针对查找表而言的。<strong>动态表指查找表中有删除和插入操作的表。</strong></p>
-</li>
-<li><p>无序查找和有序查找</p>
-<p>无序查找：被查找数列有序无序均可</p>
-<p>有序查找：被查找数列必须为有序数列</p>
-</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">红黑树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="红黑树的性质"><a href="#红黑树的性质" class="headerlink" title="红黑树的性质"></a>红黑树的性质</h2><p>普通的二叉查找树在极端情况下可退化成链表，此时的增删查效率都会比较低下。为了避免这种情况，就出现了一些自平衡的查找树，比如 AVL，红黑树等。这些自平衡的查找树通过定义一些性质，将任意节点的左右子树高度差控制在规定范围内，以达到平衡状态。以红黑树为例，红黑树通过如下的性质定义实现自平衡：</p>
-<ol>
-<li>节点是红色或黑色。</li>
-<li>根是黑色。</li>
-<li>所有叶子都是黑色（叶子是NIL节点）。</li>
-<li>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</li>
-<li>从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点（简称黑高）。</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/" class="post-title-link" itemprop="url">数据结构图解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="数组、链表的优缺点"><a href="#数组、链表的优缺点" class="headerlink" title="数组、链表的优缺点"></a>数组、链表的优缺点</h3><h4 id="数组的优缺点"><a href="#数组的优缺点" class="headerlink" title="数组的优缺点"></a>数组的优缺点</h4><p>数组的优点在于：</p>
-<ul>
-<li>构建非常简单</li>
-<li>能在 O(1) 的时间里根据数组的下标（index）查询某个元素</li>
-</ul>
-<p>而数组的缺点在于：</p>
-<ul>
-<li>构建时必须分配一段连续的空间</li>
-<li>查询某个元素是否存在时需要遍历整个数组，耗费 O(n) 的时间（其中，n 是元素的个数）</li>
-<li>删除和添加某个元素时，同样需要耗费 O(n) 的时间</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">Redis与缓存</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:55:11" itemprop="dateModified" datetime="2020-06-08T08:55:11+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:55:31" itemprop="dateModified" datetime="2020-06-08T08:55:31+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -857,8 +647,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -873,12 +663,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h3><p>Redis(Remote Dictionary Server) 是一个使用 C 语言编写的，开源的（BSD许可）高性能非关系型（NoSQL）的键值对数据库。</p>
-<p>Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。</p>
-<p>与传统数据库不同的是， Redis 的数据是存在内存中的，所以读写速度非常快，因此 redis 被广泛应用于缓存方向，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。另外，Redis 也经常用来做分布式锁。除此之外，Redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p>
+          <blockquote>
+<p>  参考文档: <a href="https://www.w3school.com.cn/sql/index.asp" target="_blank" rel="noopener">SQL 教程</a></p>
+</blockquote>
+<h2 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h2><p><strong>SQL 是用于访问和处理数据库的标准的计算机语言。</strong></p>
+<h4 id="什么是-SQL"><a href="#什么是-SQL" class="headerlink" title="什么是 SQL"></a>什么是 SQL</h4><ul>
+<li>SQL 指结构化查询语言</li>
+<li>SQL 使我们有能力访问数据库</li>
+<li>SQL 是一种 ANSI 的标准计算机语言</li>
+</ul>
+<p>注：ANSI，美国国家标准化组织</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis%E4%B8%8E%E7%BC%93%E5%AD%98/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1001,7 +798,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -1015,7 +812,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">sql基础</a>
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
         </h2>
 
         <div class="post-meta">
@@ -1032,7 +829,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:55:31" itemprop="dateModified" datetime="2020-06-08T08:55:31+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1040,7 +837,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
                 </span>
             </span>
 
@@ -1053,8 +850,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1069,19 +866,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>  参考文档: <a href="https://www.w3school.com.cn/sql/index.asp" target="_blank" rel="noopener">SQL 教程</a></p>
-</blockquote>
-<h2 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h2><p><strong>SQL 是用于访问和处理数据库的标准的计算机语言。</strong></p>
-<h4 id="什么是-SQL"><a href="#什么是-SQL" class="headerlink" title="什么是 SQL"></a>什么是 SQL</h4><ul>
-<li>SQL 指结构化查询语言</li>
-<li>SQL 使我们有能力访问数据库</li>
-<li>SQL 是一种 ANSI 的标准计算机语言</li>
-</ul>
-<p>注：ANSI，美国国家标准化组织</p>
+          <h2 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h2><p><strong>二叉树（Binary Tree）</strong></p>
+<p>二叉树（Binary Tree）是有限个节点的集合，这个集合可以是空集，也可以是一个根节点和两颗不相交的子二叉树组成的集合，其中一颗树叫根的左子树，另一颗树叫右子树。所以二叉树是一个递归地概念。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1105,7 +894,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -1119,7 +908,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/" class="post-title-link" itemprop="url">RPC框架</a>
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/" class="post-title-link" itemprop="url">图算法</a>
         </h2>
 
         <div class="post-meta">
@@ -1136,7 +925,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:54:04" itemprop="dateModified" datetime="2020-06-08T08:54:04+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1144,7 +933,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
                 </span>
             </span>
 
@@ -1157,8 +946,103 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="图的定义和常用术语"><a href="#图的定义和常用术语" class="headerlink" title="图的定义和常用术语"></a>图的定义和常用术语</h2><p>图是一系列顶点（结点）和描述顶点之间的关系边（弧）组成。图是数据元素的集合，这些数据元素相互连接形成网络。其形式化定义为：G=（V，E）。其中，G表示图，V是顶点的集合，E是边或弧的集合。并且E可以表示为：E=（Vi，Vj），表示顶点Vi和Vj之间有边或弧相连。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/child.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">基本数据结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1174,12 +1058,107 @@
 
       
           <blockquote>
-<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/system-design/data-communication/why-use-rpc</a></p>
+<p>  常用的数据结构可根据数据访问的特点分为<strong>线性结构</strong>和<strong>非线性结构</strong>。</p>
+<p>  线性结构包括常见的链表、栈、队列等，非线性结构包括树、图等。</p>
 </blockquote>
-<h2 id="RPC简介"><a href="#RPC简介" class="headerlink" title="RPC简介"></a>RPC简介</h2><h4 id="什么是-RPC？"><a href="#什么是-RPC？" class="headerlink" title="什么是 RPC？"></a>什么是 RPC？</h4><p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同的机器上，那么服务 A 如果想要调用服务 B 中的某个方法该怎么办呢？使用 HTTP请求当然可以，但是可能会比较慢而且一些优化做的并不好。 RPC 的出现就是为了解决这个问题。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E7%BD%91%E7%BB%9C/RPC%E6%A1%86%E6%9E%B6/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/child.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">字符串算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:57:47" itemprop="dateModified" datetime="2020-06-08T08:57:47+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="字符串查找"><a href="#字符串查找" class="headerlink" title="字符串查找"></a>字符串查找</h4><h5 id="KMP-算法"><a href="#KMP-算法" class="headerlink" title="KMP 算法"></a>KMP 算法</h5><p>谈到字符串问题，不得不提的就是 KMP 算法，它是用来解决<strong>字符串查找</strong>的问题，可以在一个字符串（S）中查找一个子串（W）出现的位置。KMP 算法把字符匹配的时间复杂度缩小到 O(m+n) ,而空间复杂度也只有O(m)。因为“暴力搜索”的方法会反复回溯主串，导致效率低下，而KMP算法可以利用已经部分匹配这个有效信息，保持主串上的指针不回溯，通过修改子串的指针，让模式串尽量地移动到有效的位置。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1202,7 +1181,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1270,14 +1249,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
