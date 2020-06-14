@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-14 22:09:51" itemprop="dateModified" datetime="2020-06-14T22:09:51+08:00">2020-06-14</time>
+                <time title="修改时间：2020-06-14 22:11:40" itemprop="dateModified" datetime="2020-06-14T22:11:40+08:00">2020-06-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,24 +256,14 @@
       
           <p>参考书籍：<br>《重构 改善既有代码的设计 第2版》马丁 福勒著 人民邮电出版社</p>
 <p>马丁 福勒的其他著作：《分析模式》，《UML精粹》，《领域特定语言》</p>
-<p>目录<br>这本书一共有12章，像<strong>代码的坏味道</strong>，<strong>测试体系*</strong>这类词已经屡见不鲜了。</p>
-<p>第1章：重构，第一个示例</p>
-<p>第2章：重构的原则</p>
-<p>第3章：代码的坏味道</p>
-<p>第4章：构筑测试体系</p>
-<p>第5章：介绍重构名录</p>
-<p>第6章：第一组重构</p>
-<p>第7章：封装</p>
-<p>第8章：搬移特性</p>
-<p>第9章：重新组织数据</p>
-<p>第10章：简化条件逻辑</p>
-<p>第11章：重构API</p>
-<p>第12章：处理继承关系</p>
-<p>关于重构的定义<br>作者对于重构的定义有着非常严谨的要求，我提炼一下，大概是这个意思：</p>
-<p><strong>在不改变软件可观察行为的前提下，提高代码可读性。</strong></p>
-<p>关于代码可读性这个话题是具有一定适应范围的，对于一个简单的应用并不显得重要，但对于复杂的业务系统就显得十分关键。试想一下，如果5000行代码写的乱七八糟还能咬咬牙硬着头皮看一下；倘若是50万行乱七八糟的代码……就只能……你懂的！</p>
-<p><strong>代码的可读性对于后续代码维护，代码修改起到了相当重要的铺垫作用。</strong></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%201%20Have%20a%20look/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -323,7 +313,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-14 22:09:52" itemprop="dateModified" datetime="2020-06-14T22:09:52+08:00">2020-06-14</time>
+                <time title="修改时间：2020-06-14 22:11:40" itemprop="dateModified" datetime="2020-06-14T22:11:40+08:00">2020-06-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -362,70 +352,14 @@
       
           <h3 id="1-什么是重构？"><a href="#1-什么是重构？" class="headerlink" title="1.什么是重构？"></a>1.什么是重构？</h3><p>在不改变软件可观察行为的前提下，使用一些重构的手法，提高代码可读性。</p>
 <p>换句话说，在保持软件可用的前提下，修改代码使得更加容易被理解。</p>
-<h3 id="2-为什么重构？"><a href="#2-为什么重构？" class="headerlink" title="2.为什么重构？"></a>2.为什么重构？</h3><p>为了后续的代码维护和修改，易读是重构的核心价值。</p>
-<p>除此之外，重构随之带来的好处有：</p>
-<p>找到bug<br>提高编程速度（在代码量累计到一定程度时，重构过的代码会更加易于添加新功能）</p>
-<h3 id="3-什么时候重构？"><a href="#3-什么时候重构？" class="headerlink" title="3.什么时候重构？"></a>3.什么时候重构？</h3><ul>
-<li>添加新功能之前重构</li>
-</ul>
-<p>添加新功能最快的方法往往是先修改现有代码，使新功能容易被加入。</p>
-<ul>
-<li><p>使代码更易理解时重构</p>
-</li>
-<li><p>顺便重构（修复bug，添加新功能）</p>
-</li>
-<li><p>代码复审（code review）时重构</p>
-</li>
-</ul>
-<p>总而言之：重构的门槛远远没有想象中那么高，重构是对既有代码的修改，也许我们在无意识中就已经做了这样的工作，一方面继续保持良好的编程习惯，另一方面学习更加成体系的重构手法。</p>
-<p>就如同重构的定义，在可用的前提下，提高重构的技术。</p>
-<p><strong>什么时候不应该重构？</strong></p>
-<p>对于一段凌乱的代码，如果不需要修改它，就不需要重构。</p>
-<p>只有当你需要理解其工作原理时，重构才变得有价值。</p>
-<p>如果重写比重构更加容易，那就不需要重构了。（判断）</p>
-<h3 id="4-重构会遇到哪些问题？"><a href="#4-重构会遇到哪些问题？" class="headerlink" title="4.重构会遇到哪些问题？"></a>4.重构会遇到哪些问题？</h3><p><code>“毕竟生活里很少有晴空万里的好事”       **——Martin Fowler**</code></p>
-<ul>
-<li>延缓新功能开发</li>
-</ul>
-<p>先添加新功能再重构，还是先重构再添加新功能，这不是一个对错的问题，而是一个取舍的分叉口。</p>
-<p>Martin Fowler的回答醍醐灌顶，作为程序员往往对代码库的整洁有着极高的追求，以技术去驱动重构没有错，但现实世界往往取决于经济。</p>
-<p>“重构的意义不在于把代码库打磨的闪闪发光，而是纯粹经济角度出发的考量。”</p>
-<p>“重构应该总是由经济利益驱动。”</p>
-<p>除了重构之外，现在的团队开发，前后端分离等等，不仅是技术发展的必然结果，同时也是经济化必然的结果。同样的场景，是否重构更多取决于经济条件。</p>
-<ul>
-<li>代码所有权成为重构阻力</li>
-</ul>
-<p>修改函数声明和调用可能也会遭遇声明者无法修改调用者代码的权限问题。</p>
-<p>Martin Fowler推荐的是团队代码所有制。对于跨团队的兼容，可以采用类似GitHub上开源的模型。</p>
-<p>(在强代码所有制和混乱修改的折中)</p>
-<ul>
-<li>分支合并问题</li>
-</ul>
-<p>在隔离的分支上工作的越久，需要完成的集成工作就越困难。</p>
-<p>持续集成（CI：Continuous Integration）：也称基于主干开发。为了避免彼此分支差异过大，每个团队成员每天至少向主线集成一次。</p>
-<p>使用CI的代价：必须使用相关的实践保持主线的健康状态。</p>
-<ul>
-<li>快速的自测试</li>
-</ul>
-<p>建立一套完备的测试套件，并且需要快速运行。</p>
-<p>准备这套测试套件的代价很高，但收益也是可观的：</p>
-<p>使重构可行性变得更大<br>使添加新功能更加安全<br>bug排查更加迅速，容易</p>
-<ul>
-<li>遗留代码</li>
-</ul>
-<p>重构可以很好的理解遗留系统，但同时又是十分危险的。</p>
-<p>再次推书了，hhh《修改代码的艺术》：运用重构手法创造出接缝，在接缝处插入测试。（当然，具有一定风险）</p>
-<ul>
-<li>数据库</li>
-</ul>
-<p>flower先生的同事发明了一套渐进式数据库设计和数据库重构的方法…….</p>
-<h3 id="5-重构与性能优化"><a href="#5-重构与性能优化" class="headerlink" title="5.重构与性能优化"></a>5.重构与性能优化</h3><p>重构：使代码更易读</p>
-<p>性能优化：使代码运行速度更快</p>
-<p>先写出可调优的软件（重构），然后对其调优达到足够的速度（性能优化）。</p>
-<p>关于性能优化：现状——大半时间都花在了一小段代码上。</p>
-<p>使用一个度量工具监控程序的运行，找出性能热点的一小段代码集中调优。</p>
-<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>.自动化重构<br>Intellij IDEA可以自动重构的…</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%202%20%E9%87%8D%E6%9E%84%E7%9A%84%E5%8E%9F%E5%88%99/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -570,7 +504,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-14 22:08:10" itemprop="dateModified" datetime="2020-06-14T22:08:10+08:00">2020-06-14</time>
+                <time title="修改时间：2020-06-14 22:11:40" itemprop="dateModified" datetime="2020-06-14T22:11:40+08:00">2020-06-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -610,158 +544,9 @@
           <p>代码的坏味道这一章集中论述该何时重构。具体的重构方法在后面的章节。</p>
 <p>“没有任何度量规矩比得上见识广博者的直觉。你必须培养自己的判断力，学会判断一个类中有多少实例变量才算太大，一个函数内有多少代码才不算太长。”</p>
 <p>​ ——Martin Flower</p>
-<ol>
-<li>改名<br>深思熟虑给函数，模块，变量和类命名，使其清晰的表明自己的功能和用法。</li>
-</ol>
-<p>重构手法之一：改名（改变函数声明，变量改名，字段改名）</p>
-<ol start="2">
-<li>消除重复代码——提炼函数<br>同一个类的两个函数含有相同的表达式——提炼函数。</li>
-</ol>
-<p>重复的代码段位于同一个超类的不同子类中——函数上移。</p>
-<ol start="3">
-<li>拆分过长函数<br>“活的最长，最好的程序往往都比较短”</li>
-</ol>
-<p>“函数越长，就越难理解”</p>
-<ol start="4">
-<li>过长参数列表<br>如果发现几项参数经常出现，可通过引入参数对象将其合并为一个对象。（封装）<br>如果发现从现有的数据结构抽出很多数据项作为参数，不如直接传递完整的对象<br>以查询替代参数：可以像某个参数查询获得另一个参数的值。</li>
-<li>全局变量<br>全局变量的问题：代码库的任何一个角落都可以修改，且无法探测。（代码病毒）</li>
-</ol>
-<p>处理方法：封装变量。用函数封装起来，再搬到类或模块里，控制其访问权限。</p>
-<ol start="6">
-<li>发散式变化与霰弹式修改<br>发散式变化：遇到变化时固定修改某一部分代码。</li>
-</ol>
-<p>霰弹式修改：代码的坏味道其中一种，遇到变化需要修改很多地方。</p>
-<p>减小模块的耦合，实现模块的独立。在添加修改功能时实现代码变更的独立。</p>
-<ol start="7">
-<li>依恋情节<br>模块化：最大化区域的内部交互，最小化的跨区域交互。</li>
-</ol>
-<p>依恋情节：一个函数和另一个模块的函数或者数据交流格外频繁，远胜于在自己内部的交流。</p>
-<ol start="8">
-<li>数据泥团<br>“两个类中相同的字段，许多函数签名中相同的参数….”</li>
-</ol>
-<p>在必要时提炼类。引入参数对象，保持对象完整使之参数列表较短。</p>
-<p>语义和形式的权衡。</p>
-<ol start="9">
-<li><p>使用多态替换switch</p>
-</li>
-<li><p>循环语句<br>以管道取代循环。</p>
-</li>
-<li><p>冗赘的元素<br>随着重构类变得越来越小，适时庄严赴义。</p>
-</li>
-<li><p>夸夸其谈通用性<br>如果用不到，就不值得。用不上的装置只会挡路。</p>
-</li>
-<li><p>中间人<br>封装往往伴随着委托。</p>
-</li>
-</ol>
-<p>委托应当适度，过度委托就会变成冗余。</p>
-<ol start="14">
-<li>过大的类<br>造成重复代码。</li>
-</ol>
-<p>提炼类，提炼超类。</p>
-<ol start="15">
-<li>注释<br>“当你感觉需要写注释时，请先尝试重构。”</li>
-</ol>
-<p>注释的应用场景：</p>
-<p>这段代码做了什么<br>记录将来的打算<br>为什么做</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E9%9B%86%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">Java集合</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E9%9B%86%E5%90%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E9%9B%86%E5%90%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><h4 id="集合分类"><a href="#集合分类" class="headerlink" title="集合分类"></a>集合分类</h4><p>Java 容器分为 Collection 和 Map 两大类：</p>
-<img src="../图片/collection集合.jpg" alt="collection集合" style="zoom: 67%;" />
-
-<p>Collection集合主要有List和Set两大接口</p>
-<ul>
-<li>Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。</li>
-<li>List：一个有序（元素存入集合的顺序和取出的顺序一致）容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 ArrayList、LinkedList。</li>
-</ul>
-<p>Map是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。Map 的常用实现类：HashMap、TreeMap、HashTable、LinkedHashMap、ConcurrentHashMap</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E9%9B%86%E5%90%88/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%203%20%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -961,6 +746,106 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/30/%E5%9F%BA%E7%A1%80Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/child.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">操作系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="一、基本特征"><a href="#一、基本特征" class="headerlink" title="一、基本特征"></a>一、基本特征</h3><h4 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h4><p><strong>并发</strong>是指宏观上在一段时间内能同时运行多个程序，而<strong>并行</strong>则指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+<h4 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h4><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
+<p>互斥共享的资源称为临界资源，例如打印机等，在同一时刻只允许一个进程访问，需要用同步机制来实现互斥访问。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
