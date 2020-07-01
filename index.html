@@ -186,6 +186,198 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/child.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/" class="post-title-link" itemprop="url">Spring基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-23 20:50:49 / 修改时间：23:48:47" itemprop="dateCreated datePublished" datetime="2020-06-23T20:50:49+08:00">2020-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">Java框架</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Spring框架的七大模块"><a href="#Spring框架的七大模块" class="headerlink" title="Spring框架的七大模块"></a>Spring框架的七大模块</h2><ul>
+<li><strong>Spring Core</strong>：框架的最基础部分，提供 IoC 容器，对 bean 进行管理。</li>
+<li><strong>Spring Context</strong>：继承BeanFactory，提供上下文信息，扩展出JNDI、EJB、电子邮件、国际化等功能。</li>
+<li><strong>Spring DAO</strong>：提供了JDBC的抽象层，还提供了声明性事务管理方法。</li>
+<li><strong>Spring ORM</strong>：提供了JPA、JDO、Hibernate、MyBatis 等ORM映射层.</li>
+<li><strong>Spring AOP</strong>：集成了所有AOP功能</li>
+<li><strong>Spring Web</strong>：提供了基础的 Web 开发的上下文信息，现有的Web框架，如JSF、Tapestry、Structs等，提供了集成</li>
+<li><strong>Spring Web MVC</strong>：提供了 Web 应用的 Model-View-Controller 全功能实现。</li>
+</ul>
+<h2 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h2><h3 id="概念梳理"><a href="#概念梳理" class="headerlink" title="概念梳理"></a>概念梳理</h3><h4 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h4><ol>
+<li>AOP 是 ==Aspect Oriented Programming（面向切面编程）== 的简称，和OOP（面向对象编程）一样是一种编程思想，是对OOP的一种补充。</li>
+<li>AOP旨在将横切关注点（crosscutting concern）从业务主体逻辑中进行剥离，实现关注点分离，以提高程序的模块化程度（及业务模块只需关注业务逻辑，无需关注日志、安全、事务等通用逻辑）</li>
+</ol>
+<h4 id="常见术语"><a href="#常见术语" class="headerlink" title="常见术语"></a>常见术语</h4><p>AOP有自己的一套术语，我们必须了解一下这些行话，才能更好地理解AOP。为了方便大家理解，下面将用电表抄表员作为例子。</p>
+<ol>
+<li>通知 (Advice)<ul>
+<li>电表抄表员的工作是登记每家每户的电量并汇报给电力公司，记录电量是抄表员的主要工作，类似的，==切面需要完成的工作称为通知==。</li>
+<li>定义了切面在切点附近的操作 （什么时候做什么事）。</li>
+<li>常见的通知类型有：before、after、after-returning、around等</li>
+</ul>
+</li>
+<li>连接点 (JoinPoint)<ul>
+<li>电力公司为整个城市提供供电，每家都有一个电表，每一家都是抄表员的潜在目标。同样的，我们的==程序也有千万的时间点可以执行通知，这些时间点被称为连接点==。</li>
+<li>连接点指程序运行时允许插入切面的一个点，可以是一个函数、一个包路径、一个类、或者抛出的异常</li>
+</ul>
+</li>
+<li>切点（PointCut）<ul>
+<li>如果让一位抄表员访问所有电力公司的住户是不现实的，一般每一个抄表员仅负责某一个区域的住户，同样的，==切点用于指定连接点的范围==。</li>
+<li>切点用于定义切面的位置，也就是捕获哪些连接点的调用然后执行”通知”的操作（什么地点）。</li>
+</ul>
+</li>
+<li>切面（Aspect）<ul>
+<li>当抄表员开始一天的工作时，他知道自己要做的事情（记录电量）以及去哪里收集信息（去哪些地点），这个==聚合信息称为切面==。</li>
+<li>切面是切点和通知的聚合，一般是一个横跨多各类的通用逻辑抽象而成的类，切面类会定义在什么时间、什么地点、做什么事</li>
+</ul>
+</li>
+<li>目标对象( Target )<ul>
+<li>指被切面织入的对象</li>
+</ul>
+</li>
+<li>引入（Introduction）<ul>
+<li>引入允许我们向现有的类添加新方法或属性。</li>
+</ul>
+</li>
+<li>织入（Weaving）<ul>
+<li>织入是把切面应用到切点对应的连接点的过程。切面在指定连接点被织入到目标对象中。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Spring-IoC"><a href="#Spring-IoC" class="headerlink" title="Spring IoC"></a>Spring IoC</h2><blockquote>
+<p>  IoC - Inversion of Control, 控制反转。</p>
+</blockquote>
+<h3 id="初识IoC"><a href="#初识IoC" class="headerlink" title="初识IoC"></a>初识IoC</h3><h4 id="什么是控制反转？"><a href="#什么是控制反转？" class="headerlink" title="什么是控制反转？"></a>什么是控制反转？</h4><p>控制反转就是把创建和管理 bean 的过程转移给了第三方。而这个第三方，就是 Spring IoC Container，对于 IoC 来说，最重要的就是<strong>容器</strong>。</p>
+<p>容器负责创建、配置和管理 bean，也就是它管理着 bean 的生命，控制着 bean 的依赖注入。通俗点讲，因为项目中每次创建对象是很麻烦的，所以使用 Spring IoC 容器来管理这些对象，需要的时候就直接用，不用管它是怎么来的、什么时候要销毁，只管用就好了。</p>
+<p>举个例子，就好像父母没时间管孩子，就把小朋友交给托管所，就安心的去上班而不用管孩子了。托儿所，就是第三方容器，负责管理小朋友的吃喝玩乐；父母，相当于程序员，只管接送孩子，不用管他们吃喝。</p>
+<h4 id="bean-是什么？"><a href="#bean-是什么？" class="headerlink" title="bean 是什么？"></a><code>bean</code> 是什么？</h4><p>Bean 其实就是包装了的 Object，无论是控制反转还是依赖注入，它们的主语都是 Object，而 bean 就是由第三方包装好了的 Object。（想一下别人送礼物给你的时候都是要包装一下的，自己造的就免了。</p>
+<p>Bean 是 Spring 的主角，有种说法叫 Spring 就是面向 bean 的编程（Bean Oriented Programming, BOP）。</p>
+<h4 id="几个关键问题："><a href="#几个关键问题：" class="headerlink" title="几个关键问题："></a>几个关键问题：</h4><h5 id="何为控制，控制的是什么？"><a href="#何为控制，控制的是什么？" class="headerlink" title="何为控制，控制的是什么？"></a>何为控制，控制的是什么？</h5><p>答：是 bean 的创建、管理的权利，控制 bean 的整个生命周期。</p>
+<h5 id="何为反转，反转了什么？"><a href="#何为反转，反转了什么？" class="headerlink" title="何为反转，反转了什么？"></a>何为反转，反转了什么？</h5><p>答：把这个权利交给了 Spring 容器，而不是自己去控制，就是反转。由之前的自己主动创建对象，变成现在被动接收别人给我们的对象的过程，这就是反转。</p>
+<p>举个生活中的例子，主动投资和被动投资。</p>
+<p>自己炒股、选股票的人就是主动投资，主动权掌握在自己的手中；而买基金的人就是被动投资，把主动权交给了基金经理，除非你把这个基金卖了，否则具体选哪些投资产品都是基金经理决定的。</p>
+<h3 id="IoC-容器"><a href="#IoC-容器" class="headerlink" title="IoC 容器"></a>IoC 容器</h3><h4 id="IoC容器的设计"><a href="#IoC容器的设计" class="headerlink" title="IoC容器的设计"></a>IoC容器的设计</h4><p>使用 <code>ApplicationContext</code>，它是 <code>BeanFactory</code> 的子类，更好的补充并实现了 <code>BeanFactory</code> 。</p>
+<p><code>BeanFactory</code> 简单粗暴，可以理解为 HashMap：</p>
+<ul>
+<li>Key - bean name</li>
+<li>Value - bean object</li>
+</ul>
+<p>但它一般只有 get, put 两个功能，所以称之为“低级容器”。而 <code>ApplicationContext</code> 多了很多功能，因为它继承了多个接口，可称之为“高级容器”。</p>
+<p><code>ApplicationContext</code> 的里面有两个具体的实现子类，用来读取配置配件的：</p>
+<ul>
+<li><code>ClassPathXmlApplicationContext</code> - 从 class path 中加载配置文件，更常用一些；</li>
+<li><code>FileSystemXmlApplicationContext</code> - 从本地文件中加载配置文件，不是很常用，如果再到 Linux 环境中，还要改路径，不是很方便。</li>
+</ul>
+<p>当我们点开 <code>ClassPathXmlApplicationContext</code> 时，发现它并不是直接继承 <code>ApplicationContext</code> 的，它有很多层的依赖关系，每层的子类都是对父类的补充实现。而再往上找，发现最上层的 class 回到了 <code>BeanFactory</code>，所以它非常重要。</p>
+<blockquote>
+<p>  要注意，Spring 中还有个 <code>FactoryBean</code>，两者并没有特别的关系，只是名字比较接近，所以不要弄混了顺序。</p>
+</blockquote>
+<h4 id="IoC容器的初始化"><a href="#IoC容器的初始化" class="headerlink" title="IoC容器的初始化"></a>IoC容器的初始化</h4><p>Spring IOC容器初始化的核心过程可以简单的如下图表示，主要有四个步骤（还有一些如：后置加载器，国际化，事件广播器等一些过程不展开）：</p>
+<ol>
+<li>Bean定义的定位，Bean 可能定义在XML中，或者一个注解，或者其他形式。这些都被用Resource来定位，读取Resource获取BeanDefinition 注册到 Bean定义注册表中。</li>
+<li>第一次向容器getBean操作会触发Bean的创建过程,实列化一个Bean时 ,根据BeanDefinition中类信息等实列化Bean。</li>
+<li>将实列化的Bean放到单列Bean缓存内。</li>
+<li>此后再次获取向容器getBean就会从缓存中获取。</li>
+</ol>
+<h3 id="Spring-Bean"><a href="#Spring-Bean" class="headerlink" title="Spring Bean"></a>Spring Bean</h3><h4 id="Bean的注入方式"><a href="#Bean的注入方式" class="headerlink" title="Bean的注入方式"></a>Bean的注入方式</h4><p>目前主要有五种注入方式：SET注入，构造器注入，静态工厂，实例工厂，注解方式</p>
+<h4 id="Bean解析注册过程"><a href="#Bean解析注册过程" class="headerlink" title="Bean解析注册过程"></a>Bean解析注册过程</h4><p>这个过程完成Bean的从配置文件到解析注册成bean工厂的过程（对应代码在AbstactApplicationContext.obtainFreshBeanFactory）</p>
+<ol>
+<li>通过读取XML配置文件获取 Resource 资源，获取这个资源包含了路径config/spring/local/appcontext-client.xml 文件下定义的BeanDefinition信息。</li>
+<li>创建一个 BeanFactory，这里使用 DefaultListableBeanFactory。</li>
+<li>创建一个载入 BeanDefinition 的解读器，这里使用 XmlBeanDefinitionReader 来载入 XML 文件形式 BeanDefinition，通过一个回调配置给 factory。</li>
+<li>从定义好的资源位置读入配置信息，具体的解析过程由 XmlBeanDefinitionReader 的 loadBeanDefinitions() 方法来完成。完成整个载入和注册 Bean 定义之后，需要的 IoC 容器就建立起来可以直接使用了。</li>
+</ol>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><blockquote>
+<p>  DI - dependency injection, 依赖注入</p>
+</blockquote>
+<h4 id="何为依赖，依赖什么？"><a href="#何为依赖，依赖什么？" class="headerlink" title="何为依赖，依赖什么？"></a>何为依赖，依赖什么？</h4><p>程序运行需要依赖外部的资源，提供程序内对象的所需要的数据、资源。</p>
+<h4 id="何为注入，注入什么？"><a href="#何为注入，注入什么？" class="headerlink" title="何为注入，注入什么？"></a>何为注入，注入什么？</h4><p>配置文件把资源从外部注入到内部，容器加载了外部的文件、对象、数据，然后把这些资源注入给程序内的对象，维护了程序内外对象之间的依赖关系。</p>
+<p>所以说，==控制反转是通过依赖注入实现的==。但是它们是有差别的，像是<strong>从不同角度描述的同一件事</strong>：</p>
+<ul>
+<li>IoC 是设计思想，DI 是具体的实现方式</li>
+<li>IoC 是理论，DI 是实践</li>
+</ul>
+<p>从而实现对象之间的解藕。</p>
+<p><strong>当然，IoC 也可以通过其他的方式来实现，而 DI 只是 Spring 的选择。</strong></p>
+<p>IoC 和 DI 也并非 Spring 框架提出来的，Spring 只是应用了这个设计思想和理念到自己的框架里去。</p>
+<h3 id="使用-IoC-的好处"><a href="#使用-IoC-的好处" class="headerlink" title="使用 IoC 的好处"></a>使用 IoC 的好处</h3><p>==解藕==。</p>
+<p>它把对象之间的依赖关系转成用配置文件来管理，由 Spring IoC Container 来管理。</p>
+<p>在项目中，底层的实现都是由很多个对象组成的，对象之间彼此合作实现项目的业务逻辑。但是，很多很多对象紧密结合在一起，一旦有一方出问题了，必然会对其他对象有所影响，所以才有了解藕的这种设计思想。</p>
+<h2 id="Spring-创建对象的过程"><a href="#Spring-创建对象的过程" class="headerlink" title="Spring 创建对象的过程"></a>Spring 创建对象的过程</h2><p>通过 <code>ApplicationContext</code> 这个 IoC 容器的入口，用它的两个具体的实现子类，从 class path 或者 file path 中读取数据，用 <code>getBean()</code> 获取具体的 bean instance。</p>
+<p>那使用 Spring 到底省略了我们什么工作？</p>
+<p>答：<code>new 的过程</code>。把 new 的过程交给第三方来创建、管理，这就是「解藕」。Spring 也是用的 <code>set()</code> 方法，它只不过提供了一套更加完善的实现机制而已。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Java%E6%A1%86%E6%9E%B6/Mybatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -394,198 +586,6 @@
 <td>单独实例的值和它对应的映射。属性有：value, type, results。results 属性是结果数组，因此这个注解和实际的 ResultMap 很相似，由下面的 Results 注解指定。</td>
 </tr>
 </tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/child.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/" class="post-title-link" itemprop="url">Spring基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-23 20:50:49 / 修改时间：23:48:47" itemprop="dateCreated datePublished" datetime="2020-06-23T20:50:49+08:00">2020-06-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">Java框架</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/23/Java%E6%A1%86%E6%9E%B6/Spring/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Spring框架的七大模块"><a href="#Spring框架的七大模块" class="headerlink" title="Spring框架的七大模块"></a>Spring框架的七大模块</h2><ul>
-<li><strong>Spring Core</strong>：框架的最基础部分，提供 IoC 容器，对 bean 进行管理。</li>
-<li><strong>Spring Context</strong>：继承BeanFactory，提供上下文信息，扩展出JNDI、EJB、电子邮件、国际化等功能。</li>
-<li><strong>Spring DAO</strong>：提供了JDBC的抽象层，还提供了声明性事务管理方法。</li>
-<li><strong>Spring ORM</strong>：提供了JPA、JDO、Hibernate、MyBatis 等ORM映射层.</li>
-<li><strong>Spring AOP</strong>：集成了所有AOP功能</li>
-<li><strong>Spring Web</strong>：提供了基础的 Web 开发的上下文信息，现有的Web框架，如JSF、Tapestry、Structs等，提供了集成</li>
-<li><strong>Spring Web MVC</strong>：提供了 Web 应用的 Model-View-Controller 全功能实现。</li>
-</ul>
-<h2 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h2><h3 id="概念梳理"><a href="#概念梳理" class="headerlink" title="概念梳理"></a>概念梳理</h3><h4 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h4><ol>
-<li>AOP 是 ==Aspect Oriented Programming（面向切面编程）== 的简称，和OOP（面向对象编程）一样是一种编程思想，是对OOP的一种补充。</li>
-<li>AOP旨在将横切关注点（crosscutting concern）从业务主体逻辑中进行剥离，实现关注点分离，以提高程序的模块化程度（及业务模块只需关注业务逻辑，无需关注日志、安全、事务等通用逻辑）</li>
-</ol>
-<h4 id="常见术语"><a href="#常见术语" class="headerlink" title="常见术语"></a>常见术语</h4><p>AOP有自己的一套术语，我们必须了解一下这些行话，才能更好地理解AOP。为了方便大家理解，下面将用电表抄表员作为例子。</p>
-<ol>
-<li>通知 (Advice)<ul>
-<li>电表抄表员的工作是登记每家每户的电量并汇报给电力公司，记录电量是抄表员的主要工作，类似的，==切面需要完成的工作称为通知==。</li>
-<li>定义了切面在切点附近的操作 （什么时候做什么事）。</li>
-<li>常见的通知类型有：before、after、after-returning、around等</li>
-</ul>
-</li>
-<li>连接点 (JoinPoint)<ul>
-<li>电力公司为整个城市提供供电，每家都有一个电表，每一家都是抄表员的潜在目标。同样的，我们的==程序也有千万的时间点可以执行通知，这些时间点被称为连接点==。</li>
-<li>连接点指程序运行时允许插入切面的一个点，可以是一个函数、一个包路径、一个类、或者抛出的异常</li>
-</ul>
-</li>
-<li>切点（PointCut）<ul>
-<li>如果让一位抄表员访问所有电力公司的住户是不现实的，一般每一个抄表员仅负责某一个区域的住户，同样的，==切点用于指定连接点的范围==。</li>
-<li>切点用于定义切面的位置，也就是捕获哪些连接点的调用然后执行”通知”的操作（什么地点）。</li>
-</ul>
-</li>
-<li>切面（Aspect）<ul>
-<li>当抄表员开始一天的工作时，他知道自己要做的事情（记录电量）以及去哪里收集信息（去哪些地点），这个==聚合信息称为切面==。</li>
-<li>切面是切点和通知的聚合，一般是一个横跨多各类的通用逻辑抽象而成的类，切面类会定义在什么时间、什么地点、做什么事</li>
-</ul>
-</li>
-<li>目标对象( Target )<ul>
-<li>指被切面织入的对象</li>
-</ul>
-</li>
-<li>引入（Introduction）<ul>
-<li>引入允许我们向现有的类添加新方法或属性。</li>
-</ul>
-</li>
-<li>织入（Weaving）<ul>
-<li>织入是把切面应用到切点对应的连接点的过程。切面在指定连接点被织入到目标对象中。</li>
-</ul>
-</li>
-</ol>
-<h2 id="Spring-IoC"><a href="#Spring-IoC" class="headerlink" title="Spring IoC"></a>Spring IoC</h2><blockquote>
-<p>  IoC - Inversion of Control, 控制反转。</p>
-</blockquote>
-<h3 id="初识IoC"><a href="#初识IoC" class="headerlink" title="初识IoC"></a>初识IoC</h3><h4 id="什么是控制反转？"><a href="#什么是控制反转？" class="headerlink" title="什么是控制反转？"></a>什么是控制反转？</h4><p>控制反转就是把创建和管理 bean 的过程转移给了第三方。而这个第三方，就是 Spring IoC Container，对于 IoC 来说，最重要的就是<strong>容器</strong>。</p>
-<p>容器负责创建、配置和管理 bean，也就是它管理着 bean 的生命，控制着 bean 的依赖注入。通俗点讲，因为项目中每次创建对象是很麻烦的，所以使用 Spring IoC 容器来管理这些对象，需要的时候就直接用，不用管它是怎么来的、什么时候要销毁，只管用就好了。</p>
-<p>举个例子，就好像父母没时间管孩子，就把小朋友交给托管所，就安心的去上班而不用管孩子了。托儿所，就是第三方容器，负责管理小朋友的吃喝玩乐；父母，相当于程序员，只管接送孩子，不用管他们吃喝。</p>
-<h4 id="bean-是什么？"><a href="#bean-是什么？" class="headerlink" title="bean 是什么？"></a><code>bean</code> 是什么？</h4><p>Bean 其实就是包装了的 Object，无论是控制反转还是依赖注入，它们的主语都是 Object，而 bean 就是由第三方包装好了的 Object。（想一下别人送礼物给你的时候都是要包装一下的，自己造的就免了。</p>
-<p>Bean 是 Spring 的主角，有种说法叫 Spring 就是面向 bean 的编程（Bean Oriented Programming, BOP）。</p>
-<h4 id="几个关键问题："><a href="#几个关键问题：" class="headerlink" title="几个关键问题："></a>几个关键问题：</h4><h5 id="何为控制，控制的是什么？"><a href="#何为控制，控制的是什么？" class="headerlink" title="何为控制，控制的是什么？"></a>何为控制，控制的是什么？</h5><p>答：是 bean 的创建、管理的权利，控制 bean 的整个生命周期。</p>
-<h5 id="何为反转，反转了什么？"><a href="#何为反转，反转了什么？" class="headerlink" title="何为反转，反转了什么？"></a>何为反转，反转了什么？</h5><p>答：把这个权利交给了 Spring 容器，而不是自己去控制，就是反转。由之前的自己主动创建对象，变成现在被动接收别人给我们的对象的过程，这就是反转。</p>
-<p>举个生活中的例子，主动投资和被动投资。</p>
-<p>自己炒股、选股票的人就是主动投资，主动权掌握在自己的手中；而买基金的人就是被动投资，把主动权交给了基金经理，除非你把这个基金卖了，否则具体选哪些投资产品都是基金经理决定的。</p>
-<h3 id="IoC-容器"><a href="#IoC-容器" class="headerlink" title="IoC 容器"></a>IoC 容器</h3><h4 id="IoC容器的设计"><a href="#IoC容器的设计" class="headerlink" title="IoC容器的设计"></a>IoC容器的设计</h4><p>使用 <code>ApplicationContext</code>，它是 <code>BeanFactory</code> 的子类，更好的补充并实现了 <code>BeanFactory</code> 。</p>
-<p><code>BeanFactory</code> 简单粗暴，可以理解为 HashMap：</p>
-<ul>
-<li>Key - bean name</li>
-<li>Value - bean object</li>
-</ul>
-<p>但它一般只有 get, put 两个功能，所以称之为“低级容器”。而 <code>ApplicationContext</code> 多了很多功能，因为它继承了多个接口，可称之为“高级容器”。</p>
-<p><code>ApplicationContext</code> 的里面有两个具体的实现子类，用来读取配置配件的：</p>
-<ul>
-<li><code>ClassPathXmlApplicationContext</code> - 从 class path 中加载配置文件，更常用一些；</li>
-<li><code>FileSystemXmlApplicationContext</code> - 从本地文件中加载配置文件，不是很常用，如果再到 Linux 环境中，还要改路径，不是很方便。</li>
-</ul>
-<p>当我们点开 <code>ClassPathXmlApplicationContext</code> 时，发现它并不是直接继承 <code>ApplicationContext</code> 的，它有很多层的依赖关系，每层的子类都是对父类的补充实现。而再往上找，发现最上层的 class 回到了 <code>BeanFactory</code>，所以它非常重要。</p>
-<blockquote>
-<p>  要注意，Spring 中还有个 <code>FactoryBean</code>，两者并没有特别的关系，只是名字比较接近，所以不要弄混了顺序。</p>
-</blockquote>
-<h4 id="IoC容器的初始化"><a href="#IoC容器的初始化" class="headerlink" title="IoC容器的初始化"></a>IoC容器的初始化</h4><p>Spring IOC容器初始化的核心过程可以简单的如下图表示，主要有四个步骤（还有一些如：后置加载器，国际化，事件广播器等一些过程不展开）：</p>
-<ol>
-<li>Bean定义的定位，Bean 可能定义在XML中，或者一个注解，或者其他形式。这些都被用Resource来定位，读取Resource获取BeanDefinition 注册到 Bean定义注册表中。</li>
-<li>第一次向容器getBean操作会触发Bean的创建过程,实列化一个Bean时 ,根据BeanDefinition中类信息等实列化Bean。</li>
-<li>将实列化的Bean放到单列Bean缓存内。</li>
-<li>此后再次获取向容器getBean就会从缓存中获取。</li>
-</ol>
-<h3 id="Spring-Bean"><a href="#Spring-Bean" class="headerlink" title="Spring Bean"></a>Spring Bean</h3><h4 id="Bean的注入方式"><a href="#Bean的注入方式" class="headerlink" title="Bean的注入方式"></a>Bean的注入方式</h4><p>目前主要有五种注入方式：SET注入，构造器注入，静态工厂，实例工厂，注解方式</p>
-<h4 id="Bean解析注册过程"><a href="#Bean解析注册过程" class="headerlink" title="Bean解析注册过程"></a>Bean解析注册过程</h4><p>这个过程完成Bean的从配置文件到解析注册成bean工厂的过程（对应代码在AbstactApplicationContext.obtainFreshBeanFactory）</p>
-<ol>
-<li>通过读取XML配置文件获取 Resource 资源，获取这个资源包含了路径config/spring/local/appcontext-client.xml 文件下定义的BeanDefinition信息。</li>
-<li>创建一个 BeanFactory，这里使用 DefaultListableBeanFactory。</li>
-<li>创建一个载入 BeanDefinition 的解读器，这里使用 XmlBeanDefinitionReader 来载入 XML 文件形式 BeanDefinition，通过一个回调配置给 factory。</li>
-<li>从定义好的资源位置读入配置信息，具体的解析过程由 XmlBeanDefinitionReader 的 loadBeanDefinitions() 方法来完成。完成整个载入和注册 Bean 定义之后，需要的 IoC 容器就建立起来可以直接使用了。</li>
-</ol>
-<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><blockquote>
-<p>  DI - dependency injection, 依赖注入</p>
-</blockquote>
-<h4 id="何为依赖，依赖什么？"><a href="#何为依赖，依赖什么？" class="headerlink" title="何为依赖，依赖什么？"></a>何为依赖，依赖什么？</h4><p>程序运行需要依赖外部的资源，提供程序内对象的所需要的数据、资源。</p>
-<h4 id="何为注入，注入什么？"><a href="#何为注入，注入什么？" class="headerlink" title="何为注入，注入什么？"></a>何为注入，注入什么？</h4><p>配置文件把资源从外部注入到内部，容器加载了外部的文件、对象、数据，然后把这些资源注入给程序内的对象，维护了程序内外对象之间的依赖关系。</p>
-<p>所以说，==控制反转是通过依赖注入实现的==。但是它们是有差别的，像是<strong>从不同角度描述的同一件事</strong>：</p>
-<ul>
-<li>IoC 是设计思想，DI 是具体的实现方式</li>
-<li>IoC 是理论，DI 是实践</li>
-</ul>
-<p>从而实现对象之间的解藕。</p>
-<p><strong>当然，IoC 也可以通过其他的方式来实现，而 DI 只是 Spring 的选择。</strong></p>
-<p>IoC 和 DI 也并非 Spring 框架提出来的，Spring 只是应用了这个设计思想和理念到自己的框架里去。</p>
-<h3 id="使用-IoC-的好处"><a href="#使用-IoC-的好处" class="headerlink" title="使用 IoC 的好处"></a>使用 IoC 的好处</h3><p>==解藕==。</p>
-<p>它把对象之间的依赖关系转成用配置文件来管理，由 Spring IoC Container 来管理。</p>
-<p>在项目中，底层的实现都是由很多个对象组成的，对象之间彼此合作实现项目的业务逻辑。但是，很多很多对象紧密结合在一起，一旦有一方出问题了，必然会对其他对象有所影响，所以才有了解藕的这种设计思想。</p>
-<h2 id="Spring-创建对象的过程"><a href="#Spring-创建对象的过程" class="headerlink" title="Spring 创建对象的过程"></a>Spring 创建对象的过程</h2><p>通过 <code>ApplicationContext</code> 这个 IoC 容器的入口，用它的两个具体的实现子类，从 class path 或者 file path 中读取数据，用 <code>getBean()</code> 获取具体的 bean instance。</p>
-<p>那使用 Spring 到底省略了我们什么工作？</p>
-<p>答：<code>new 的过程</code>。把 new 的过程交给第三方来创建、管理，这就是「解藕」。Spring 也是用的 <code>set()</code> 方法，它只不过提供了一套更加完善的实现机制而已。</p>
 
       
     </div>
@@ -1508,7 +1508,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -1522,7 +1522,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/" class="post-title-link" itemprop="url">JavaStream</a>
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">Java异常</a>
         </h2>
 
         <div class="post-meta">
@@ -1539,7 +1539,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:53:20" itemprop="dateModified" datetime="2020-06-08T08:53:20+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1560,8 +1560,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1576,19 +1576,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>  参考文档：</p>
-<p>  <a href="https://blog.csdn.net/ycj_xiyang/article/details/83624642" target="_blank" rel="noopener">Java8-Stream API 详解</a></p>
-<p>  <a href="https://blog.csdn.net/zxl646801924/article/details/90374320?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">java8 stream常用方法</a></p>
-</blockquote>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Stream 作为 Java 8 的一大亮点，它与 java.io 包里的 InputStream 和 OutputStream 是完全不同的概念。</p>
-<p>Java 8 中的 <strong>Stream 是对集合（Collection）对象功能的增强</strong>，它专注于对集合对象进行各种非常便利、高效的聚合操作（aggregate operation），或者大批量数据操作 (bulk data operation)。</p>
-<p>Stream API 借助于同样新出现的 Lambda 表达式，极大的提高编程效率和程序可读性。同时它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。</p>
-<p>通常编写并行代码很难而且容易出错, 但使用 Stream API 无需编写一行多线程的代码，就可以很方便地写出高性能的并发程序。</p>
-<p>所以说，Java 8 中首次出现的 java.util.stream 是一个函数式语言+多核时代综合影响的产物。</p>
+          <h4 id="Java异常简介"><a href="#Java异常简介" class="headerlink" title="Java异常简介"></a>Java异常简介</h4><p>Java异常是Java提供的一种识别及响应错误的一致性机制。</p>
+<p>Java异常机制可以使程序中异常处理代码和正常业务代码分离，保证程序代码更加优雅，并提高程序健壮性。在有效使用异常的情况下，异常能清晰的回答what, where, why这3个问题：异常类型回答了“什么”被抛出，异常堆栈跟踪回答了“在哪”抛出，异常信息回答了“为什么”会抛出。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1612,7 +1604,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/child.jpg">
@@ -1626,7 +1618,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Java基础</a>
+            <a href="/2020/05/30/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">架构基础</a>
         </h2>
 
         <div class="post-meta">
@@ -1643,7 +1635,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:52" itemprop="dateModified" datetime="2020-06-08T08:57:52+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-18 08:01:05" itemprop="dateModified" datetime="2020-06-18T08:01:05+08:00">2020-06-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1651,7 +1643,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                  <a href="/categories/%E6%9E%B6%E6%9E%84-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">架构--阅读笔记</span></a>
                 </span>
             </span>
 
@@ -1664,8 +1656,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/30/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1680,24 +1672,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><ul>
-<li>byte/8</li>
-<li>char/16</li>
-<li>short/16</li>
-<li>int/32</li>
-<li>float/32</li>
-<li>long/64</li>
-<li>double/64</li>
-<li>boolean/~</li>
-</ul>
-<blockquote>
-<p>  boolean 只有两个值：true、false，可以使用 1 bit 来存储，但是具体大小没有明确规定。JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。</p>
-</blockquote>
-<h4 id="包装类型"><a href="#包装类型" class="headerlink" title="包装类型"></a>包装类型</h4><p>基本类型都有对应的包装类型，基本类型与其对应的包装类型之间的赋值使用<strong>自动装箱</strong>与<strong>拆箱</strong>完成。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer x = <span class="number">2</span>;     <span class="comment">// 装箱 调用了 Integer.valueOf(2)</span></span><br><span class="line"><span class="keyword">int</span> y = x;         <span class="comment">// 拆箱 调用了 X.intValue()</span></span><br></pre></td></tr></table></figure>
+          <h4 id="模块与组件"><a href="#模块与组件" class="headerlink" title="模块与组件"></a>模块与组件</h4><p>模块：从逻辑角度拆分，主要目的是职责分离</p>
+<p>组件：从物理角度拆分，主要目的是单元复用</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1838,6 +1817,8 @@
         
 
         
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">豫ICP备20019377号-1 </a>
+  </div>
 
 <div class="copyright">
   
