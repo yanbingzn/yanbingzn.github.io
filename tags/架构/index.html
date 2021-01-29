@@ -20,19 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="代码的坏味道这一章集中论述该何时重构。具体的重构方法在后面的章节。 “没有任何度量规矩比得上见识广博者的直觉。你必须培养自己的判断力，学会判断一个类中有多少实例变量才算太大，一个函数内有多少代码才不算太长。” ​ ——Martin Flower">
-<meta property="og:type" content="article">
-<meta property="og:title" content="代码的坏味道">
-<meta property="og:url" content="http://yoursite.com/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%203%20%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93/index.html">
+  <meta name="description" content="闲看庭前花开落，漫随天外云卷舒。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="严冰的博客">
+<meta property="og:url" content="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="严冰的博客">
-<meta property="og:description" content="代码的坏味道这一章集中论述该何时重构。具体的重构方法在后面的章节。 “没有任何度量规矩比得上见识广博者的直觉。你必须培养自己的判断力，学会判断一个类中有多少实例变量才算太大，一个函数内有多少代码才不算太长。” ​ ——Martin Flower">
+<meta property="og:description" content="闲看庭前花开落，漫随天外云卷舒。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-30T12:50:49.000Z">
-<meta property="article:modified_time" content="2020-06-18T00:01:07.887Z">
 <meta property="article:author" content="yanbing">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%203%20%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93/">
+<link rel="canonical" href="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/">
 
 
 <script id="page-configurations">
@@ -40,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>代码的坏味道 | 严冰的博客</title>
+  <title>标签: 架构 | 严冰的博客</title>
   
 
 
@@ -182,168 +180,71 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%203%20%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          代码的坏味道
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-18 08:01:07" itemprop="dateModified" datetime="2020-06-18T08:01:07+08:00">2020-06-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%87%8D%E6%9E%84-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">重构--阅读笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">架构
+          <small>标签</small>
+        </h2>
+      </div>
 
       
-        <p>代码的坏味道这一章集中论述该何时重构。具体的重构方法在后面的章节。</p>
-<p>“没有任何度量规矩比得上见识广博者的直觉。你必须培养自己的判断力，学会判断一个类中有多少实例变量才算太大，一个函数内有多少代码才不算太长。”</p>
-<p>​ ——Martin Flower</p>
-<a id="more"></a>
-<ol>
-<li>改名<br>深思熟虑给函数，模块，变量和类命名，使其清晰的表明自己的功能和用法。</li>
-</ol>
-<p>重构手法之一：改名（改变函数声明，变量改名，字段改名）</p>
-<ol start="2">
-<li>消除重复代码——提炼函数<br>同一个类的两个函数含有相同的表达式——提炼函数。</li>
-</ol>
-<p>重复的代码段位于同一个超类的不同子类中——函数上移。</p>
-<ol start="3">
-<li>拆分过长函数<br>“活的最长，最好的程序往往都比较短”</li>
-</ol>
-<p>“函数越长，就越难理解”</p>
-<ol start="4">
-<li>过长参数列表<br>如果发现几项参数经常出现，可通过引入参数对象将其合并为一个对象。（封装）<br>如果发现从现有的数据结构抽出很多数据项作为参数，不如直接传递完整的对象<br>以查询替代参数：可以像某个参数查询获得另一个参数的值。</li>
-<li>全局变量<br>全局变量的问题：代码库的任何一个角落都可以修改，且无法探测。（代码病毒）</li>
-</ol>
-<p>处理方法：封装变量。用函数封装起来，再搬到类或模块里，控制其访问权限。</p>
-<ol start="6">
-<li>发散式变化与霰弹式修改<br>发散式变化：遇到变化时固定修改某一部分代码。</li>
-</ol>
-<p>霰弹式修改：代码的坏味道其中一种，遇到变化需要修改很多地方。</p>
-<p>减小模块的耦合，实现模块的独立。在添加修改功能时实现代码变更的独立。</p>
-<ol start="7">
-<li>依恋情节<br>模块化：最大化区域的内部交互，最小化的跨区域交互。</li>
-</ol>
-<p>依恋情节：一个函数和另一个模块的函数或者数据交流格外频繁，远胜于在自己内部的交流。</p>
-<ol start="8">
-<li>数据泥团<br>“两个类中相同的字段，许多函数签名中相同的参数….”</li>
-</ol>
-<p>在必要时提炼类。引入参数对象，保持对象完整使之参数列表较短。</p>
-<p>语义和形式的权衡。</p>
-<ol start="9">
-<li><p>使用多态替换switch</p>
-</li>
-<li><p>循环语句<br>以管道取代循环。</p>
-</li>
-<li><p>冗赘的元素<br>随着重构类变得越来越小，适时庄严赴义。</p>
-</li>
-<li><p>夸夸其谈通用性<br>如果用不到，就不值得。用不上的装置只会挡路。</p>
-</li>
-<li><p>中间人<br>封装往往伴随着委托。</p>
-</li>
-</ol>
-<p>委托应当适度，过度委托就会变成冗余。</p>
-<ol start="14">
-<li>过大的类<br>造成重复代码。</li>
-</ol>
-<p>提炼类，提炼超类。</p>
-<ol start="15">
-<li>注释<br>“当你感觉需要写注释时，请先尝试重构。”</li>
-</ol>
-<p>注释的应用场景：</p>
-<p>这段代码做了什么<br>记录将来的打算<br>为什么做</p>
-
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
 
-    
-    
-    
-        
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>yanbing
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%203%20%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93/" title="代码的坏味道">http://yoursite.com/2020/05/30/重构--阅读笔记/Chapter 3 代码的坏味道/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-05-30T20:50:49+08:00"
+              content="2020-05-30">
+          05-30
+        </time>
+      </div>
 
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/05/30/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E3%80%8A%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84%E3%80%8B%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E9%AB%98%E6%80%A7%E8%83%BD%E5%92%8C%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/" itemprop="url">
+            <span itemprop="name">存储高性能-架构</span>
+          </a>
+      </div>
 
-      <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="prev" title="Java多线程">
-      <i class="fa fa-chevron-left"></i> Java多线程
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/30/%E9%87%8D%E6%9E%84--%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Chapter%202%20%E9%87%8D%E6%9E%84%E7%9A%84%E5%8E%9F%E5%88%99/" rel="next" title="重构的原则">
-      重构的原则 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-05-30T20:50:49+08:00"
+              content="2020-05-30">
+          05-30
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/05/30/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E7%A1%80/" itemprop="url">
+            <span itemprop="name">架构基础</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
@@ -418,13 +319,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -436,9 +337,6 @@
       <span class="links-of-author-item">
         <a href="https://blog.csdn.net/i_silence" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;i_silence" rel="noopener" target="_blank"><i class="fab fa-codiepie fa-fw"></i>CSDN</a>
       </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 

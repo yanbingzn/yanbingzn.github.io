@@ -1134,7 +1134,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -1148,7 +1148,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">Java异常</a>
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/" class="post-title-link" itemprop="url">JavaStream</a>
         </h2>
 
         <div class="post-meta">
@@ -1165,7 +1165,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:53:20" itemprop="dateModified" datetime="2020-06-08T08:53:20+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1188,11 +1188,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="Java异常简介"><a href="#Java异常简介" class="headerlink" title="Java异常简介"></a>Java异常简介</h4><p>Java异常是Java提供的一种识别及响应错误的一致性机制。</p>
-<p>Java异常机制可以使程序中异常处理代码和正常业务代码分离，保证程序代码更加优雅，并提高程序健壮性。在有效使用异常的情况下，异常能清晰的回答what, where, why这3个问题：异常类型回答了“什么”被抛出，异常堆栈跟踪回答了“在哪”抛出，异常信息回答了“为什么”会抛出。</p>
+          <blockquote>
+<p>  参考文档：</p>
+<p>  <a href="https://blog.csdn.net/ycj_xiyang/article/details/83624642" target="_blank" rel="noopener">Java8-Stream API 详解</a></p>
+<p>  <a href="https://blog.csdn.net/zxl646801924/article/details/90374320?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">java8 stream常用方法</a></p>
+</blockquote>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Stream 作为 Java 8 的一大亮点，它与 java.io 包里的 InputStream 和 OutputStream 是完全不同的概念。</p>
+<p>Java 8 中的 <strong>Stream 是对集合（Collection）对象功能的增强</strong>，它专注于对集合对象进行各种非常便利、高效的聚合操作（aggregate operation），或者大批量数据操作 (bulk data operation)。</p>
+<p>Stream API 借助于同样新出现的 Lambda 表达式，极大的提高编程效率和程序可读性。同时它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。</p>
+<p>通常编写并行代码很难而且容易出错, 但使用 Stream API 无需编写一行多线程的代码，就可以很方便地写出高性能的并发程序。</p>
+<p>所以说，Java 8 中首次出现的 java.util.stream 是一个函数式语言+多核时代综合影响的产物。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/JavaStream/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1290,13 +1298,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1308,9 +1316,6 @@
       <span class="links-of-author-item">
         <a href="https://blog.csdn.net/i_silence" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;i_silence" rel="noopener" target="_blank"><i class="fab fa-codiepie fa-fw"></i>CSDN</a>
       </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 

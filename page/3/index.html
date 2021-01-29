@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -200,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">GitHub搜索技巧</a>
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">排序算法</a>
         </h2>
 
         <div class="post-meta">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-29 16:53:00" itemprop="dateModified" datetime="2021-01-29T16:53:00+08:00">2021-01-29</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
                 </span>
             </span>
 
@@ -240,22 +240,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="搜热门：GitHub-Trend-和-GitHub-Topic"><a href="#搜热门：GitHub-Trend-和-GitHub-Topic" class="headerlink" title="搜热门：GitHub Trend 和 GitHub Topic"></a>搜热门：GitHub Trend 和 GitHub Topic</h2><ul>
-<li>GitHub Trend<br>页面总结了每天/每周/每月周期的热门 Repositories 和 Developers，你可以看到在某个周期处于热门状态的开发项目和开发者。</li>
-<li>GitHub Topic<br>展示了最新和最流行的讨论主题，在这里你不仅能够看到开发项目，还能看到更多非开发技术的讨论主题，比如 Job、Chrome 浏览器等。</li>
+          <h2 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h2><p><strong>排序的定义</strong></p>
+<p>对一序列对象根据某个关键字进行排序。</p>
+<p><strong>术语说明</strong></p>
+<ul>
+<li>稳定 ：如果a原本在b前面，并且a=b，则排序之后a仍然在b的前面；</li>
+<li>不稳定 ：如果a原本在b的前面，而a=b，则排序之后a可能会出现在b的后面；</li>
+<li>内排序 ：所有排序操作都在<strong>内存中</strong>完成；</li>
+<li>外排序 ：由于数据太大，因此把<strong>数据放在磁盘中</strong>，而排序通过磁盘和内存的数据传输才能进行；</li>
+<li>时间复杂度 ： 一个算法执行所耗费的时间。</li>
+<li>空间复杂度 ：运行完一个程序所需内存的大小。</li>
 </ul>
-<h2 id="搜开发者"><a href="#搜开发者" class="headerlink" title="搜开发者"></a>搜开发者</h2><ul>
-<li>匹配用户位置为china的开发者<br>location ：China</li>
-<li>匹配开发语言为java的开发者<br>language ： java<br>整个搜索条件就是：<br>language:java location:china</li>
-<li>匹配超过一千名关注者开发者：<br>follows:&gt;=1000</li>
-<li>匹配用户名为yanbing的开发者<br>yanbing in:fullname</li>
-</ul>
-<h2 id="搜项目"><a href="#搜项目" class="headerlink" title="搜项目"></a>搜项目</h2><p>Awesome + 关键字<br>Awesome 似乎已经成为不少 GitHub 项目喜爱的命名之一；<br>比如前面提及要找到优秀的 Windows 软件，可以尝试搜索<br>Awesome windows</p>
-<p>Awesome iOS frameworks</p>
-<p>Awesome wesome Android libraries and resources</p>
-<h3 id="设置搜索条件"><a href="#设置搜索条件" class="headerlink" title="设置搜索条件"></a>设置搜索条件</h3><p>灵活运用下面几个搜索条件：stars:、language:、forks:，其实就是设置项目收藏、开发语言、派生的搜索条件，例如：<br>stars:&gt;=500 language:java<br>或者使用 GitHub 提供的 高级搜索功能。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>GitHub 上有很多优秀的开源项目，用好 GitHub 的搜索功能，我们可以发现更多好用的项目和工具。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -274,7 +277,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -288,7 +291,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">sql基础</a>
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/" class="post-title-link" itemprop="url">数据结构图解</a>
         </h2>
 
         <div class="post-meta">
@@ -305,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:55:31" itemprop="dateModified" datetime="2020-06-08T08:55:31+08:00">2020-06-08</time>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,7 +316,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
                 </span>
             </span>
 
@@ -328,19 +331,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>  参考文档: <a href="https://www.w3school.com.cn/sql/index.asp" target="_blank" rel="noopener">SQL 教程</a></p>
-</blockquote>
-<h2 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h2><p><strong>SQL 是用于访问和处理数据库的标准的计算机语言。</strong></p>
-<h4 id="什么是-SQL"><a href="#什么是-SQL" class="headerlink" title="什么是 SQL"></a>什么是 SQL</h4><ul>
-<li>SQL 指结构化查询语言</li>
-<li>SQL 使我们有能力访问数据库</li>
-<li>SQL 是一种 ANSI 的标准计算机语言</li>
+          <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="数组、链表的优缺点"><a href="#数组、链表的优缺点" class="headerlink" title="数组、链表的优缺点"></a>数组、链表的优缺点</h3><h4 id="数组的优缺点"><a href="#数组的优缺点" class="headerlink" title="数组的优缺点"></a>数组的优缺点</h4><p>数组的优点在于：</p>
+<ul>
+<li>构建非常简单</li>
+<li>能在 O(1) 的时间里根据数组的下标（index）查询某个元素</li>
 </ul>
-<p>注：ANSI，美国国家标准化组织</p>
+<p>而数组的缺点在于：</p>
+<ul>
+<li>构建时必须分配一段连续的空间</li>
+<li>查询某个元素是否存在时需要遍历整个数组，耗费 O(n) 的时间（其中，n 是元素的个数）</li>
+<li>删除和添加某个元素时，同样需要耗费 O(n) 的时间</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -539,6 +543,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">sql基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:55:31" itemprop="dateModified" datetime="2020-06-08T08:55:31+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>  参考文档: <a href="https://www.w3school.com.cn/sql/index.asp" target="_blank" rel="noopener">SQL 教程</a></p>
+</blockquote>
+<h2 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h2><p><strong>SQL 是用于访问和处理数据库的标准的计算机语言。</strong></p>
+<h4 id="什么是-SQL"><a href="#什么是-SQL" class="headerlink" title="什么是 SQL"></a>什么是 SQL</h4><ul>
+<li>SQL 指结构化查询语言</li>
+<li>SQL 使我们有能力访问数据库</li>
+<li>SQL 是一种 ANSI 的标准计算机语言</li>
+</ul>
+<p>注：ANSI，美国国家标准化组织</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%80%E6%9D%A1sql%E8%AF%AD%E5%8F%A5%E5%9C%A8mysql%E4%B8%AD%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -698,6 +792,186 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
 <li>MySQL 5.6参考手册:<a href="https://dev.MySQL.com/doc/refman/5.6/en/" target="_blank" rel="noopener">https://dev.MySQL.com/doc/refman/5.6/en/</a></li>
 </ul>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">红黑树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="红黑树的性质"><a href="#红黑树的性质" class="headerlink" title="红黑树的性质"></a>红黑树的性质</h2><p>普通的二叉查找树在极端情况下可退化成链表，此时的增删查效率都会比较低下。为了避免这种情况，就出现了一些自平衡的查找树，比如 AVL，红黑树等。这些自平衡的查找树通过定义一些性质，将任意节点的左右子树高度差控制在规定范围内，以达到平衡状态。以红黑树为例，红黑树通过如下的性质定义实现自平衡：</p>
+<ol>
+<li>节点是红色或黑色。</li>
+<li>根是黑色。</li>
+<li>所有叶子都是黑色（叶子是NIL节点）。</li>
+<li>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</li>
+<li>从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点（简称黑高）。</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E8%A7%A3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">查找算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-03 22:25:06" itemprop="dateModified" datetime="2020-07-03T22:25:06+08:00">2020-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="查找算法说明"><a href="#查找算法说明" class="headerlink" title="查找算法说明"></a>查找算法说明</h2><p><strong>查找定义</strong>：</p>
+<p>根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。</p>
+<p><strong>查找算法分类：</strong></p>
+<ol>
+<li><p>静态查找和动态查找</p>
+<p>注：静态或者动态都是针对查找表而言的。<strong>动态表指查找表中有删除和插入操作的表。</strong></p>
+</li>
+<li><p>无序查找和有序查找</p>
+<p>无序查找：被查找数列有序无序均可</p>
+<p>有序查找：被查找数列必须为有序数列</p>
+</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -916,7 +1190,7 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -930,7 +1204,7 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于数据库存储时间的一点思考</a>
+            <a href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" class="post-title-link" itemprop="url">Docker</a>
         </h2>
 
         <div class="post-meta">
@@ -947,7 +1221,7 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-03 23:01:14" itemprop="dateModified" datetime="2020-09-03T23:01:14+08:00">2020-09-03</time>
+                <time title="修改时间：2021-01-29 16:51:53" itemprop="dateModified" datetime="2021-01-29T16:51:53+08:00">2021-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -955,144 +1229,7 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我们平时开发中不可避免的就是要存储时间，比如我们要记录操作表中这条记录的时间、记录转账的交易时间、记录出发时间等等。你会发现这个时间这个东西与我们开发的联系还是非常紧密的，用的好与不好会给我们的业务甚至功能带来很大的影响。所以，我们有必要重新出发，好好认识一下这个东西。</p>
-<p>这是一篇短小精悍的文章，仔细阅读一定能学到不少东西！</p>
-<h3 id="1-切记不要用字符串存储日期"><a href="#1-切记不要用字符串存储日期" class="headerlink" title="1.切记不要用字符串存储日期"></a>1.切记不要用字符串存储日期</h3><p>我记得我在大学的时候就这样干过，而且现在很多对数据库不太了解的新手也会这样干，可见，这种存储日期的方式的优点还是有的，就是简单直白，容易上手。</p>
-<p>但是，这是不正确的做法，主要会有下面两个问题：</p>
-<ol>
-<li>字符串占用的空间更大！</li>
-<li>字符串存储的日期比较效率比较低（逐个字符进行比对），无法用日期相关的 API 进行计算和比较。</li>
-</ol>
-<h3 id="2-Datetime-和-Timestamp-之间抉择"><a href="#2-Datetime-和-Timestamp-之间抉择" class="headerlink" title="2.Datetime 和 Timestamp 之间抉择"></a>2.Datetime 和 Timestamp 之间抉择</h3><p>Datetime 和 Timestamp 是 MySQL 提供的两种比较相似的保存时间的数据类型。他们两者究竟该如何选择呢？</p>
-<p><strong>通常我们都会首选 Timestamp。</strong> 下面说一下为什么这样做!</p>
-<h4 id="2-1-DateTime-类型没有时区信息的"><a href="#2-1-DateTime-类型没有时区信息的" class="headerlink" title="2.1 DateTime 类型没有时区信息的"></a>2.1 DateTime 类型没有时区信息的</h4><p><strong>DateTime 类型是没有时区信息的（时区无关）</strong> ，DateTime 类型保存的时间都是当前会话所设置的时区对应的时间。这样就会有什么问题呢？当你的时区更换之后，比如你的服务器更换地址或者更换客户端连接时区设置的话，就会导致你从数据库中读出的时间错误。不要小看这个问题，很多系统就是因为这个问题闹出了很多笑话。</p>
-<p><strong>Timestamp 和时区有关</strong>。Timestamp 类型字段的值会随着服务器时区的变化而变化，自动换算成相应的时间，说简单点就是在不同时区，查询到同一个条记录此字段的值会不一样。</p>
-<p>下面实际演示一下！</p>
-<p>建表 SQL 语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`time_zone_test`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`date_time`</span> datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`time_stamp`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
-
-<p>插入数据：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> time_zone_test(date_time,time_stamp) <span class="keyword">VALUES</span>(<span class="keyword">NOW</span>(),<span class="keyword">NOW</span>());</span><br></pre></td></tr></table></figure>
-
-<p>查看数据：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> date_time,time_stamp <span class="keyword">from</span> time_zone_test;</span><br></pre></td></tr></table></figure>
-
-<p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+---------------------+---------------------+</span><br><span class="line">| date_time           | time_stamp          |</span><br><span class="line">+---------------------+---------------------+</span><br><span class="line">| 2020-01-11 09:53:32 | 2020-01-11 09:53:32 |</span><br><span class="line">+---------------------+---------------------+</span><br></pre></td></tr></table></figure>
-
-<p>现在我们运行</p>
-<p>修改当前会话的时区:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">time_zone</span>=<span class="string">'+8:00'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>再次查看数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+---------------------+---------------------+</span><br><span class="line">| date_time           | time_stamp          |</span><br><span class="line">+---------------------+---------------------+</span><br><span class="line">| 2020-01-11 09:53:32 | 2020-01-11 17:53:32 |</span><br><span class="line">+---------------------+---------------------+</span><br></pre></td></tr></table></figure>
-
-<p><strong>扩展：一些关于 MySQL 时区设置的一个常用 sql 命令</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前会话时区</span></span><br><span class="line"><span class="keyword">SELECT</span> @@session.time_zone;</span><br><span class="line"><span class="comment"># 设置当前会话时区</span></span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">time_zone</span> = <span class="string">'Europe/Helsinki'</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">time_zone</span> = <span class="string">"+00:00"</span>;</span><br><span class="line"><span class="comment"># 数据库全局时区设置</span></span><br><span class="line"><span class="keyword">SELECT</span> @@global.time_zone;</span><br><span class="line"><span class="comment"># 设置全局时区</span></span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> <span class="keyword">time_zone</span> = <span class="string">'+8:00'</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> <span class="keyword">time_zone</span> = <span class="string">'Europe/Helsinki'</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2-DateTime-类型耗费空间更大"><a href="#2-2-DateTime-类型耗费空间更大" class="headerlink" title="2.2 DateTime 类型耗费空间更大"></a>2.2 DateTime 类型耗费空间更大</h4><p>Timestamp 只需要使用 4 个字节的存储空间，但是 DateTime 需要耗费 8 个字节的存储空间。但是，这样同样造成了一个问题，Timestamp 表示的时间范围更小。</p>
-<ul>
-<li>DateTime ：1000-01-01 00:00:00 ~ 9999-12-31 23:59:59</li>
-<li>Timestamp： 1970-01-01 00:00:01 ~ 2037-12-31 23:59:59</li>
-</ul>
-<blockquote>
-<p>Timestamp 在不同版本的 MySQL 中有细微差别。</p>
-</blockquote>
-<h3 id="3-再看-MySQL-日期类型存储空间"><a href="#3-再看-MySQL-日期类型存储空间" class="headerlink" title="3 再看 MySQL 日期类型存储空间"></a>3 再看 MySQL 日期类型存储空间</h3><p>下图是 MySQL 5.6 版本中日期类型所占的存储空间：</p>
-<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/FhRGUVHFK0ujRPNA75f6CuOXQHTE.jpeg" alt=""></p>
-<p>可以看出 5.6.4 之后的 MySQL 多出了一个需要 0 ～ 3 字节的小数位。Datatime 和 Timestamp 会有几种不同的存储空间占用。</p>
-<p>为了方便，本文我们还是默认 Timestamp 只需要使用 4 个字节的存储空间，但是 DateTime 需要耗费 8 个字节的存储空间。</p>
-<h3 id="4-数值型时间戳是更好的选择吗？"><a href="#4-数值型时间戳是更好的选择吗？" class="headerlink" title="4.数值型时间戳是更好的选择吗？"></a>4.数值型时间戳是更好的选择吗？</h3><p>很多时候，我们也会使用 int 或者 bigint 类型的数值也就是时间戳来表示时间。</p>
-<p>这种存储方式的具有 Timestamp 类型的所具有一些优点，并且使用它的进行日期排序以及对比等操作的效率会更高，跨系统也很方便，毕竟只是存放的数值。缺点也很明显，就是数据的可读性太差了，你无法直观的看到具体时间。</p>
-<p>时间戳的定义如下：</p>
-<blockquote>
-<p>时间戳的定义是从一个基准时间开始算起，这个基准时间是「1970-1-1 00:00:00 +0:00」，从这个时间开始，用整数表示，以秒计时，随着时间的流逝这个时间整数不断增加。这样一来，我只需要一个数值，就可以完美地表示时间了，而且这个数值是一个绝对数值，即无论的身处地球的任何角落，这个表示时间的时间戳，都是一样的，生成的数值都是一样的，并且没有时区的概念，所以在系统的中时间的传输中，都不需要进行额外的转换了，只有在显示给用户的时候，才转换为字符串格式的本地时间。</p>
-</blockquote>
-<p>数据库中实际操作：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select UNIX_TIMESTAMP('2020-01-11 09:53:32');</span><br><span class="line">+<span class="comment">---------------------------------------+</span></span><br><span class="line">| UNIX_TIMESTAMP('2020-01-11 09:53:32') |</span><br><span class="line">+<span class="comment">---------------------------------------+</span></span><br><span class="line">|                            1578707612 |</span><br><span class="line">+<span class="comment">---------------------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">select</span> FROM_UNIXTIME(<span class="number">1578707612</span>);</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| FROM_UNIXTIME(1578707612) |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| 2020-01-11 09:53:32       |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p>MySQL 中时间到底怎么存储才好？Datetime?Timestamp? 数值保存的时间戳？</p>
-<p>好像并没有一个银弹，很多程序员会觉得数值型时间戳是真的好，效率又高还各种兼容，但是很多人又觉得它表现的不够直观。这里插一嘴，《高性能 MySQL 》这本神书的作者就是推荐 Timestamp，原因是数值表示时间不够直观。下面是原文：</p>
-<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/高性能mysql-不推荐用数值时间戳.jpg" style="zoom:50%;" />
-
-<p>每种方式都有各自的优势，根据实际场景才是王道。下面再对这三种方式做一个简单的对比，以供大家实际开发中选择正确的存放时间的数据类型：</p>
-<img src="https://img-blog.csdnimg.cn/20200903223943332.png#pic_center" style="zoom:50%;" />
-
-<p>如果还有什么问题欢迎给我留言！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">数据库系统原理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:54:53" itemprop="dateModified" datetime="2020-06-08T08:54:53+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                  <a href="/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">常用工具</span></a>
                 </span>
             </span>
 
@@ -1108,176 +1245,12 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
 
       
           <blockquote>
-<p>  参考文档：<a href="https://cyc2018.github.io/CS-Notes/#/notes/数据库系统原理" target="_blank" rel="noopener">https://cyc2018.github.io/CS-Notes/#/notes/数据库系统原理</a></p>
+<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/tools/Docker-Image" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/tools/Docker-Image</a></p>
 </blockquote>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf6pnlokjqj30us0jbq3x.jpg" alt="img" style="zoom:50%;" />
+<h2 id="Docker-下载镜像"><a href="#Docker-下载镜像" class="headerlink" title="Docker 下载镜像"></a>Docker 下载镜像</h2><p>如果我们想要在本地运行容器，就必须保证本地存在对应的镜像。所以，第一步，我们需要下载镜像。当我们尝试下载镜像时，Docker 会尝试先从默认的镜像仓库（默认使用 Docker Hub 公共仓库）去下载，当然了，用户也可以自定义配置想要下载的镜像仓库。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h2><p><strong>二叉树（Binary Tree）</strong></p>
-<p>二叉树（Binary Tree）是有限个节点的集合，这个集合可以是空集，也可以是一个根节点和两颗不相交的子二叉树组成的集合，其中一颗树叫根的左子树，另一颗树叫右子树。所以二叉树是一个递归地概念。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/" class="post-title-link" itemprop="url">图算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="图的定义和常用术语"><a href="#图的定义和常用术语" class="headerlink" title="图的定义和常用术语"></a>图的定义和常用术语</h2><p>图是一系列顶点（结点）和描述顶点之间的关系边（弧）组成。图是数据元素的集合，这些数据元素相互连接形成网络。其形式化定义为：G=（V，E）。其中，G表示图，V是顶点的集合，E是边或弧的集合。并且E可以表示为：E=（Vi，Vj），表示顶点Vi和Vj之间有边或弧相连。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%9B%BE/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1375,13 +1348,13 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1393,9 +1366,6 @@ b.先找出学生中年龄 18 岁的学生，然后再查询姓名为“张三�
       <span class="links-of-author-item">
         <a href="https://blog.csdn.net/i_silence" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;i_silence" rel="noopener" target="_blank"><i class="fab fa-codiepie fa-fw"></i>CSDN</a>
       </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
