@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -200,7 +200,102 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="post-title-link" itemprop="url">Java虚拟机</a>
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Java基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 08:57:52" itemprop="dateModified" datetime="2020-06-08T08:57:52+08:00">2020-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><ul>
+<li>byte/8</li>
+<li>char/16</li>
+<li>short/16</li>
+<li>int/32</li>
+<li>float/32</li>
+<li>long/64</li>
+<li>double/64</li>
+<li>boolean/~</li>
+</ul>
+<blockquote>
+<p>  boolean 只有两个值：true、false，可以使用 1 bit 来存储，但是具体大小没有明确规定。JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。</p>
+</blockquote>
+<h4 id="包装类型"><a href="#包装类型" class="headerlink" title="包装类型"></a>包装类型</h4><p>基本类型都有对应的包装类型，基本类型与其对应的包装类型之间的赋值使用<strong>自动装箱</strong>与<strong>拆箱</strong>完成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer x = <span class="number">2</span>;     <span class="comment">// 装箱 调用了 Integer.valueOf(2)</span></span><br><span class="line"><span class="keyword">int</span> y = x;         <span class="comment">// 拆箱 调用了 X.intValue()</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">Java异常</a>
         </h2>
 
         <div class="post-meta">
@@ -240,21 +335,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="JVM-的主要组成部分"><a href="#JVM-的主要组成部分" class="headerlink" title="JVM 的主要组成部分"></a>JVM 的主要组成部分</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf004cfo6tj30y90jnjxw.jpg" alt="JVM主要组成部分"></p>
-<p>JVM包含两个子系统和两个组件，两个子系统为Class loader(类装载)、Execution engine(执行引擎)；两个组件为Runtime data area(运行时数据区)、Native Interface(本地接口)。</p>
-<ul>
-<li><p>Class loader(类装载)：根据给定的全类名(如：java.lang.Object)来装载class文件到运行时区域中的方法区。</p>
-</li>
-<li><p>Runtime data area(运行时数据区域)：这就是我们常说的JVM的内存。</p>
-</li>
-<li><p>Execution engine(执行引擎)：执行class中的指令。</p>
-</li>
-<li><p>Native Interface(本地接口)：与native libraries交互，是其它编程语言交互的接口。</p>
-</li>
-</ul>
+          <h4 id="Java异常简介"><a href="#Java异常简介" class="headerlink" title="Java异常简介"></a>Java异常简介</h4><p>Java异常是Java提供的一种识别及响应错误的一致性机制。</p>
+<p>Java异常机制可以使程序中异常处理代码和正常业务代码分离，保证程序代码更加优雅，并提高程序健壮性。在有效使用异常的情况下，异常能清晰的回答what, where, why这3个问题：异常类型回答了“什么”被抛出，异常堆栈跟踪回答了“在哪”抛出，异常信息回答了“为什么”会抛出。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E5%BC%82%E5%B8%B8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -392,7 +477,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E9%9B%86%E5%90%88/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/java%E9%9B%86%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/dog.jpg">
@@ -406,7 +491,93 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">Java集合</a>
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/java%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">Java集合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-01 23:04:29" itemprop="dateModified" datetime="2020-07-01T23:04:29+08:00">2020-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="集合分类"><a href="#集合分类" class="headerlink" title="集合分类"></a>集合分类</h2><p>Java 容器分为 Collection 和 Map 两大类：</p>
+<p>Collection集合主要有List和Set两大接口</p>
+<ul>
+<li>Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。</li>
+<li>List：一个有序（元素存入集合的顺序和取出的顺序一致）容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 ArrayList、LinkedList。<br>Map是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。Map 的常用实现类：HashMap、TreeMap、HashTable、LinkedHashMap、ConcurrentHashMap</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/java%E9%9B%86%E5%90%88/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dog.jpg">
+      <meta itemprop="name" content="yanbing">
+      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="严冰的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="post-title-link" itemprop="url">Java虚拟机</a>
         </h2>
 
         <div class="post-meta">
@@ -446,18 +617,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><h4 id="集合分类"><a href="#集合分类" class="headerlink" title="集合分类"></a>集合分类</h4><p>Java 容器分为 Collection 和 Map 两大类：</p>
-<img src="../图片/collection集合.jpg" alt="collection集合" style="zoom: 67%;" />
-
-<p>Collection集合主要有List和Set两大接口</p>
+          <h2 id="JVM-的主要组成部分"><a href="#JVM-的主要组成部分" class="headerlink" title="JVM 的主要组成部分"></a>JVM 的主要组成部分</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf004cfo6tj30y90jnjxw.jpg" alt="JVM主要组成部分"></p>
+<p>JVM包含两个子系统和两个组件，两个子系统为Class loader(类装载)、Execution engine(执行引擎)；两个组件为Runtime data area(运行时数据区)、Native Interface(本地接口)。</p>
 <ul>
-<li>Set：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。</li>
-<li>List：一个有序（元素存入集合的顺序和取出的顺序一致）容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 ArrayList、LinkedList。</li>
+<li><p>Class loader(类装载)：根据给定的全类名(如：java.lang.Object)来装载class文件到运行时区域中的方法区。</p>
+</li>
+<li><p>Runtime data area(运行时数据区域)：这就是我们常说的JVM的内存。</p>
+</li>
+<li><p>Execution engine(执行引擎)：执行class中的指令。</p>
+</li>
+<li><p>Native Interface(本地接口)：与native libraries交互，是其它编程语言交互的接口。</p>
+</li>
 </ul>
-<p>Map是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。Map 的常用实现类：HashMap、TreeMap、HashTable、LinkedHashMap、ConcurrentHashMap</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E9%9B%86%E5%90%88/#more" rel="contents">
+              <a class="btn" href="/2020/05/30/Java%E5%9F%BA%E7%A1%80/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -596,7 +770,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-18 08:01:05" itemprop="dateModified" datetime="2020-06-18T08:01:05+08:00">2020-06-18</time>
+                <time title="修改时间：2021-01-29 16:56:12" itemprop="dateModified" datetime="2021-01-29T16:56:12+08:00">2021-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -759,7 +933,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-01 19:00:40" itemprop="dateModified" datetime="2020-07-01T19:00:40+08:00">2020-07-01</time>
+                <time title="修改时间：2021-01-29 16:51:53" itemprop="dateModified" datetime="2021-01-29T16:51:53+08:00">2021-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -843,7 +1017,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-01 19:03:45" itemprop="dateModified" datetime="2020-07-01T19:03:45+08:00">2020-07-01</time>
+                <time title="修改时间：2021-01-29 16:52:31" itemprop="dateModified" datetime="2021-01-29T16:52:31+08:00">2021-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -895,183 +1069,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/" class="post-title-link" itemprop="url">Linux</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>  参考文档：<a href="https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/operating-system/linux</a></p>
-</blockquote>
-<h2 id="初探Linux"><a href="#初探Linux" class="headerlink" title="初探Linux"></a>初探Linux</h2><h3 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h3><ul>
-<li><strong>类Unix系统：</strong> Linux是一种自由、开放源码的类似Unix的操作系统</li>
-<li><strong>Linux内核：</strong> 严格来说，Linux这个词本身只表示Linux内核。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dog.jpg">
-      <meta itemprop="name" content="yanbing">
-      <meta itemprop="description" content="闲看庭前花开落，漫随天外云卷舒。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="严冰的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">操作系统</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-30 20:50:49" itemprop="dateCreated datePublished" datetime="2020-05-30T20:50:49+08:00">2020-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 08:57:51" itemprop="dateModified" datetime="2020-06-08T08:57:51+08:00">2020-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="一、基本特征"><a href="#一、基本特征" class="headerlink" title="一、基本特征"></a>一、基本特征</h3><h4 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h4><p><strong>并发</strong>是指宏观上在一段时间内能同时运行多个程序，而<strong>并行</strong>则指同一时刻能运行多个指令。</p>
-<p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
-<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
-<h4 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h4><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
-<p>有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
-<p>互斥共享的资源称为临界资源，例如打印机等，在同一时刻只允许一个进程访问，需要用同步机制来实现互斥访问。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1139,20 +1140,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1192,7 +1193,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
